@@ -1,0 +1,10 @@
+version: 2
+secrets:
+  ignored-paths:
+    - "node_modules/**"
+    - ".git/**"
+    - "dist/**"
+    - ".agent/**"
+    - ".gemini/**"
+    - ".vscode/**"
+    - "package-lock.json"
