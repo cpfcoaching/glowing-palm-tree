@@ -16,5 +16,9 @@
 			"path": "skills-library"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"python.analysis.extraPaths": [
+			"/Users/MacAttack/.vscode/extensions/ms-security.ms-sentinel-2.1.0/python"
+		]
+	}
 }
