@@ -105,6 +105,7 @@ export default function TokenBurnDashboard() {
             <button
               key={windowOption.key}
               type="button"
+              className={windowKey === windowOption.key ? "active" : ""}
               aria-pressed={windowKey === windowOption.key ? "true" : "false"}
               onClick={() => setWindowKey(windowOption.key)}
             >
@@ -294,7 +295,7 @@ export default function TokenBurnDashboard() {
                   <span className="muted-range">({formatTokens(driver.low)} - {formatTokens(driver.high)} est)</span>
                 </div>
                 <span className="track">
-                  <i style={{ width: `${driver.share}%` }} />
+                  <i style={{ "--width": `${driver.share}%` } as React.CSSProperties} />
                 </span>
                 <span>{formatTokens(driver.exact)} ({driver.share}%)</span>
               </div>
