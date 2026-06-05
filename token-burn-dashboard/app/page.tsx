@@ -105,7 +105,7 @@ export default function TokenBurnDashboard() {
             <button
               key={windowOption.key}
               type="button"
-              aria-pressed={windowKey === windowOption.key}
+              aria-pressed={windowKey === windowOption.key ? "true" : "false"}
               onClick={() => setWindowKey(windowOption.key)}
             >
               {windowOption.label}
@@ -155,7 +155,7 @@ export default function TokenBurnDashboard() {
             <div className="strip-col">
               <span className="muted">EXACT LANE</span>
               <strong>{formatTokens(latestDay.exact_total)}</strong>
-              <span style={{ fontSize: "11px", lineHeight: "1.4" }}>
+              <span className="muted-details">
                 Codex: {formatTokens(latestDay.codex_tokens)}
                 <br />
                 Claude Code: {formatTokens(latestDay.claude_code_tokens)} ({latestDay.claude_code_calls} calls)
@@ -170,7 +170,7 @@ export default function TokenBurnDashboard() {
               <strong>
                 {latestDay.chatgpt_messages + latestDay.claude_chat_messages + latestDay.vscode_chat_messages} msgs
               </strong>
-              <span style={{ fontSize: "11px", lineHeight: "1.4" }}>
+              <span className="muted-details">
                 ChatGPT: {latestDay.chatgpt_conversations}c, {latestDay.chatgpt_messages}m, {latestDay.chatgpt_files}f
                 <br />
                 Claude Chat: {latestDay.claude_chat_conversations}c, {latestDay.claude_chat_messages}m
@@ -271,7 +271,7 @@ export default function TokenBurnDashboard() {
                 <span className="muted">Sum of low-high estimates</span>
               </div>
               
-              <h3 style={{ marginTop: "16px" }}>Measured Activities</h3>
+              <h3 className="measured-activities-header">Measured Activities</h3>
               <div className="activity-list">
                 <div>ChatGPT: <b>{totalChatGPTConversations}</b> conversations, <b>{totalChatGPTMessages}</b> messages, <b>{totalChatGPTFiles}</b> files</div>
                 <div>Claude Chat: <b>{totalClaudeChatConversations}</b> conversations, <b>{totalClaudeChatMessages}</b> messages</div>

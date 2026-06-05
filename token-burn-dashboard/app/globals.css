@@ -616,3 +616,13 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.muted-details {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.measured-activities-header {
+  margin-top: 16px;
+}
