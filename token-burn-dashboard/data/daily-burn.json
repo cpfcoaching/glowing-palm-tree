@@ -1,0 +1,19 @@
+[
+  {
+    "date": "2026-05-24",
+    "codex_tokens": 184320,
+    "claude_code_tokens": 512880,
+    "claude_code_calls": 47,
+    "api_tokens": 0,
+    "chatgpt_conversations": 12,
+    "chatgpt_messages": 84,
+    "chatgpt_files": 3,
+    "claude_chat_conversations": 0,
+    "claude_chat_messages": 0,
+    "chat_tokens_low": 30000,
+    "chat_tokens_high": 45000,
+    "confidence": "floor",
+    "driver": "shipping",
+    "evidence": "dashboard build and review"
+  }
+]

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-import rawRows from "../data/daily-burn.sample.json";
+import rawRows from "../data/daily-burn.json";
 import { normalizeRows, type BurnRow } from "../lib/burn-data";
 import { getWindowRows, type WindowKey, windows } from "../lib/date-windows";
 import {
