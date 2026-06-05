@@ -45,3 +45,7 @@ local_settings.py
 staticfiles/
 media/
 instance/
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+.beads-credential-key

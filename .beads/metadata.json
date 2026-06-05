@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "Antigravity",
+  "project_id": "f6246fc1-0a30-49bf-9d8c-838354215aed"
+}
