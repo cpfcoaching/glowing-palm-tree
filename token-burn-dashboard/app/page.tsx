@@ -43,11 +43,14 @@ export default function TokenBurnDashboard() {
   const totalChatGPTFiles = selectedRows.reduce((sum, r) => sum + r.chatgpt_files, 0);
   const totalClaudeChatConversations = selectedRows.reduce((sum, r) => sum + r.claude_chat_conversations, 0);
   const totalClaudeChatMessages = selectedRows.reduce((sum, r) => sum + r.claude_chat_messages, 0);
+  const totalVSCodeConversations = selectedRows.reduce((sum, r) => sum + r.vscode_chat_conversations, 0);
+  const totalVSCodeMessages = selectedRows.reduce((sum, r) => sum + r.vscode_chat_messages, 0);
 
   // Exact sources
   const totalCodex = selectedRows.reduce((sum, r) => sum + r.codex_tokens, 0);
   const totalClaudeCode = selectedRows.reduce((sum, r) => sum + r.claude_code_tokens, 0);
   const totalAPI = selectedRows.reduce((sum, r) => sum + r.api_tokens, 0);
+  const totalAntigravity = selectedRows.reduce((sum, r) => sum + r.antigravity_tokens, 0);
   const totalClaudeCodeCalls = selectedRows.reduce((sum, r) => sum + r.claude_code_calls, 0);
 
   // Top days (by exact total)
@@ -91,7 +94,7 @@ export default function TokenBurnDashboard() {
     <main className="page">
       <header className="hero">
         <div>
-          <p className="eyebrow">Token burn dashboard</p>
+          <p className="eyebrow">Token burn dashboard (EST Timezone)</p>
           <h1>AI usage by day, source, and driver.</h1>
           <p className="lead">
             Tracking exact local session logs alongside estimated web chat bands. Measured logs, activity metrics, and estimates are strictly separated.
@@ -117,11 +120,11 @@ export default function TokenBurnDashboard() {
         <div className="fidelity-badge-grid">
           <div className="fidelity-badge-item">
             <span className="pill exact">EXACT lane</span>
-            <p>Measured logs only: Codex, Claude Code, and developer API usage. Real token counts.</p>
+            <p>Measured logs: Codex, Claude Code, OpenRouter (API), and Antigravity. Real token counts.</p>
           </div>
           <div className="fidelity-badge-item">
             <span className="pill activity-badge">ACTIVITY lane</span>
-            <p>Measured activity counts (conversations, messages, files) from web apps without token API access.</p>
+            <p>Measured counts (conversations, messages, files) from web/app interfaces without token APIs: ChatGPT, Claude Chat, and VSCode Chat.</p>
           </div>
           <div className="fidelity-badge-item">
             <span className="pill estimated">ESTIMATE lane</span>
@@ -152,17 +155,27 @@ export default function TokenBurnDashboard() {
             <div className="strip-col">
               <span className="muted">EXACT LANE</span>
               <strong>{formatTokens(latestDay.exact_total)}</strong>
-              <span>Codex: {formatTokens(latestDay.codex_tokens)} | Claude Code: {formatTokens(latestDay.claude_code_tokens)} ({latestDay.claude_code_calls} calls) | API: {formatTokens(latestDay.api_tokens)}</span>
+              <span style={{ fontSize: "11px", lineHeight: "1.4" }}>
+                Codex: {formatTokens(latestDay.codex_tokens)}
+                <br />
+                Claude Code: {formatTokens(latestDay.claude_code_tokens)} ({latestDay.claude_code_calls} calls)
+                <br />
+                OpenRouter API: {formatTokens(latestDay.api_tokens)}
+                <br />
+                Antigravity: {formatTokens(latestDay.antigravity_tokens)}
+              </span>
             </div>
             <div className="strip-col border-left">
               <span className="muted">ACTIVITY LANE</span>
               <strong>
-                {latestDay.chatgpt_messages + latestDay.claude_chat_messages} msgs
+                {latestDay.chatgpt_messages + latestDay.claude_chat_messages + latestDay.vscode_chat_messages} msgs
               </strong>
-              <span>
-                ChatGPT: {latestDay.chatgpt_conversations} convs, {latestDay.chatgpt_messages} msgs, {latestDay.chatgpt_files} files
+              <span style={{ fontSize: "11px", lineHeight: "1.4" }}>
+                ChatGPT: {latestDay.chatgpt_conversations}c, {latestDay.chatgpt_messages}m, {latestDay.chatgpt_files}f
                 <br />
-                Claude: {latestDay.claude_chat_conversations} convs, {latestDay.claude_chat_messages} msgs
+                Claude Chat: {latestDay.claude_chat_conversations}c, {latestDay.claude_chat_messages}m
+                <br />
+                VSCode Chat: {latestDay.vscode_chat_conversations}c, {latestDay.vscode_chat_messages}m
               </span>
             </div>
             <div className="strip-col border-left">
@@ -239,8 +252,12 @@ export default function TokenBurnDashboard() {
                 <strong>{formatTokens(totalClaudeCode)} <small>({totalClaudeCodeCalls} calls)</small></strong>
               </div>
               <div className="source-item">
-                <span className="pill exact">Developer API Exact</span>
+                <span className="pill exact">OpenRouter API Exact</span>
                 <strong>{formatTokens(totalAPI)}</strong>
+              </div>
+              <div className="source-item">
+                <span className="pill exact">Antigravity Exact</span>
+                <strong>{formatTokens(totalAntigravity)}</strong>
               </div>
             </div>
 
@@ -258,6 +275,7 @@ export default function TokenBurnDashboard() {
               <div className="activity-list">
                 <div>ChatGPT: <b>{totalChatGPTConversations}</b> conversations, <b>{totalChatGPTMessages}</b> messages, <b>{totalChatGPTFiles}</b> files</div>
                 <div>Claude Chat: <b>{totalClaudeChatConversations}</b> conversations, <b>{totalClaudeChatMessages}</b> messages</div>
+                <div>VSCode Chat: <b>{totalVSCodeConversations}</b> conversations, <b>{totalVSCodeMessages}</b> messages</div>
               </div>
             </div>
           </div>
@@ -342,9 +360,11 @@ export default function TokenBurnDashboard() {
                 <th>7d Exact Avg</th>
                 <th>Codex Ex.</th>
                 <th>Claude Code Ex.</th>
-                <th>API Ex.</th>
+                <th>OpenRouter Ex.</th>
+                <th>Antigravity Ex.</th>
                 <th>ChatGPT Activity</th>
-                <th>Claude Chat Activity</th>
+                <th>Claude Chat Act.</th>
+                <th>VSCode Activity</th>
                 <th>Estimate Band</th>
                 <th>Fidelity</th>
                 <th>Driver</th>
@@ -363,6 +383,7 @@ export default function TokenBurnDashboard() {
                     <td>{formatTokens(row.codex_tokens)}</td>
                     <td>{formatTokens(row.claude_code_tokens)} <small>({row.claude_code_calls})</small></td>
                     <td>{formatTokens(row.api_tokens)}</td>
+                    <td>{formatTokens(row.antigravity_tokens)}</td>
                     <td>
                       <span className="count-group">
                         {row.chatgpt_conversations}c / {row.chatgpt_messages}m / {row.chatgpt_files}f
@@ -371,6 +392,11 @@ export default function TokenBurnDashboard() {
                     <td>
                       <span className="count-group">
                         {row.claude_chat_conversations}c / {row.claude_chat_messages}m
+                      </span>
+                    </td>
+                    <td>
+                      <span className="count-group">
+                        {row.vscode_chat_conversations}c / {row.vscode_chat_messages}m
                       </span>
                     </td>
                     <td>
@@ -392,7 +418,7 @@ export default function TokenBurnDashboard() {
 
       <footer className="footerNote">
         <p>
-          Data sourced locally from <code>data/daily-burn.sample.json</code>. Commits contain normalized daily totals only. All private logs and path names are scrubbed.
+          Data sourced locally from <code>data/daily-burn.json</code>. Commits contain normalized daily totals only. All private logs and path names are scrubbed.
         </p>
       </footer>
     </main>
