@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/token-burn-dashboard/app/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\nimport type { ReactNode } from \"react\";\n\nimport \"./globals.css\";\n\nexport const metadata: Metadata = {\n  title: \"Token Burn Dashboard\",\n  description: \"A local dashboard for exact and estimated AI token usage.\",\n};\n\nexport default function RootLayout({ children }: { children: ReactNode }) {\n  return (\n    <html lang=\"en\">\n      <body>{children}</body>\n    </html>\n  );\n}\n"],"names":["metadata","title","description","RootLayout","children","lang"],"mappings":";;;;;;;;;AAKO,MAAMA,WAAqB;IAChCC,OAAO;IACPC,aAAa;AACf;AAEe,SAASC,WAAW,EAAEC,QAAQ,EAA2B;IACtE,qBACE,4QAAC;QAAKC,MAAK;kBACT,cAAA,4QAAC;sBAAMD;;;;;;;;;;;AAGb"}},
+    {"offset": {"line": 41, "column": 0}, "map": {"version":3,"sources":["file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/token-burn-dashboard/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,iJACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

@@ -1,0 +1,13 @@
+var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/app/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0bmzgcs._.js")
+R.c("server/chunks/ssr/0bzl_next_dist_esm_build_templates_app-page_1s4ae-i.js")
+R.c("server/chunks/ssr/[root-of-the-server]__124mjjw._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1dpgols._.js")
+R.c("server/chunks/ssr/token-burn-dashboard_app_layout_tsx_05bt-tk._.js")
+R.c("server/chunks/ssr/0bzl_next_dist_client_components_0kk3cm8._.js")
+R.c("server/chunks/ssr/0bzl_next_dist_client_components_builtin_forbidden_0l8h_qj.js")
+R.c("server/chunks/ssr/0bzl_next_dist_client_components_builtin_unauthorized_07n76cu.js")
+R.c("server/chunks/ssr/0bzl_next_dist_client_components_builtin_global-error_1w7ndnm.js")
+R.c("server/chunks/ssr/token-burn-dashboard__next-internal_server_app_page_actions_0cmgets.js")
+R.m(40019)
+module.exports=R.m(40019).exports

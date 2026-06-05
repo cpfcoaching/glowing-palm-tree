@@ -1,0 +1,3 @@
+module.exports=[75020,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(46626);a.n(d("[project]/token-burn-dashboard/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},53987,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(46626);a.n(d("[project]/token-burn-dashboard/node_modules/next/dist/client/components/builtin/global-error.js"))},53944,a=>{"use strict";a.i(75020);var b=a.i(53987);a.n(b)},13261,a=>{a.n(a.i(53944))}];
+
+//# sourceMappingURL=0bzl_next_dist_client_components_builtin_global-error_1w7ndnm.js.map
