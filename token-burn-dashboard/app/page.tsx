@@ -106,7 +106,7 @@ export default function TokenBurnDashboard() {
               key={windowOption.key}
               type="button"
               className={windowKey === windowOption.key ? "active" : ""}
-              aria-pressed={windowKey === windowOption.key ? "true" : "false"}
+              aria-pressed={windowKey === windowOption.key}
               onClick={() => setWindowKey(windowOption.key)}
             >
               {windowOption.label}
@@ -288,14 +288,15 @@ export default function TokenBurnDashboard() {
           note="Burn driver categories and their exact shares."
         >
           <div className="driverGrid">
-            {drivers.map((driver) => (
+            {drivers.map((driver, idx) => (
               <div key={driver.label} className="driver">
+                <style>{`.driver-bar-${idx} { width: ${driver.share}%; }`}</style>
                 <div className="driver-info">
                   <strong>{driver.label}</strong>
                   <span className="muted-range">({formatTokens(driver.low)} - {formatTokens(driver.high)} est)</span>
                 </div>
                 <span className="track">
-                  <i style={{ "--width": `${driver.share}%` } as React.CSSProperties} />
+                  <i className={`driver-bar-${idx}`} />
                 </span>
                 <span>{formatTokens(driver.exact)} ({driver.share}%)</span>
               </div>
