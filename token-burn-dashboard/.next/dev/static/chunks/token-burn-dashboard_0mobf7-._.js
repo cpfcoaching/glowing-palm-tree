@@ -350,7 +350,8 @@ function TokenBurnDashboard() {
                         "aria-label": "Select time range",
                         children: __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$date$2d$windows$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["windows"].map((windowOption)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
-                                "aria-pressed": windowKey === windowOption.key,
+                                className: windowKey === windowOption.key ? "active" : "",
+                                "aria-pressed": windowKey === windowOption.key ? "true" : "false",
                                 onClick: ()=>setWindowKey(windowOption.key),
                                 children: windowOption.label
                             }, windowOption.key, false, {
@@ -377,7 +378,7 @@ function TokenBurnDashboard() {
                         children: "Data Fidelity Lanes"
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 119,
+                        lineNumber: 120,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -391,20 +392,20 @@ function TokenBurnDashboard() {
                                         children: "EXACT lane"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 123,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Measured logs: Codex, Claude Code, OpenRouter (API), and Antigravity. Real token counts."
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 124,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 121,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -415,20 +416,20 @@ function TokenBurnDashboard() {
                                         children: "ACTIVITY lane"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 127,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Measured counts (conversations, messages, files) from web/app interfaces without token APIs: ChatGPT, Claude Chat, and VSCode Chat."
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 128,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 125,
+                                lineNumber: 126,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -439,32 +440,32 @@ function TokenBurnDashboard() {
                                         children: "ESTIMATE lane"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 131,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Calculated range bands based on message lengths. Always rendered as a low-to-high interval."
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 132,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 129,
+                                lineNumber: 130,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 120,
+                        lineNumber: 121,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 118,
+                lineNumber: 119,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -477,7 +478,7 @@ function TokenBurnDashboard() {
                         note: "Measured tokens only"
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 138,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Metric, {
@@ -486,7 +487,7 @@ function TokenBurnDashboard() {
                         note: peakExactDay?.date || "n/a"
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 139,
+                        lineNumber: 140,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Metric, {
@@ -495,7 +496,7 @@ function TokenBurnDashboard() {
                         note: "Moving average"
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 140,
+                        lineNumber: 141,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Metric, {
@@ -504,13 +505,13 @@ function TokenBurnDashboard() {
                         note: "Rows in view"
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 141,
+                        lineNumber: 142,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 137,
+                lineNumber: 138,
                 columnNumber: 7
             }, this),
             latestDay && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -527,7 +528,7 @@ function TokenBurnDashboard() {
                                         children: "Current Day Status"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 150,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -537,13 +538,13 @@ function TokenBurnDashboard() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 151,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 148,
+                                lineNumber: 149,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -551,13 +552,13 @@ function TokenBurnDashboard() {
                                 children: "Active"
                             }, void 0, false, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 152,
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 147,
+                        lineNumber: 148,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -571,27 +572,24 @@ function TokenBurnDashboard() {
                                         children: "EXACT LANE"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 157,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(latestDay.exact_total)
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 157,
+                                        lineNumber: 158,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        style: {
-                                            fontSize: "11px",
-                                            lineHeight: "1.4"
-                                        },
+                                        className: "muted-details",
                                         children: [
                                             "Codex: ",
                                             (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(latestDay.codex_tokens),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 160,
+                                                lineNumber: 161,
                                                 columnNumber: 17
                                             }, this),
                                             "Claude Code: ",
@@ -601,14 +599,14 @@ function TokenBurnDashboard() {
                                             " calls)",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 162,
+                                                lineNumber: 163,
                                                 columnNumber: 17
                                             }, this),
                                             "OpenRouter API: ",
                                             (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(latestDay.api_tokens),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 164,
+                                                lineNumber: 165,
                                                 columnNumber: 17
                                             }, this),
                                             "Antigravity: ",
@@ -616,13 +614,13 @@ function TokenBurnDashboard() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 159,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 155,
+                                lineNumber: 156,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -633,7 +631,7 @@ function TokenBurnDashboard() {
                                         children: "ACTIVITY LANE"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 169,
+                                        lineNumber: 170,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -643,14 +641,11 @@ function TokenBurnDashboard() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 171,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        style: {
-                                            fontSize: "11px",
-                                            lineHeight: "1.4"
-                                        },
+                                        className: "muted-details",
                                         children: [
                                             "ChatGPT: ",
                                             latestDay.chatgpt_conversations,
@@ -661,7 +656,7 @@ function TokenBurnDashboard() {
                                             "f",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 176,
                                                 columnNumber: 17
                                             }, this),
                                             "Claude Chat: ",
@@ -671,7 +666,7 @@ function TokenBurnDashboard() {
                                             "m",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 178,
                                                 columnNumber: 17
                                             }, this),
                                             "VSCode Chat: ",
@@ -682,13 +677,13 @@ function TokenBurnDashboard() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 174,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 168,
+                                lineNumber: 169,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -699,7 +694,7 @@ function TokenBurnDashboard() {
                                         children: "ESTIMATE LANE"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 183,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -710,7 +705,7 @@ function TokenBurnDashboard() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 184,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -722,13 +717,13 @@ function TokenBurnDashboard() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 186,
+                                        lineNumber: 187,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 181,
+                                lineNumber: 182,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -739,7 +734,7 @@ function TokenBurnDashboard() {
                                         children: "DRIVER"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 191,
+                                        lineNumber: 192,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -747,7 +742,7 @@ function TokenBurnDashboard() {
                                         children: latestDay.driver
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 192,
+                                        lineNumber: 193,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -755,25 +750,25 @@ function TokenBurnDashboard() {
                                         children: latestDay.evidence || "No evidence logged"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 193,
+                                        lineNumber: 194,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 190,
+                                lineNumber: 191,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 154,
+                        lineNumber: 155,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 146,
+                lineNumber: 147,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -792,12 +787,12 @@ function TokenBurnDashboard() {
                                         title: `${row.date}: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(row.exact_total)} exact tokens, driver: ${row.driver}`
                                     }, row.date, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 207,
+                                        lineNumber: 208,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 205,
+                                lineNumber: 206,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -808,7 +803,7 @@ function TokenBurnDashboard() {
                                         children: "less"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 215,
+                                        lineNumber: 216,
                                         columnNumber: 13
                                     }, this),
                                     [
@@ -822,26 +817,26 @@ function TokenBurnDashboard() {
                                             className: `heat${level}`
                                         }, level, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 217,
+                                            lineNumber: 218,
                                             columnNumber: 15
                                         }, this)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "more"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 219,
+                                        lineNumber: 220,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 214,
+                                lineNumber: 215,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 200,
+                        lineNumber: 201,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Panel, {
@@ -860,7 +855,7 @@ function TokenBurnDashboard() {
                                         stroke: "rgba(240,236,228,0.12)"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 230,
+                                        lineNumber: 231,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -871,29 +866,29 @@ function TokenBurnDashboard() {
                                         strokeLinecap: "round"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 232,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 229,
+                                lineNumber: 230,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                            lineNumber: 228,
+                            lineNumber: 229,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 223,
+                        lineNumber: 224,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 199,
+                lineNumber: 200,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -913,7 +908,7 @@ function TokenBurnDashboard() {
                                             children: "Exact Lanes (Measured)"
                                         }, void 0, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 245,
+                                            lineNumber: 246,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -924,20 +919,20 @@ function TokenBurnDashboard() {
                                                     children: "Codex Exact"
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 247,
+                                                    lineNumber: 248,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(totalCodex)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 248,
+                                                    lineNumber: 249,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 246,
+                                            lineNumber: 247,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -948,7 +943,7 @@ function TokenBurnDashboard() {
                                                     children: "Claude Code Exact"
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 251,
+                                                    lineNumber: 252,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -963,19 +958,19 @@ function TokenBurnDashboard() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 252,
+                                                            lineNumber: 253,
                                                             columnNumber: 57
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 252,
+                                                    lineNumber: 253,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 250,
+                                            lineNumber: 251,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -986,20 +981,20 @@ function TokenBurnDashboard() {
                                                     children: "OpenRouter API Exact"
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 255,
+                                                    lineNumber: 256,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(totalAPI)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 256,
+                                                    lineNumber: 257,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 254,
+                                            lineNumber: 255,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1010,26 +1005,26 @@ function TokenBurnDashboard() {
                                                     children: "Antigravity Exact"
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 259,
+                                                    lineNumber: 260,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(totalAntigravity)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 260,
+                                                    lineNumber: 261,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 258,
+                                            lineNumber: 259,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                    lineNumber: 244,
+                                    lineNumber: 245,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1039,7 +1034,7 @@ function TokenBurnDashboard() {
                                             children: "Estimated Bands (Range)"
                                         }, void 0, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 265,
+                                            lineNumber: 266,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1050,7 +1045,7 @@ function TokenBurnDashboard() {
                                                     children: "Estimates Band"
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 267,
+                                                    lineNumber: 268,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -1061,7 +1056,7 @@ function TokenBurnDashboard() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 268,
+                                                    lineNumber: 269,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1069,23 +1064,21 @@ function TokenBurnDashboard() {
                                                     children: "Sum of low-high estimates"
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 271,
+                                                    lineNumber: 272,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 266,
+                                            lineNumber: 267,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            style: {
-                                                marginTop: "16px"
-                                            },
+                                            className: "measured-activities-header",
                                             children: "Measured Activities"
                                         }, void 0, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 274,
+                                            lineNumber: 275,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1098,7 +1091,7 @@ function TokenBurnDashboard() {
                                                             children: totalChatGPTConversations
                                                         }, void 0, false, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 276,
+                                                            lineNumber: 277,
                                                             columnNumber: 31
                                                         }, this),
                                                         " conversations, ",
@@ -1106,7 +1099,7 @@ function TokenBurnDashboard() {
                                                             children: totalChatGPTMessages
                                                         }, void 0, false, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 276,
+                                                            lineNumber: 277,
                                                             columnNumber: 81
                                                         }, this),
                                                         " messages, ",
@@ -1114,14 +1107,14 @@ function TokenBurnDashboard() {
                                                             children: totalChatGPTFiles
                                                         }, void 0, false, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 276,
+                                                            lineNumber: 277,
                                                             columnNumber: 121
                                                         }, this),
                                                         " files"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 276,
+                                                    lineNumber: 277,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1131,7 +1124,7 @@ function TokenBurnDashboard() {
                                                             children: totalClaudeChatConversations
                                                         }, void 0, false, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 277,
+                                                            lineNumber: 278,
                                                             columnNumber: 35
                                                         }, this),
                                                         " conversations, ",
@@ -1139,14 +1132,14 @@ function TokenBurnDashboard() {
                                                             children: totalClaudeChatMessages
                                                         }, void 0, false, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 277,
+                                                            lineNumber: 278,
                                                             columnNumber: 88
                                                         }, this),
                                                         " messages"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 277,
+                                                    lineNumber: 278,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1156,7 +1149,7 @@ function TokenBurnDashboard() {
                                                             children: totalVSCodeConversations
                                                         }, void 0, false, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 278,
+                                                            lineNumber: 279,
                                                             columnNumber: 35
                                                         }, this),
                                                         " conversations, ",
@@ -1164,37 +1157,37 @@ function TokenBurnDashboard() {
                                                             children: totalVSCodeMessages
                                                         }, void 0, false, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 278,
+                                                            lineNumber: 279,
                                                             columnNumber: 84
                                                         }, this),
                                                         " messages"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 278,
+                                                    lineNumber: 279,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 275,
+                                            lineNumber: 276,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                    lineNumber: 264,
+                                    lineNumber: 265,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                            lineNumber: 243,
+                            lineNumber: 244,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 238,
+                        lineNumber: 239,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Panel, {
@@ -1213,7 +1206,7 @@ function TokenBurnDashboard() {
                                                     children: driver.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 293,
+                                                    lineNumber: 294,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1227,29 +1220,29 @@ function TokenBurnDashboard() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 294,
+                                                    lineNumber: 295,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 292,
+                                            lineNumber: 293,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "track",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("i", {
                                                 style: {
-                                                    width: `${driver.share}%`
+                                                    "--width": `${driver.share}%`
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 297,
+                                                lineNumber: 298,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 296,
+                                            lineNumber: 297,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1261,29 +1254,29 @@ function TokenBurnDashboard() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 299,
+                                            lineNumber: 300,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, driver.label, true, {
                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                    lineNumber: 291,
+                                    lineNumber: 292,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                            lineNumber: 289,
+                            lineNumber: 290,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 284,
+                        lineNumber: 285,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 237,
+                lineNumber: 238,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1303,37 +1296,37 @@ function TokenBurnDashboard() {
                                             children: item.label
                                         }, void 0, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 315,
+                                            lineNumber: 316,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                             children: item.value
                                         }, void 0, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 316,
+                                            lineNumber: 317,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: item.note
                                         }, void 0, false, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 317,
+                                            lineNumber: 318,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, item.label, true, {
                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                    lineNumber: 314,
+                                    lineNumber: 315,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                            lineNumber: 312,
+                            lineNumber: 313,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 307,
+                        lineNumber: 308,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Panel, {
@@ -1353,7 +1346,7 @@ function TokenBurnDashboard() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 331,
+                                            lineNumber: 332,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1363,20 +1356,20 @@ function TokenBurnDashboard() {
                                                     children: day.date
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 333,
+                                                    lineNumber: 334,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: day.evidence
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 334,
+                                                    lineNumber: 335,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 332,
+                                            lineNumber: 333,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1389,7 +1382,7 @@ function TokenBurnDashboard() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 337,
+                                                    lineNumber: 338,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1400,35 +1393,35 @@ function TokenBurnDashboard() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 338,
+                                                    lineNumber: 339,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 336,
+                                            lineNumber: 337,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, day.date, true, {
                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                    lineNumber: 330,
+                                    lineNumber: 331,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                            lineNumber: 328,
+                            lineNumber: 329,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 323,
+                        lineNumber: 324,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 306,
+                lineNumber: 307,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1444,33 +1437,33 @@ function TokenBurnDashboard() {
                                         children: "Moving-average table"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 349,
+                                        lineNumber: 350,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                         children: "Daily Operating Table (Last 30 Days)"
                                     }, void 0, false, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 350,
+                                        lineNumber: 351,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 348,
+                                lineNumber: 349,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Strict lane separation: exact tokens, activity counts, and estimate range bands."
                             }, void 0, false, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 352,
+                                lineNumber: 353,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 347,
+                        lineNumber: 348,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1485,102 +1478,102 @@ function TokenBurnDashboard() {
                                                 children: "Date"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 358,
+                                                lineNumber: 359,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Exact Total"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 359,
+                                                lineNumber: 360,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "7d Exact Avg"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 360,
+                                                lineNumber: 361,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Codex Ex."
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 361,
+                                                lineNumber: 362,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Claude Code Ex."
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 362,
+                                                lineNumber: 363,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "OpenRouter Ex."
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 363,
+                                                lineNumber: 364,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Antigravity Ex."
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 364,
+                                                lineNumber: 365,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "ChatGPT Activity"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 365,
+                                                lineNumber: 366,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Claude Chat Act."
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 366,
+                                                lineNumber: 367,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "VSCode Activity"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 367,
+                                                lineNumber: 368,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Estimate Band"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 368,
+                                                lineNumber: 369,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Fidelity"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 369,
+                                                lineNumber: 370,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                 children: "Driver"
                                             }, void 0, false, {
                                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                lineNumber: 370,
+                                                lineNumber: 371,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                        lineNumber: 357,
+                                        lineNumber: 358,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                    lineNumber: 356,
+                                    lineNumber: 357,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1593,33 +1586,33 @@ function TokenBurnDashboard() {
                                                         children: row.date
                                                     }, void 0, false, {
                                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                        lineNumber: 379,
+                                                        lineNumber: 380,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 378,
+                                                    lineNumber: 379,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(row.exact_total)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 381,
+                                                    lineNumber: 382,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["movingAverageExact7"])(selectedRows, originalIndex))
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 382,
+                                                    lineNumber: 383,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(row.codex_tokens)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 383,
+                                                    lineNumber: 384,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1634,27 +1627,27 @@ function TokenBurnDashboard() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                            lineNumber: 384,
+                                                            lineNumber: 385,
                                                             columnNumber: 64
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 384,
+                                                    lineNumber: 385,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(row.api_tokens)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 385,
+                                                    lineNumber: 386,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$lib$2f$token$2d$math$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatTokens"])(row.antigravity_tokens)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 386,
+                                                    lineNumber: 387,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1670,12 +1663,12 @@ function TokenBurnDashboard() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                        lineNumber: 388,
+                                                        lineNumber: 389,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 387,
+                                                    lineNumber: 388,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1689,12 +1682,12 @@ function TokenBurnDashboard() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                        lineNumber: 393,
+                                                        lineNumber: 394,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 392,
+                                                    lineNumber: 393,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1708,12 +1701,12 @@ function TokenBurnDashboard() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                        lineNumber: 398,
+                                                        lineNumber: 399,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 397,
+                                                    lineNumber: 398,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1724,7 +1717,7 @@ function TokenBurnDashboard() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 402,
+                                                    lineNumber: 403,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1734,48 +1727,48 @@ function TokenBurnDashboard() {
                                                         children: row.confidence
                                                     }, void 0, false, {
                                                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                        lineNumber: 406,
+                                                        lineNumber: 407,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 405,
+                                                    lineNumber: 406,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                     children: row.driver
                                                 }, void 0, false, {
                                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                                    lineNumber: 410,
+                                                    lineNumber: 411,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, row.date, true, {
                                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                            lineNumber: 377,
+                                            lineNumber: 378,
                                             columnNumber: 19
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                    lineNumber: 373,
+                                    lineNumber: 374,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                            lineNumber: 355,
+                            lineNumber: 356,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 354,
+                        lineNumber: 355,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 346,
+                lineNumber: 347,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -1787,19 +1780,19 @@ function TokenBurnDashboard() {
                             children: "data/daily-burn.json"
                         }, void 0, false, {
                             fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                            lineNumber: 421,
+                            lineNumber: 422,
                             columnNumber: 37
                         }, this),
                         ". Commits contain normalized daily totals only. All private logs and path names are scrubbed."
                     ]
                 }, void 0, true, {
                     fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                    lineNumber: 420,
+                    lineNumber: 421,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 419,
+                lineNumber: 420,
                 columnNumber: 7
             }, this)
         ]
@@ -1820,27 +1813,27 @@ function Metric({ label, value, note }) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 431,
+                lineNumber: 432,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                 children: value
             }, void 0, false, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 432,
+                lineNumber: 433,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 children: note
             }, void 0, false, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 433,
+                lineNumber: 434,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-        lineNumber: 430,
+        lineNumber: 431,
         columnNumber: 5
     }, this);
 }
@@ -1859,40 +1852,40 @@ function Panel({ label, title, note, children }) {
                                 children: label
                             }, void 0, false, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 453,
+                                lineNumber: 454,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: title
                             }, void 0, false, {
                                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                                lineNumber: 454,
+                                lineNumber: 455,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 452,
+                        lineNumber: 453,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$token$2d$burn$2d$dashboard$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: note
                     }, void 0, false, {
                         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                        lineNumber: 456,
+                        lineNumber: 457,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/token-burn-dashboard/app/page.tsx",
-                lineNumber: 451,
+                lineNumber: 452,
                 columnNumber: 7
             }, this),
             children
         ]
     }, void 0, true, {
         fileName: "[project]/token-burn-dashboard/app/page.tsx",
-        lineNumber: 450,
+        lineNumber: 451,
         columnNumber: 5
     }, this);
 }
