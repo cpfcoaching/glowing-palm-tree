@@ -132,3 +132,6 @@ Agents must not rely on their context window for long-term project knowledge. Yo
 3. You figure out a complex, undocumented build, test, or run command.
 4. You discover a codebase-specific "gotcha" or hidden dependency.
 *Rule of thumb: If a new human teammate would need to know it to be productive, persist it immediately.*
+
+## HTML Dashboard Preference (Markdown 2.0)
+When building complex outputs, summaries, or data views, do NOT use plain markdown walls of text. Instead, generate high-density HTML artifacts (mimicking Notion-style dashboards) that include tables, embedded CSS, side-by-side layouts, and visual hierarchy. Treat these HTML outputs as "dynamic memory" and interactive workspaces rather than static documents.
