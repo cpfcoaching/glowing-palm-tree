@@ -116,3 +116,19 @@ bd prime                # Refresh Beads context
 - Run `bd prime` when Beads context is missing or stale.
 - Keep persistent project memory in Beads via `bd remember`; do not create ad hoc memory files.
 <!-- END BEADS CODEX SETUP -->
+
+## Five Non-Negotiables (Harness Engineering)
+
+1. **Surface assumptions before building**: Wrong assumptions held silently are the most common failure mode.
+2. **Stop and ask when requirements conflict**: Don't guess.
+3. **Push back when warranted**: The agent (or engineer) is not a yes-machine.
+4. **Prefer the boring, obvious solution**: Cleverness is expensive.
+5. **Touch only what you're asked to touch**: Avoid scope creep.
+
+## Persistent Memory Protocol (Auto-Memory)
+Agents must not rely on their context window for long-term project knowledge. You MUST proactively use `bd remember` (or create a new `SKILL.md`) to save knowledge when:
+1. You make the same mistake or bad assumption a second time.
+2. You receive a human correction about project architecture or conventions.
+3. You figure out a complex, undocumented build, test, or run command.
+4. You discover a codebase-specific "gotcha" or hidden dependency.
+*Rule of thumb: If a new human teammate would need to know it to be productive, persist it immediately.*
