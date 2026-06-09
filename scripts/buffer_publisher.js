@@ -51,9 +51,11 @@ async function publishToBuffer() {
 
   if (time && time !== 'now') {
     payload.append('scheduled_at', time);
+  } else if (time === 'now') {
+    payload.append('now', 'true');
   } else {
-    // If not scheduled, we can append to the end of the queue or post now
-    // For safety, let's just use top of queue or default buffer queuing
+    // If not scheduled and not 'now', Buffer defaults to adding to the end of the queue
+    console.log('No specific time provided. Post will be added to the queue.');
   }
 
   // Handle image attachment

@@ -12,7 +12,7 @@ print_usage() {
   echo "  --file <path>                Path to markdown file containing content (required)"
   echo "  --profile <id>               Buffer Profile ID (or set BUFFER_PROFILE_ID env var)"
   echo "  --token <token>              Buffer Access Token (or set BUFFER_ACCESS_TOKEN env var)"
-  echo "  --time <time>                Scheduled time (ISO) or 'now' (optional, default: now)"
+  echo "  --time <time>                Scheduled time (ISO), 'now' (publish immediately), or empty (queue)"
   echo "  --dry-run                    Simulate the action without making API calls or browser actions"
   echo "  --headless                   Run Playwright in headless mode (optional for substack)"
   echo ""
@@ -22,7 +22,7 @@ TARGET=""
 FILE=""
 PROFILE="${BUFFER_PROFILE_ID:-}"
 TOKEN="${BUFFER_ACCESS_TOKEN:-}"
-TIME="now"
+TIME=""
 DRY_RUN=""
 HEADLESS=""
 
@@ -51,9 +51,9 @@ if [ -z "$FILE" ] || [ ! -f "$FILE" ]; then
   exit 1
 fi
 
-# Basic parsing: read first line as title, rest as body
+# Basic parsing: read first line as title, rest as body (removing leading blank lines)
 TITLE=$(head -n 1 "$FILE" | sed 's/^# //')
-BODY=$(tail -n +3 "$FILE")
+BODY=$(tail -n +2 "$FILE" | sed '/./,$!d')
 
 if [ "$TARGET" == "buffer" ]; then
   if [ -z "$PROFILE" ] || [ -z "$TOKEN" ]; then

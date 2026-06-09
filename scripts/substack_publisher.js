@@ -51,18 +51,23 @@ async function publishToSubstack() {
 
     if (fs.existsSync(sessionPath)) {
       console.log(`Loading session from ${sessionPath}`);
-      context = await browser.newContext({ storageState: sessionPath });
+      context = await browser.newContext({ 
+        storageState: sessionPath,
+        permissions: ['clipboard-read', 'clipboard-write']
+      });
     } else {
       console.log('No existing session found. Proceeding with a fresh session.');
       console.log('You may be prompted to log in manually on the first run.');
-      context = await browser.newContext();
+      context = await browser.newContext({
+        permissions: ['clipboard-read', 'clipboard-write']
+      });
     }
 
     const page = await context.newPage();
     
     // Navigate to Substack publish page
     console.log(`Navigating to ${url}...`);
-    await page.goto(url, { waitUntil: 'networkidle' });
+    await page.goto(url, { waitUntil: 'domcontentloaded' });
 
     // Wait for the login form OR the editor to appear
     console.log('Waiting for the page to load...');
@@ -80,7 +85,7 @@ async function publishToSubstack() {
       await context.storageState({ path: sessionPath });
       
       // Navigate to the post publish page again in case it didn't redirect automatically
-      await page.goto(url, { waitUntil: 'networkidle' });
+      await page.goto(url, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(3000);
     }
 
@@ -88,31 +93,41 @@ async function publishToSubstack() {
 
     // These selectors are highly speculative and need to be refined based on actual Substack DOM
     // Typically Substack uses contenteditable or ProseMirror
-    try {
-      // Look for title input
-      const titleInput = page.locator('textarea[placeholder*="Title"], h1[contenteditable="true"], [data-testid="post-title"]');
-      if (await titleInput.count() > 0) {
-        await titleInput.first().fill(title);
-        console.log('Filled title.');
-      }
-
-      // Look for body input
-      const bodyInput = page.locator('[contenteditable="true"].ProseMirror');
-      if (await bodyInput.count() > 0) {
-        // Simple type
-        await bodyInput.first().click();
-        await page.keyboard.type(body);
-        console.log('Filled body.');
-      } else {
-        console.log('Could not find the main body editor area. Selectors may need updating.');
-      }
-
-    } catch (e) {
-      console.error('Error interacting with editor elements:', e.message);
+    
+    // Look for title input
+    const titleInput = page.locator('textarea[placeholder*="Title"], h1[contenteditable="true"], [data-testid="post-title"]');
+    if (await titleInput.count() > 0) {
+      await titleInput.first().fill(title);
+      console.log('Filled title.');
+    } else {
+      throw new Error('Title input not found. Selectors may need updating.');
     }
 
-    console.log('Saving Draft... (simulating wait)');
-    await page.waitForTimeout(2000);
+    // Look for body input
+    const bodyInput = page.locator('[contenteditable="true"].ProseMirror');
+    if (await bodyInput.count() > 0) {
+      await bodyInput.first().click();
+      
+      // Use clipboard to paste the content for much better markdown formatting support
+      console.log('Writing content to clipboard and pasting...');
+      await page.evaluate((text) => navigator.clipboard.writeText(text), body);
+      
+      const isMac = process.platform === 'darwin';
+      await page.keyboard.press(isMac ? 'Meta+V' : 'Control+V');
+      console.log('Pasted body.');
+    } else {
+      throw new Error('Could not find the main body editor area. Selectors may need updating.');
+    }
+
+    console.log('Waiting for real save verification...');
+    // Wait for the "Saved" text to appear in the save status indicator
+    // Typically it changes from "Saving..." to "Saved"
+    try {
+      await page.waitForSelector('text="Saved"', { timeout: 15000 });
+      console.log('Verified "Saved" indicator on the page.');
+    } catch (e) {
+      console.warn('Could not verify explicit "Saved" status within 15 seconds. Proceeding anyway, but verify manually.');
+    }
     
     // Ensure session is saved just in case cookies were updated
     await context.storageState({ path: sessionPath });
@@ -120,14 +135,11 @@ async function publishToSubstack() {
     console.log('Draft created successfully. Exiting without publishing to maintain safety safeguards.');
 
   } catch (error) {
-    console.error('Substack Automation Error:', error);
+    console.error('Substack Automation Error:', error.message);
+    process.exit(1);
   } finally {
-    if (browser && headless) {
+    if (browser) {
       await browser.close();
-    } else {
-      console.log('Leaving browser open since it was run in headed mode for inspection. Close the browser window to exit.');
-      // Keep process alive if in headed mode for debugging
-      // await browser.close();
     }
   }
 }

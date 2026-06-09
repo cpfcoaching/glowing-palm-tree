@@ -1,0 +1,395 @@
+{
+  "cookies": [
+    {
+      "name": "_GRECAPTCHA",
+      "value": "09AKhCRwht4YbPSdRNDb-ly7MZedgLCDUFwjjIP0618DwXFqvurrpckrnZYvRKj-1c1hBsf7DBpiSDyys2RWh3S9c",
+      "domain": "www.google.com",
+      "path": "/recaptcha",
+      "expires": 1796572251.055818,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1812556022.456284,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%222a48c9bd-6ab8-4d7f-a03f-d8dfea84467a%22",
+      "domain": ".substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1812556458.130285,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "0f8eb63c-191f-4e74-8dbe-16b0a78ba4fe",
+      "domain": ".substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1788796022.484032,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "4pIuEj9jw_EO.cdKntYHukInL6QyluuHM5XLR22BWHA-1781020022.3698254-1.0.1.1-2B8dqlmMoVpmTZQw_nXNUjHkslBGIxgsQ75xXGoMXlsQktRDKSDa3FDUaXoj629qBGrSn04XattxFt3kk8XIJCfr37vkr3CJTN0wPRZzZUsRFCgRYjic2EFLePNhKMH4",
+      "domain": ".substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1781021822.484061,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1812556022.739337,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%2241625fc0-e7bc-4a22-a867-e73f341350f9%22",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1812556303.852645,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "da67ba02-163d-49d7-bf8b-3c13e27784dc",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1788796022.739472,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "visit_id",
+      "value": "%7B%22id%22%3A%221e0be1c2-7426-48be-b56a-7d1d2e8e1264%22%2C%22timestamp%22%3A%222026-06-09T15%3A47%3A02.681Z%22%7D",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1781022103.852604,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "cf_clearance",
+      "value": "6PweUCsL2B6sdenrIVNcj32bi4ADAsElmP4okxf24i0-1781020026-1.2.1.1-W5lrvijDx4iztgpZHHFmfhODf8qASj4pRGsW84SGyguqKL0TC1k2bOe9dB6Jxf0TvRz2QW2Bo_iA3qragHq3Ka6VhUtx4TUFPNBiOzUw8tGgaSxXWCOGwNNvsF5axEi36qvulOalLQaxGvi03WD2x7M9eFPb_t.kzLND8k1jPw413HFZx9j6QdFn9QFm3vlMiYG5.Ik6JTbyXtQQwvLYkQo24XZkSAhvaA0W.efwDDC3gajIW_wmOmhM8DBJMa1yoWk_RbyeQxIHZWRG73z1G2HNKxTE6rXra3FVF6NpFcLq4T5wLghygz96A1ZiZGESChX0HQxylaYoyEjjcqf7bA",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1812556026.478761,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://substack.com",
+      "_crHasCrossSiteAncestor": false
+    },
+    {
+      "name": "__cf_bm",
+      "value": "G9aMGKU1.sZowAPLkXg97ghBTnkkXhwgpQwxq29paTU-1781020026.4742622-1.0.1.1-VWuabRaQ86oxRzST4Mp.emZqVyxBS3DxK0ydzqINydNirXe2UlUXeSuOWL4a17sIeNalaAXzse5v07rffsm_DXq_FXQUpyTA7hnaaDJXB4lFIqTHdvsWfPTh_Vvrpmci",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1781021826.479598,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.419013595.1781020027",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1815580294.678407,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.39666375.1781020027",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1788796027,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUlt5XRg9UksYFk-qB96HRY5lcubMbPVNsMGr7_4MuxODIFwZTHVQ7sz8d56",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1815580211.878784,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "substack.sid",
+      "value": "s%3A2nT0gGyu4_vQveFOfqpy5uaAg3PIS6o9.jixak25wdw287q5ehXL2IwGMpQkGoGRKJLMmhAcLFqM",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1788796303.852722,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_dd_s",
+      "value": "rum=0&expire=1781021203681",
+      "domain": "substack.com",
+      "path": "/",
+      "expires": 1781021203,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "bqtOsugZ6B9b/vtC4mnTHG/LNk5gc7LYASi9CY4h2rnVncf7K5ErYrSfUBIbzqMYzFKlODo+BWg8Bu/oY9R/9Tdq06XHCIb/qbG+BkljLLqQ6K0o8xzLhjq24djHSipTlD5bvQV4l6n5lZEJxDi98Rj8zICR2BsidfqO5feBQudmhV6yyvGYlNpKugf6rOnuDVX9I5ZXaDha2xLKUXXKtxwnXvlZr3sPl2IIyDbmyKEA6KvpH9SNZVRLMCdO4WX4",
+      "domain": "substack.com",
+      "path": "/",
+      "expires": 1781625103.852481,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "bqtOsugZ6B9b/vtC4mnTHG/LNk5gc7LYASi9CY4h2rnVncf7K5ErYrSfUBIbzqMYzFKlODo+BWg8Bu/oY9R/9Tdq06XHCIb/qbG+BkljLLqQ6K0o8xzLhjq24djHSipTlD5bvQV4l6n5lZEJxDi98Rj8zICR2BsidfqO5feBQudmhV6yyvGYlNpKugf6rOnuDVX9I5ZXaDha2xLKUXXKtxwnXvlZr3sPl2IIyDbmyKEA6KvpH9SNZVRLMCdO4WX4",
+      "domain": "substack.com",
+      "path": "/",
+      "expires": 1781625103.852553,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22e5a5a745366ef2cdea8529fb00665167%22",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1812556303.852587,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "substack.lli",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQwNzQ2ODEsImlhdCI6MTc4MTAyMDMwMywiZXhwIjoxNzgzNjEyMzAzLCJhdWQiOiJsaWtlbHktbG9nZ2VkLWluIn0.yL6hI-m5G8_d2Jaj9E29lxO_FqHMr8fS6dpJDtA8QG0",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1788796303.852662,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "connect.sid",
+      "value": "s%3AFLcxROLacfr3nMBM9vwPAGeJPmXLJpjX.FFR6DAqQgUqI7cNXkeaIarB1pRsz1Y%2FtHEirjiOUmYE",
+      "domain": "substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1788796458.130427,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22e5a5a745366ef2cdea8529fb00665167%22",
+      "domain": ".substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1812556458.129816,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "visit_id",
+      "value": "%7B%22id%22%3A%22ee0fdf64-5226-4d0c-868d-22757de09b2b%22%2C%22timestamp%22%3A%222026-06-09T15%3A51%3A44.131Z%22%7D",
+      "domain": ".substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1781022258.130091,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_ga_TLW0DF6G5V",
+      "value": "GS2.1.s1781020026$o1$g1$t1781020304$j50$l0$h0",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1815580304.438562,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1180391643.1781020308",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1788796308,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1010014168.1781020308",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1815580457.64975,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_92DECDWXE9",
+      "value": "GS2.1.s1781020307$o1$g1$t1781020457$j60$l0$h0",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1815580457.649609,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "f17HlAWiVk+g+SVlaZdF2Ugl1hhBeadBTXw2b7MAhkZi28/P5IxOB1/FjX3Vnf19nlmz6R2OV2HQiHdDpD26pt9AEZxZXx0DBqvnCeeWodI/+zCysmO7+MLQQdyxI5Gys176kZFRsoFQ4dQNfIja7SBgu5hB5a8tSX3578NlfmsXAf4+ZPf/SthF+xl2mulOjn4yrlFqTbPn1W3ZTAO5/Aj3BqtXI0JGVSaiRkldW8cCQw8q9+6+CUkwgXIwC2EF",
+      "domain": "substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1781625258.129317,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "f17HlAWiVk+g+SVlaZdF2Ugl1hhBeadBTXw2b7MAhkZi28/P5IxOB1/FjX3Vnf19nlmz6R2OV2HQiHdDpD26pt9AEZxZXx0DBqvnCeeWodI/+zCysmO7+MLQQdyxI5Gys176kZFRsoFQ4dQNfIja7SBgu5hB5a8tSX3578NlfmsXAf4+ZPf/SthF+xl2mulOjn4yrlFqTbPn1W3ZTAO5/Aj3BqtXI0JGVSaiRkldW8cCQw8q9+6+CUkwgXIwC2EF",
+      "domain": "substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1781625258.129649,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_MHMFSRVHS1",
+      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h324951457",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1815580459.024068,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_KVRT19DQW4",
+      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h601991367",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1815580459.029383,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_05FPF83ZMZ",
+      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h51890170",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1815580459.039032,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_2453C4C1ND",
+      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h476974762",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1815580459.043882,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_dd_s",
+      "value": "rum=0&expire=1781021361080",
+      "domain": "substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1781021361,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://substack.cpf-coaching.com",
+      "localStorage": [
+        {
+          "name": "substack_ref",
+          "value": "\"https://substack.com/\""
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"eopCount\":0,\"creationTimeMs\":1781020307862},\"expires\":1788796307862}}"
+        },
+        {
+          "name": "substack_ref_url",
+          "value": "\"https://substack.cpf-coaching.com/publish/post\""
+        },
+        {
+          "name": "ss-version-backups-local",
+          "value": "[]"
+        }
+      ]
+    },
+    {
+      "origin": "https://substack.com",
+      "localStorage": [
+        {
+          "name": "_grecaptcha",
+          "value": "09AKhCRwgMQWBvxTcMVl76M_ZRraWHJSZ4NfW7qfTiFDZaQGIORGkV0owH_yoxMNnsQxXRSSIOJwXaKJoa_7VI6LoTSOslRJsw2s-UB3afI9doSYQlbrnhdZppp1eh3EHg"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"eopCount\":0,\"creationTimeMs\":1781020026669},\"expires\":1788796026669}}"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::a",
+          "value": "MTl4dHozYmkwaDU1aQ=="
+        },
+        {
+          "name": "rc::f",
+          "value": "0aAJh6Vkpls3R3gqsbrEpklXB61Dv921rBgyB4yxkHqzpc35RL6CyaCLZPFcZrVoedjAqKK7w"
+        }
+      ]
+    }
+  ]
+}
