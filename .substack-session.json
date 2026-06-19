@@ -25,7 +25,7 @@
       "value": "%222a48c9bd-6ab8-4d7f-a03f-d8dfea84467a%22",
       "domain": ".substack.cpf-coaching.com",
       "path": "/",
-      "expires": 1812556458.130285,
+      "expires": 1813319878.283769,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
@@ -37,16 +37,6 @@
       "path": "/",
       "expires": 1788796022.484032,
       "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "__cf_bm",
-      "value": "4pIuEj9jw_EO.cdKntYHukInL6QyluuHM5XLR22BWHA-1781020022.3698254-1.0.1.1-2B8dqlmMoVpmTZQw_nXNUjHkslBGIxgsQ75xXGoMXlsQktRDKSDa3FDUaXoj629qBGrSn04XattxFt3kk8XIJCfr37vkr3CJTN0wPRZzZUsRFCgRYjic2EFLePNhKMH4",
-      "domain": ".substack.cpf-coaching.com",
-      "path": "/",
-      "expires": 1781021822.484061,
-      "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
@@ -81,16 +71,6 @@
       "sameSite": "None"
     },
     {
-      "name": "visit_id",
-      "value": "%7B%22id%22%3A%221e0be1c2-7426-48be-b56a-7d1d2e8e1264%22%2C%22timestamp%22%3A%222026-06-09T15%3A47%3A02.681Z%22%7D",
-      "domain": ".substack.com",
-      "path": "/",
-      "expires": 1781022103.852604,
-      "httpOnly": true,
-      "secure": false,
-      "sameSite": "Strict"
-    },
-    {
       "name": "cf_clearance",
       "value": "6PweUCsL2B6sdenrIVNcj32bi4ADAsElmP4okxf24i0-1781020026-1.2.1.1-W5lrvijDx4iztgpZHHFmfhODf8qASj4pRGsW84SGyguqKL0TC1k2bOe9dB6Jxf0TvRz2QW2Bo_iA3qragHq3Ka6VhUtx4TUFPNBiOzUw8tGgaSxXWCOGwNNvsF5axEi36qvulOalLQaxGvi03WD2x7M9eFPb_t.kzLND8k1jPw413HFZx9j6QdFn9QFm3vlMiYG5.Ik6JTbyXtQQwvLYkQo24XZkSAhvaA0W.efwDDC3gajIW_wmOmhM8DBJMa1yoWk_RbyeQxIHZWRG73z1G2HNKxTE6rXra3FVF6NpFcLq4T5wLghygz96A1ZiZGESChX0HQxylaYoyEjjcqf7bA",
       "domain": ".substack.com",
@@ -101,16 +81,6 @@
       "sameSite": "None",
       "partitionKey": "https://substack.com",
       "_crHasCrossSiteAncestor": false
-    },
-    {
-      "name": "__cf_bm",
-      "value": "G9aMGKU1.sZowAPLkXg97ghBTnkkXhwgpQwxq29paTU-1781020026.4742622-1.0.1.1-VWuabRaQ86oxRzST4Mp.emZqVyxBS3DxK0ydzqINydNirXe2UlUXeSuOWL4a17sIeNalaAXzse5v07rffsm_DXq_FXQUpyTA7hnaaDJXB4lFIqTHdvsWfPTh_Vvrpmci",
-      "domain": ".substack.com",
-      "path": "/",
-      "expires": 1781021826.479598,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
     },
     {
       "name": "_ga",
@@ -133,16 +103,6 @@
       "sameSite": "Lax"
     },
     {
-      "name": "IDE",
-      "value": "AHWqTUlt5XRg9UksYFk-qB96HRY5lcubMbPVNsMGr7_4MuxODIFwZTHVQ7sz8d56",
-      "domain": ".doubleclick.net",
-      "path": "/",
-      "expires": 1815580211.878784,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "substack.sid",
       "value": "s%3A2nT0gGyu4_vQveFOfqpy5uaAg3PIS6o9.jixak25wdw287q5ehXL2IwGMpQkGoGRKJLMmhAcLFqM",
       "domain": ".substack.com",
@@ -151,36 +111,6 @@
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
-    },
-    {
-      "name": "_dd_s",
-      "value": "rum=0&expire=1781021203681",
-      "domain": "substack.com",
-      "path": "/",
-      "expires": 1781021203,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Strict"
-    },
-    {
-      "name": "AWSALBTG",
-      "value": "bqtOsugZ6B9b/vtC4mnTHG/LNk5gc7LYASi9CY4h2rnVncf7K5ErYrSfUBIbzqMYzFKlODo+BWg8Bu/oY9R/9Tdq06XHCIb/qbG+BkljLLqQ6K0o8xzLhjq24djHSipTlD5bvQV4l6n5lZEJxDi98Rj8zICR2BsidfqO5feBQudmhV6yyvGYlNpKugf6rOnuDVX9I5ZXaDha2xLKUXXKtxwnXvlZr3sPl2IIyDbmyKEA6KvpH9SNZVRLMCdO4WX4",
-      "domain": "substack.com",
-      "path": "/",
-      "expires": 1781625103.852481,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "AWSALBTGCORS",
-      "value": "bqtOsugZ6B9b/vtC4mnTHG/LNk5gc7LYASi9CY4h2rnVncf7K5ErYrSfUBIbzqMYzFKlODo+BWg8Bu/oY9R/9Tdq06XHCIb/qbG+BkljLLqQ6K0o8xzLhjq24djHSipTlD5bvQV4l6n5lZEJxDi98Rj8zICR2BsidfqO5feBQudmhV6yyvGYlNpKugf6rOnuDVX9I5ZXaDha2xLKUXXKtxwnXvlZr3sPl2IIyDbmyKEA6KvpH9SNZVRLMCdO4WX4",
-      "domain": "substack.com",
-      "path": "/",
-      "expires": 1781625103.852553,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
     },
     {
       "name": "ajs_anonymous_id",
@@ -207,7 +137,7 @@
       "value": "s%3AFLcxROLacfr3nMBM9vwPAGeJPmXLJpjX.FFR6DAqQgUqI7cNXkeaIarB1pRsz1Y%2FtHEirjiOUmYE",
       "domain": "substack.cpf-coaching.com",
       "path": "/",
-      "expires": 1788796458.130427,
+      "expires": 1789559878.283783,
       "httpOnly": true,
       "secure": false,
       "sameSite": "Lax"
@@ -217,18 +147,8 @@
       "value": "%22e5a5a745366ef2cdea8529fb00665167%22",
       "domain": ".substack.cpf-coaching.com",
       "path": "/",
-      "expires": 1812556458.129816,
+      "expires": 1813319878.28373,
       "httpOnly": false,
-      "secure": false,
-      "sameSite": "Strict"
-    },
-    {
-      "name": "visit_id",
-      "value": "%7B%22id%22%3A%22ee0fdf64-5226-4d0c-868d-22757de09b2b%22%2C%22timestamp%22%3A%222026-06-09T15%3A51%3A44.131Z%22%7D",
-      "domain": ".substack.cpf-coaching.com",
-      "path": "/",
-      "expires": 1781022258.130091,
-      "httpOnly": true,
       "secure": false,
       "sameSite": "Strict"
     },
@@ -257,90 +177,120 @@
       "value": "GA1.1.1010014168.1781020308",
       "domain": ".cpf-coaching.com",
       "path": "/",
-      "expires": 1815580457.64975,
+      "expires": 1816343845.814287,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
-      "name": "_ga_92DECDWXE9",
-      "value": "GS2.1.s1781020307$o1$g1$t1781020457$j60$l0$h0",
-      "domain": ".cpf-coaching.com",
+      "name": "visit_id",
+      "value": "%7B%22id%22%3A%22df9a3521-9f45-4ee3-b17a-5e61a14b6485%22%2C%22timestamp%22%3A%222026-06-18T11%3A45%3A36.728Z%22%7D",
+      "domain": ".substack.cpf-coaching.com",
       "path": "/",
-      "expires": 1815580457.649609,
-      "httpOnly": false,
+      "expires": 1781785678.283749,
+      "httpOnly": true,
       "secure": false,
-      "sameSite": "Lax"
+      "sameSite": "Strict"
     },
     {
-      "name": "AWSALBTG",
-      "value": "f17HlAWiVk+g+SVlaZdF2Ugl1hhBeadBTXw2b7MAhkZi28/P5IxOB1/FjX3Vnf19nlmz6R2OV2HQiHdDpD26pt9AEZxZXx0DBqvnCeeWodI/+zCysmO7+MLQQdyxI5Gys176kZFRsoFQ4dQNfIja7SBgu5hB5a8tSX3578NlfmsXAf4+ZPf/SthF+xl2mulOjn4yrlFqTbPn1W3ZTAO5/Aj3BqtXI0JGVSaiRkldW8cCQw8q9+6+CUkwgXIwC2EF",
-      "domain": "substack.cpf-coaching.com",
+      "name": "__cf_bm",
+      "value": "dSBamjy_OSGPJbINkidRMgMiy8iTQ4JhcRFXFV8PTGo-1781783136.6998987-1.0.1.1-NTUjK8gaBmN_Lc.2LXHoqm3Nrxssjr6hd.p2.waF74pBAANZeNJ77oi5tofbN4uVDGRC0GQZQs1VNYIgmVrrO3rq_mQZwWFizEGxBEbYSQ3Az7mVDxoTcNKu0374c.th",
+      "domain": ".substack.cpf-coaching.com",
       "path": "/",
-      "expires": 1781625258.129317,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
+      "expires": 1781784936.987751,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
     },
     {
-      "name": "AWSALBTGCORS",
-      "value": "f17HlAWiVk+g+SVlaZdF2Ugl1hhBeadBTXw2b7MAhkZi28/P5IxOB1/FjX3Vnf19nlmz6R2OV2HQiHdDpD26pt9AEZxZXx0DBqvnCeeWodI/+zCysmO7+MLQQdyxI5Gys176kZFRsoFQ4dQNfIja7SBgu5hB5a8tSX3578NlfmsXAf4+ZPf/SthF+xl2mulOjn4yrlFqTbPn1W3ZTAO5/Aj3BqtXI0JGVSaiRkldW8cCQw8q9+6+CUkwgXIwC2EF",
-      "domain": "substack.cpf-coaching.com",
+      "name": "IDE",
+      "value": "AHWqTUl6Y5hVJVEXUwf5V1SeFWLkXgRXv9yoPVcGbC3ZlXmCwR3m0Hx2TLp3fkfo",
+      "domain": ".doubleclick.net",
       "path": "/",
-      "expires": 1781625258.129649,
-      "httpOnly": false,
+      "expires": 1816343137.76248,
+      "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_ga_MHMFSRVHS1",
-      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h324951457",
+      "value": "GS2.1.s1781783137$o2$g1$t1781783845$j60$l1$h1315891083",
       "domain": ".cpf-coaching.com",
       "path": "/",
-      "expires": 1815580459.024068,
+      "expires": 1816343845.8026,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga_KVRT19DQW4",
-      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h601991367",
+      "value": "GS2.1.s1781783137$o2$g1$t1781783845$j60$l1$h479894147",
       "domain": ".cpf-coaching.com",
       "path": "/",
-      "expires": 1815580459.029383,
+      "expires": 1816343845.805623,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga_05FPF83ZMZ",
-      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h51890170",
+      "value": "GS2.1.s1781783137$o2$g1$t1781783845$j60$l1$h1146996487",
       "domain": ".cpf-coaching.com",
       "path": "/",
-      "expires": 1815580459.039032,
+      "expires": 1816343845.813058,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_92DECDWXE9",
+      "value": "GS2.1.s1781783137$o2$g1$t1781783845$j60$l0$h0",
+      "domain": ".cpf-coaching.com",
+      "path": "/",
+      "expires": 1816343845.814129,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga_2453C4C1ND",
-      "value": "GS2.1.s1781020307$o1$g1$t1781020459$j58$l1$h476974762",
+      "value": "GS2.1.s1781783137$o2$g1$t1781783845$j60$l1$h1199531378",
       "domain": ".cpf-coaching.com",
       "path": "/",
-      "expires": 1815580459.043882,
+      "expires": 1816343845.817215,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_dd_s",
-      "value": "rum=0&expire=1781021361080",
+      "value": "rum=0&expire=1781784776210",
       "domain": "substack.cpf-coaching.com",
       "path": "/",
-      "expires": 1781021361,
+      "expires": 1781784777,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Strict"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "zBwG/K1QH1hZivBweQ3uD7iNw6tOu0d5Yy4ybC8Hdi9LV6fPhukozTIVmI/fV+Z1mS1WgCq3s8NKYJ3lUR8dpRWHVqZ0JtwEJ7rSMgXB7sPbmhNxciFQEvs8pXZvruFIaTFctYaDSkdFGRPS8x1dXNVrlVFfPWbrN9/d/vB5e7it",
+      "domain": "substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1782388678.28354,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "zBwG/K1QH1hZivBweQ3uD7iNw6tOu0d5Yy4ybC8Hdi9LV6fPhukozTIVmI/fV+Z1mS1WgCq3s8NKYJ3lUR8dpRWHVqZ0JtwEJ7rSMgXB7sPbmhNxciFQEvs8pXZvruFIaTFctYaDSkdFGRPS8x1dXNVrlVFfPWbrN9/d/vB5e7it",
+      "domain": "substack.cpf-coaching.com",
+      "path": "/",
+      "expires": 1782388678.283695,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
     }
   ],
   "origins": [
@@ -353,7 +303,7 @@
         },
         {
           "name": "_gcl_ls",
-          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"eopCount\":0,\"creationTimeMs\":1781020307862},\"expires\":1788796307862}}"
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"eopCount\":0,\"creationTimeMs\":1781020307862},\"expires\":1788796307862},\"gsid_dc\":{\"value\":{\"joinId\":\"j4XmsH4kcjFHtPmj6T7p3nFGfUzguXldRw\",\"lastJoinedTimeMs\":1781783845781},\"expires\":1781784145781}}"
         },
         {
           "name": "substack_ref_url",
