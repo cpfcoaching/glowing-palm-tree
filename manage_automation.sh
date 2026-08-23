@@ -20,12 +20,17 @@ usage() {
   echo "  start-daemon Launch the continuous background growth daemon"
   echo "  stop-daemon  Stop any running background growth daemons"
   echo "  logs         Tail the master orchestrator execution log"
+  echo "  install-launchagent Setup native macOS LaunchAgent (every 6h, surviving reboots/sleep)"
+  echo "  uninstall-launchagent Remove the native macOS LaunchAgent"
+  echo "  status-launchagent    Check status of macOS LaunchAgent"
   echo "  install-cron Setup a 6-hour crontab check on macOS"
   echo "==================================================================="
   exit 1
 }
 
 cmd="${1:-status}"
+PLIST_NAME="com.cpfcoaching.ace.growth.orchestrator.plist"
+USER_LAUNCHAGENTS="$HOME/Library/LaunchAgents"
 
 case "$cmd" in
   status)
@@ -61,6 +66,39 @@ case "$cmd" in
 
   logs)
     tail -f "$WORKSPACE_DIR/master_orchestrator.log"
+    ;;
+
+  install-launchagent)
+    echo "⏰ Installing native macOS LaunchAgent ($PLIST_NAME)..."
+    mkdir -p "$USER_LAUNCHAGENTS"
+    mkdir -p "$WORKSPACE_DIR/logs"
+    cp -f "$WORKSPACE_DIR/$PLIST_NAME" "$USER_LAUNCHAGENTS/$PLIST_NAME"
+    launchctl unload "$USER_LAUNCHAGENTS/$PLIST_NAME" 2>/dev/null || true
+    launchctl load "$USER_LAUNCHAGENTS/$PLIST_NAME"
+    echo "✅ LaunchAgent installed and loaded into launchd!"
+    echo "   • Runs every 6 hours (21,600s) + on system wake/login"
+    echo "   • Plist: $USER_LAUNCHAGENTS/$PLIST_NAME"
+    echo "   • Logs: $WORKSPACE_DIR/logs/"
+    ;;
+
+  uninstall-launchagent)
+    echo "🗑️ Removing macOS LaunchAgent..."
+    if [ -f "$USER_LAUNCHAGENTS/$PLIST_NAME" ]; then
+      launchctl unload "$USER_LAUNCHAGENTS/$PLIST_NAME" 2>/dev/null || true
+      rm -f "$USER_LAUNCHAGENTS/$PLIST_NAME"
+      echo "✅ LaunchAgent unloaded and removed."
+    else
+      echo "LaunchAgent not currently installed."
+    fi
+    ;;
+
+  status-launchagent)
+    echo "🔍 Checking LaunchAgent status in launchd..."
+    launchctl list | grep "com.cpfcoaching" || echo "• No com.cpfcoaching LaunchAgents currently loaded."
+    if [ -f "$WORKSPACE_DIR/logs/launchagent_stdout.log" ]; then
+      echo "📋 Recent LaunchAgent Output:"
+      tail -n 10 "$WORKSPACE_DIR/logs/launchagent_stdout.log"
+    fi
     ;;
 
   install-cron)

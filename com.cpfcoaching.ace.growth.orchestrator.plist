@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.cpfcoaching.ace.growth.orchestrator</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Volumes/Crucial X9 Pro For Mac/GDriveSync/Antigravity/manage_automation.sh</string>
+        <string>run-now</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Volumes/Crucial X9 Pro For Mac/GDriveSync/Antigravity</string>
+
+    <key>StartInterval</key>
+    <integer>21600</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Volumes/Crucial X9 Pro For Mac/GDriveSync/Antigravity/logs/launchagent_stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Volumes/Crucial X9 Pro For Mac/GDriveSync/Antigravity/logs/launchagent_stderr.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>LANG</key>
+        <string>en_US.UTF-8</string>
+    </dict>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>
