@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly Social Promotion Draft Kit</title>
+<style>
+  :root {
+    --bg-primary: #0f172a;
+    --bg-card: #1e293b;
+    --border-color: #334155;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-blue: #38bdf8;
+    --accent-green: #4ade80;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 32px;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+  }
+  .header h1 {
+    color: var(--accent-blue);
+    margin: 0 0 8px 0;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e2e8f0;
+  }
+  .badge {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  textarea {
+    width: 100%;
+    height: 220px;
+    background: #090d16;
+    color: #e2e8f0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  .btn-copy {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-copy:hover {
+    background: #1d4ed8;
+  }
+  .btn-copy.copied {
+    background: #16a34a;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📱 ACE Weekly Promotion Draft Kit (August 23, 2026)</h1>
+    <p style="color: var(--text-muted);">Ready-to-copy social promotion assets crafted to drive YouTube subscribers, podcast listeners, and newsletter signups.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">LinkedIn (Thought Leadership)</span>
+        <span class="card-title" style="margin-left: 10px;">Post 1: The #1 Mistake Cyber Job Seekers Make (Spraying Resumes)</span>
+      </div>
+      <button class="btn-copy" onclick="copyText(0)">📋 Copy Post</button>
+    </div>
+    <textarea id="post-0" readonly>Most cybersecurity job seekers are applying to 500+ job postings online and getting zero callbacks.
+
+Here is what I tell candidates in my mentoring & coaching sessions:
+
+Hiring managers aren't looking for applicants who can click 'Easy Apply'. They are looking for problem solvers who can demonstrate proof of work before the first interview.
+
+Instead of 500 cold applications, use the 3-Project Rule:
+1️⃣ Build a home lab (Active Directory / Wazuh / Splunk).
+2️⃣ Document an incident detection & response workflow on GitHub or Substack.
+3️⃣ Reach out directly to hiring managers with your project breakdown.
+
+🎥 Watch the quick 45-second breakdown here: https://www.youtube.com/@BreakingIntoCybersecurity/shorts
+
+What was the single project that helped you land your first role in tech or cyber? Drop it in the comments below! 👇
+
+---
+📬 Subscribe to the vCISO & Cyber Career Dispatch: https://vciso.substack.com
+🎙️ Listen to Breaking Into Cybersecurity on Spotify: https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri
+
+#Cybersecurity #CareerAdvice #Infosec #Hiring #Mentorship #BreakingIntoCybersecurity</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">LinkedIn (CISO & SMB Risk)</span>
+        <span class="card-title" style="margin-left: 10px;">Post 2: AI Governance & Fractional CISO Reality for SMBs</span>
+      </div>
+      <button class="btn-copy" onclick="copyText(1)">📋 Copy Post</button>
+    </div>
+    <textarea id="post-1" readonly>Small and mid-sized businesses don't need a 40-page compliance binder that collects dust.
+
+They need pragmatic risk governance:
+• Where is employee data and AI prompt data actually flowing?
+• What happens when a key vendor suffers an outage or ransomware attack?
+• How do you demonstrate security posture to enterprise clients without slowing down sales?
+
+As a Fractional CISO, my focus is aligning cyber controls directly with revenue protection.
+
+📅 If you're a founder or executive looking for practical security guidance without the full-time overhead, let's connect:
+👉 https://calendarbridge.com/book/cpf-coaching/
+
+#vCISO #CybersecurityStrategy #RiskManagement #SMB #AIGovernance #CPFCoaching</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">Substack Notes</span>
+        <span class="card-title" style="margin-left: 10px;">Post 3: Community Note on Certifications vs Portfolios</span>
+      </div>
+      <button class="btn-copy" onclick="copyText(2)">📋 Copy Post</button>
+    </div>
+    <textarea id="post-2" readonly>Quick question for the community:
+
+If you had to start over in cybersecurity today with $0 budget, which path would you choose?
+
+A) Study free material for Security+ / Network+
+B) Build a public GitHub detection engineering lab
+C) Network at local BSides / ISSA / OWASP meetups
+
+I shared my take in our latest podcast episode:
+🎙️ https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri
+
+Let's discuss below! 👇</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">YouTube Community Tab (Engagement Poll)</span>
+        <span class="card-title" style="margin-left: 10px;">Post 4: YouTube Community Poll & Conversation Starter</span>
+      </div>
+      <button class="btn-copy" onclick="copyText(3)">📋 Copy Post</button>
+    </div>
+    <textarea id="post-3" readonly>📊 Question for the community: What is your biggest challenge right now in your cyber career journey?
+
+Option 1: Getting past ATS / resume filters
+Option 2: Technical interview questions
+Option 3: Choosing the right certification (Sec+ vs CISSP)
+Option 4: Transitioning from IT Helpdesk into Security
+
+Drop your current stage in the comments, and we'll address it in the upcoming live Q&A! 💬
+
+🔔 Make sure you're subscribed with notifications on: https://www.youtube.com/@BreakingIntoCybersecurity?sub_confirmation=1</textarea>
+  </div>
+
+</div>
+<script>
+function copyText(idx) {
+  const ta = document.getElementById('post-' + idx);
+  ta.select();
+  document.execCommand('copy');
+  const btn = event.target;
+  const original = btn.innerText;
+  btn.innerText = '✅ Copied!';
+  btn.classList.add('copied');
+  setTimeout(() => {
+    btn.innerText = original;
+    btn.classList.remove('copied');
+  }, 2000);
+}
+</script>
+</body>
+</html>

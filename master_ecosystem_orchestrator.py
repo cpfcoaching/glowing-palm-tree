@@ -79,8 +79,42 @@ def run_shorts_rendering():
         logger.error(f"❌ Shorts Rendering error: {e}")
         return False
 
+def run_shorts_staging():
+    logger.info("📤 [PHASE 3] Uploading & Staging Shorts as UNLISTED for Quality Review...")
+    stage_script = YOUTUBE_DIR / "stage_and_upload_shorts.py"
+    if not stage_script.exists():
+        return True
+        
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(stage_script)]
+    
+    try:
+        res = subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=300)
+        logger.info("✅ Shorts Staging to YouTube Complete (Review in Studio).")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Shorts Staging error: {e}")
+        return False
+
+def run_draft_kit():
+    logger.info("📝 [PHASE 4] Refreshing Weekly Social Promotion Draft Kits...")
+    kit_script = YOUTUBE_DIR / "generate_weekly_draft_kit.py"
+    if not kit_script.exists():
+        return True
+        
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(kit_script)]
+    
+    try:
+        subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
+        logger.info("✅ Weekly Promotion Draft Kit Refreshed.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Draft Kit error: {e}")
+        return False
+
 def run_spotify_publisher():
-    logger.info("🎙️ [PHASE 3] Checking Spotify Podcast Publishing Queue...")
+    logger.info("🎙️ [PHASE 5] Checking Spotify Podcast Publishing Queue...")
     cron_script = SPOTIFY_DIR / "auto_publish_cron.py"
     if not cron_script.exists():
         logger.info("Spotify uploader not present, skipping.")
@@ -105,11 +139,13 @@ def execute_full_cycle():
     
     yt_ok = run_youtube_growth()
     shorts_ok = run_shorts_rendering()
+    staging_ok = run_shorts_staging()
+    kit_ok = run_draft_kit()
     spotify_ok = run_spotify_publisher()
     
     elapsed = (datetime.now() - start_time).total_seconds()
     logger.info("===================================================================")
-    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (YouTube: {yt_ok}, Shorts: {shorts_ok}, Spotify: {spotify_ok})")
+    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (YouTube: {yt_ok}, Shorts: {shorts_ok}, Staged: {staging_ok}, Spotify: {spotify_ok})")
     logger.info("===================================================================\n")
 
 def run_daemon(interval_minutes=360):
