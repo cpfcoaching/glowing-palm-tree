@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Guest Launch Kits & Co-Promotion Dashboard</title>
+<style>
+  :root {
+    --bg-primary: #0f172a;
+    --bg-card: #1e293b;
+    --border: #334155;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --green: #4ade80;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 32px;
+    margin: 0;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .header { margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .guest-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .guest-name { font-size: 20px; font-weight: 700; color: var(--accent); }
+  .btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  .btn:hover { background: #1d4ed8; }
+  .btn-green { background: #16a34a; }
+  textarea {
+    width: 100%;
+    height: 180px;
+    background: #090d16;
+    color: #e2e8f0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1 style="color: var(--accent); margin:0 0 8px 0;">🎙️ Guest 1-Click Launch Kit Dashboard</h1>
+    <p style="color: var(--text-muted); margin:0;">Send these 1-click launch packages to your podcast guests on release day to turn them into active promoters.</p>
+  </div>
+
+  <div class="card">
+    <div class="guest-header">
+      <div>
+        <div class="guest-name">Anthony Merlas</div>
+        <div style="color: var(--text-muted); font-size: 14px;">Hospitality to Cyber Pivot | Anthony Merlas | Breaking Into Cybersecurity</div>
+      </div>
+      <div>
+        <button class="btn" onclick="copyField('email-0')">📧 Copy Guest Email</button>
+        <button class="btn btn-green" onclick="copyField('li-0')">💼 Copy LinkedIn Post</button>
+      </div>
+    </div>
+    
+    <label style="font-weight:600; font-size: 13px; color: var(--text-muted);">📧 Email Draft (Subject: Your episode is live on Breaking Into Cybersecurity! 🎉 (Promotion Kit Inside))</label>
+    <textarea id="email-0" readonly>Hi Anthony,
+
+Thank you so much for joining me on Breaking Into Cybersecurity! Your episode "Hospitality to Cyber Pivot | Anthony Merlas | Breaking Into Cybersecurity" is officially LIVE across all major platforms.
+
+Here are your direct episode links:
+• 📺 YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+• 🎧 Spotify: https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k
+
+To make it effortless for you to share with your network on LinkedIn, I've put together a ready-to-paste post template below (feel free to tweak it however you like!):
+
+--------------------------------------------------
+🎙️ Excited to share that my conversation with Christophe Foulon on the Breaking Into Cybersecurity podcast is now LIVE!
+
+We dove deep into:
+💡 Going from hotel general manager to IT security: why customer service and crisis communication are lethal superpowers when pivoting into infosec.
+
+Key themes we discussed:
+✅ Navigating career pivots and standing out in today's infosec landscape
+✅ Building real-world problem-solving skills vs just collecting certifications
+✅ Pragmatic advice for early-career and seasoned security professionals
+
+🎧 Listen to the full episode on Spotify: https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k
+📺 Watch the video episode on YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+
+A huge thank you to Christophe for having me on the show! What questions do you have about transitioning or growing in cybersecurity? Let's discuss in the comments! 👇
+
+#Cybersecurity #InfoSec #BreakingIntoCybersecurity #CareerDevelopment #Podcast #Leadership
+--------------------------------------------------
+
+If you'd like raw video clips or specific soundbites for your website/portfolio, just let me know. 
+
+Thanks again for sharing your wisdom with our 2,000+ community members!
+
+Warm regards,
+
+Christophe Foulon, CISSP, CRISC
+Founder | Breaking Into Cybersecurity & CPF Coaching LLC
+https://vciso.substack.com | https://calendarbridge.com/book/cpf-coaching/
+</textarea>
+
+    <label style="font-weight:600; font-size: 13px; color: var(--text-muted); margin-top: 12px; display: block;">💼 LinkedIn Co-Promotion Copy</label>
+    <textarea id="li-0" readonly>🎙️ Excited to share that my conversation with Christophe Foulon on the Breaking Into Cybersecurity podcast is now LIVE!
+
+We dove deep into:
+💡 Going from hotel general manager to IT security: why customer service and crisis communication are lethal superpowers when pivoting into infosec.
+
+Key themes we discussed:
+✅ Navigating career pivots and standing out in today's infosec landscape
+✅ Building real-world problem-solving skills vs just collecting certifications
+✅ Pragmatic advice for early-career and seasoned security professionals
+
+🎧 Listen to the full episode on Spotify: https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k
+📺 Watch the video episode on YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+
+A huge thank you to Christophe for having me on the show! What questions do you have about transitioning or growing in cybersecurity? Let's discuss in the comments! 👇
+
+#Cybersecurity #InfoSec #BreakingIntoCybersecurity #CareerDevelopment #Podcast #Leadership</textarea>
+  </div>
+
+  <div class="card">
+    <div class="guest-header">
+      <div>
+        <div class="guest-name">Mike Lossman</div>
+        <div style="color: var(--text-muted); font-size: 14px;">Breaking Into Cybersecurity Leadership | Mike Lossman</div>
+      </div>
+      <div>
+        <button class="btn" onclick="copyField('email-1')">📧 Copy Guest Email</button>
+        <button class="btn btn-green" onclick="copyField('li-1')">💼 Copy LinkedIn Post</button>
+      </div>
+    </div>
+    
+    <label style="font-weight:600; font-size: 13px; color: var(--text-muted);">📧 Email Draft (Subject: Your episode is live on Breaking Into Cybersecurity! 🎉 (Promotion Kit Inside))</label>
+    <textarea id="email-1" readonly>Hi Mike,
+
+Thank you so much for joining me on Breaking Into Cybersecurity! Your episode "Breaking Into Cybersecurity Leadership | Mike Lossman" is officially LIVE across all major platforms.
+
+Here are your direct episode links:
+• 📺 YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+• 🎧 Spotify: https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Breaking-into-Cybersecurity---Mike-Lossmann-e2qd5lv
+
+To make it effortless for you to share with your network on LinkedIn, I've put together a ready-to-paste post template below (feel free to tweak it however you like!):
+
+--------------------------------------------------
+🎙️ Excited to share that my conversation with Christophe Foulon on the Breaking Into Cybersecurity podcast is now LIVE!
+
+We dove deep into:
+💡 What it actually takes to step into cybersecurity leadership, build trusted relationships with executive boards, and lead technical teams.
+
+Key themes we discussed:
+✅ Navigating career pivots and standing out in today's infosec landscape
+✅ Building real-world problem-solving skills vs just collecting certifications
+✅ Pragmatic advice for early-career and seasoned security professionals
+
+🎧 Listen to the full episode on Spotify: https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Breaking-into-Cybersecurity---Mike-Lossmann-e2qd5lv
+📺 Watch the video episode on YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+
+A huge thank you to Christophe for having me on the show! What questions do you have about transitioning or growing in cybersecurity? Let's discuss in the comments! 👇
+
+#Cybersecurity #InfoSec #BreakingIntoCybersecurity #CareerDevelopment #Podcast #Leadership
+--------------------------------------------------
+
+If you'd like raw video clips or specific soundbites for your website/portfolio, just let me know. 
+
+Thanks again for sharing your wisdom with our 2,000+ community members!
+
+Warm regards,
+
+Christophe Foulon, CISSP, CRISC
+Founder | Breaking Into Cybersecurity & CPF Coaching LLC
+https://vciso.substack.com | https://calendarbridge.com/book/cpf-coaching/
+</textarea>
+
+    <label style="font-weight:600; font-size: 13px; color: var(--text-muted); margin-top: 12px; display: block;">💼 LinkedIn Co-Promotion Copy</label>
+    <textarea id="li-1" readonly>🎙️ Excited to share that my conversation with Christophe Foulon on the Breaking Into Cybersecurity podcast is now LIVE!
+
+We dove deep into:
+💡 What it actually takes to step into cybersecurity leadership, build trusted relationships with executive boards, and lead technical teams.
+
+Key themes we discussed:
+✅ Navigating career pivots and standing out in today's infosec landscape
+✅ Building real-world problem-solving skills vs just collecting certifications
+✅ Pragmatic advice for early-career and seasoned security professionals
+
+🎧 Listen to the full episode on Spotify: https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Breaking-into-Cybersecurity---Mike-Lossmann-e2qd5lv
+📺 Watch the video episode on YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+
+A huge thank you to Christophe for having me on the show! What questions do you have about transitioning or growing in cybersecurity? Let's discuss in the comments! 👇
+
+#Cybersecurity #InfoSec #BreakingIntoCybersecurity #CareerDevelopment #Podcast #Leadership</textarea>
+  </div>
+
+  <div class="card">
+    <div class="guest-header">
+      <div>
+        <div class="guest-name">Tammy Klotz</div>
+        <div style="color: var(--text-muted); font-size: 14px;">Third-Party Risk Management (TPRM) Insights | Tammy Klotz</div>
+      </div>
+      <div>
+        <button class="btn" onclick="copyField('email-2')">📧 Copy Guest Email</button>
+        <button class="btn btn-green" onclick="copyField('li-2')">💼 Copy LinkedIn Post</button>
+      </div>
+    </div>
+    
+    <label style="font-weight:600; font-size: 13px; color: var(--text-muted);">📧 Email Draft (Subject: Your episode is live on Breaking Into Cybersecurity! 🎉 (Promotion Kit Inside))</label>
+    <textarea id="email-2" readonly>Hi Tammy,
+
+Thank you so much for joining me on Breaking Into Cybersecurity! Your episode "Third-Party Risk Management (TPRM) Insights | Tammy Klotz" is officially LIVE across all major platforms.
+
+Here are your direct episode links:
+• 📺 YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+• 🎧 Spotify: https://creators.spotify.com/pod/show/16hs6zYtLa4iS4RTcyNF71
+
+To make it effortless for you to share with your network on LinkedIn, I've put together a ready-to-paste post template below (feel free to tweak it however you like!):
+
+--------------------------------------------------
+🎙️ Excited to share that my conversation with Christophe Foulon on the Breaking Into Cybersecurity podcast is now LIVE!
+
+We dove deep into:
+💡 Navigating Third-Party Risk Management: how modern organizations evaluate vendor security posture and prevent supply chain vulnerabilities.
+
+Key themes we discussed:
+✅ Navigating career pivots and standing out in today's infosec landscape
+✅ Building real-world problem-solving skills vs just collecting certifications
+✅ Pragmatic advice for early-career and seasoned security professionals
+
+🎧 Listen to the full episode on Spotify: https://creators.spotify.com/pod/show/16hs6zYtLa4iS4RTcyNF71
+📺 Watch the video episode on YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+
+A huge thank you to Christophe for having me on the show! What questions do you have about transitioning or growing in cybersecurity? Let's discuss in the comments! 👇
+
+#Cybersecurity #InfoSec #BreakingIntoCybersecurity #CareerDevelopment #Podcast #Leadership
+--------------------------------------------------
+
+If you'd like raw video clips or specific soundbites for your website/portfolio, just let me know. 
+
+Thanks again for sharing your wisdom with our 2,000+ community members!
+
+Warm regards,
+
+Christophe Foulon, CISSP, CRISC
+Founder | Breaking Into Cybersecurity & CPF Coaching LLC
+https://vciso.substack.com | https://calendarbridge.com/book/cpf-coaching/
+</textarea>
+
+    <label style="font-weight:600; font-size: 13px; color: var(--text-muted); margin-top: 12px; display: block;">💼 LinkedIn Co-Promotion Copy</label>
+    <textarea id="li-2" readonly>🎙️ Excited to share that my conversation with Christophe Foulon on the Breaking Into Cybersecurity podcast is now LIVE!
+
+We dove deep into:
+💡 Navigating Third-Party Risk Management: how modern organizations evaluate vendor security posture and prevent supply chain vulnerabilities.
+
+Key themes we discussed:
+✅ Navigating career pivots and standing out in today's infosec landscape
+✅ Building real-world problem-solving skills vs just collecting certifications
+✅ Pragmatic advice for early-career and seasoned security professionals
+
+🎧 Listen to the full episode on Spotify: https://creators.spotify.com/pod/show/16hs6zYtLa4iS4RTcyNF71
+📺 Watch the video episode on YouTube: https://www.youtube.com/@BreakingIntoCybersecurity
+
+A huge thank you to Christophe for having me on the show! What questions do you have about transitioning or growing in cybersecurity? Let's discuss in the comments! 👇
+
+#Cybersecurity #InfoSec #BreakingIntoCybersecurity #CareerDevelopment #Podcast #Leadership</textarea>
+  </div>
+
+</div>
+<script>
+function copyField(id) {
+  const el = document.getElementById(id);
+  el.select();
+  document.execCommand('copy');
+  const btn = event.target;
+  const old = btn.innerText;
+  btn.innerText = '✅ Copied!';
+  setTimeout(() => { btn.innerText = old; }, 2000);
+}
+</script>
+</body>
+</html>
