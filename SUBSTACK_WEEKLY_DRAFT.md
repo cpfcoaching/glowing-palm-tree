@@ -85,13 +85,19 @@ If your internal team or engineers are looking to demonstrate proof of work to e
 
 ---
 
-## 🎙️ Executive Soundbite of the Week
+## 🎙️ Executive Podcast Deep Dive of the Week
 
-### 🎧 From the CISO Trenches: Tammy Klotz on Pragmatic Third-Party Risk
-> *“Vendor risk isn't about eliminating third parties—it's about understanding the exact boundary where your infrastructure ends and their risk begins, then building continuous tripwires at that seam.”*
+### 🎧 Episode Spotlight: Hospitality to Cyber Operations & Risk Leadership with Anthony Merlas
+How do you transition from managing high-stakes hotel operations into leading IT security and governance? In this episode, **Anthony Merlas** breaks down how customer service, crisis de-escalation, and cross-functional communication translate into elite security operations and vendor risk management.
 
-* 📺 **Watch the Video Case Study:** [Breaking Into Cybersecurity YouTube](https://www.youtube.com/@BreakingIntoCybersecurity)
-* 🎧 **Listen to the Executive Deep Dive:** [Breaking Into Cybersecurity on Spotify](https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri)
+* 📺 **Watch the Full Video Episode on YouTube:** [https://www.youtube.com/watch?v=P1Or_C-3Gx8](https://www.youtube.com/watch?v=P1Or_C-3Gx8)
+* 🎧 **Listen to the Direct Audio on Spotify:** [https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k](https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k)
+
+---
+
+### 🛡️ Related Executive Deep Dive: AI in Your Security Stack & Vendor Risks
+* 📺 **Watch on YouTube:** [Can You Trust AI in Your Security Stack? The Hidden Risks & Best Practices](https://www.youtube.com/watch?v=jXwo5gv7tGw)
+* 🎧 **Listen on Spotify:** [Breaking Into Cybersecurity Podcast Archive](https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Breaking-into-Cybersecurity---Mike-Lossmann-e2qd5lv)
 
 ---
 
