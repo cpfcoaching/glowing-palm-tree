@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YouTube Comment Response Dashboard</title>
+<style>
+  :root {
+    --bg-primary: #090d16;
+    --bg-card: #131b2e;
+    --border: #24324f;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #ff0000;
+    --accent-light: #38bdf8;
+    --green: #4ade80;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text);
+    padding: 32px 20px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .badge {
+    background: rgba(255, 0, 0, 0.15);
+    color: #f87171;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn:hover { background: #1d4ed8; }
+  .comment-box {
+    background: #060911;
+    border-left: 4px solid var(--accent-light);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+  textarea {
+    width: 100%;
+    height: 120px;
+    background: #060911;
+    color: #e2e8f0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 style="color: #f87171; margin:0 0 8px 0;">💬 YouTube Comment Response & Engagement Dashboard</h1>
+  <p style="color: var(--text-muted); margin:0 0 24px 0;">Pre-drafted, high-retention replies to answer questions and funnel viewers into your podcast, shorts, and newsletter.</p>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@novabrahe</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/sGG6rTrNg5w/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(0, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“Please tell your employees at Infragard to stop using direct energy weapons on me and other Americans. It&#39;s illegal and a form of torture like MK Ultra. Please fix this..”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-0" readonly>@@novabrahe Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@shine_with_naime</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/JRP_AssQP-M/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(1, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“Love this journey into cyber security. The reminder to learn fundamentals first before relying on tools is so key 🔐”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-1" readonly>@@shine_with_naime Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@PrivacyScrubber</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/sXEnjlqf8L0/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(2, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“Shadow AI is inevitable, so we stopped fighting it and started securing the prompt locally. We use PrivacyScrubber for Zero-Trust Data Sanitization. Since it runs in the browser RAM with no backend, we can verify that no original PII ever hits the LLM servers. CISOs should check out the &#39;ZTDS&#39; approach—it&#39;s much easier than a total ban.”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-2" readonly>@@PrivacyScrubber Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@Doms0101</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/JRP_AssQP-M/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(3, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“It sounds like you recognize data challenges in scaling threat detection. At Lifewood, validated data forms the vital foundation for effective AI models. One thing to try is multilingual compliance checks. How do you maintain data quality across languages? Your post is informative.”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-3" readonly>@@Doms0101 Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@HaraalexaTumungha</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/Mz2CBtUjm_c/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(4, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“In my experience, organizations that partner with Lifewood often find it easier to maintain robust security and compliance while handling complex, structured datasets containing sensitive information.”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-4" readonly>@@HaraalexaTumungha Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@tracyrreed</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/eg134cMG4hY/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(5, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“What book?”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-5" readonly>@@tracyrreed Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@alexandreblanc2842</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/XNKZdASo1go/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(6, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“Thanks for sharing this exchange bringing insightful tips ! From my experience, people coming with different background in the tech field, evolving in cyber security, bring an amazing value for organizations. They know how tech is operationalized practically, they know the reality of different teams, and can actually align busines, tech and risks very well.”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-6" readonly>@@alexandreblanc2842 Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@tracyrreed</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/HgilWtE_o4c/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(7, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“Also, cybersecurity is not a new field.<br><br>Cyber is a very old and mature field. It may be new to you but I&#39;ve been in &quot;cyber&quot; for 30 years. Consider this:<br><br>Bob Thomas wrote the Creeper virus in 1971<br><br>The movie War Games (made &quot;war dialing&quot; famous) was released in 1983<br><br>The first of the Rainbow Series, 5200.28-STD DoD Trusted Computer System Evaluation Criteria, aka The Orange Book, was published in 1983<br><br>The first hacker con called the &quot;The Hackers Conference&quot; was in 1984. <a href="https://en.wikipedia.org/wiki/The_Hackers_Conference">https://en.wikipedia.org/wiki/The_Hackers_Conference</a><br><br>The first commercial antivirus software was created in 1987 by a company called McAfee<br><br>The book the Cuckoo’s Egg was published in 1989<br><br>The ISC2 was founded in 1989<br><br>The first DEFCON was in 1993.<br><br>So cybersecurity is a 40+ year old industry.”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-7" readonly>@@tracyrreed Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@MeBeingMe247</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/U9aebHYgR9Q/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(8, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“Remove money in general, create a world where reputation, social contribution and self improvement are what&#39;s important instead. Money is one of the primary reasons the world has always been as horrible as it has always been. We should let AI take over completely and help us become the good and peaceful society that so many people self obsessively say they want but we&#39;ll never have because humanity is inheritantly too horrible to ever achieve. Humanity has never deserved to exist, so let&#39;s take advantage of the fact that AI could give us an opportunity to have what a small percentage of what humanity genuinely wants, peace in our time.”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-8" readonly>@@MeBeingMe247 Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <span class="badge">General Engagement</span>
+        <span style="font-weight: 700; margin-left: 10px; color: var(--accent-light);">@armankhan-x8v4x</span>
+      </div>
+      <div>
+        <a href="https://studio.youtube.com/video/lt2TJGlUpbM/comments" target="_blank" style="color: var(--accent-light); font-size: 13px; margin-right: 12px; text-decoration: none;">📺 Open Studio</a>
+        <button class="btn" onclick="copyReply(9, this)">📋 Copy Reply</button>
+      </div>
+    </div>
+    <div class="comment-box">“Your &quot;Breaking Into Cybersecurity&quot; channel is awesome, and your videos are of great quality! But I want to know—why do you think your videos aren&#39;t getting more views or engagement? Is it the algorithm, the thumbnails, or something else? Let&#39;s dig into the code and grow your channel!”</div>
+    <label style="font-weight:600; font-size: 12px; color: var(--text-muted);">💬 Suggested High-Retention Reply:</label>
+    <textarea id="reply-9" readonly>@@armankhan-x8v4x Appreciate you tuning in! What is the biggest focus in your cyber journey this week? Let us know in the comments below, and don't forget to join 2,000+ security professionals on Substack: https://vciso.substack.com 🙌</textarea>
+  </div>
+
+</div>
+<script>
+async function copyReply(idx, btn) {
+  const ta = document.getElementById('reply-' + idx);
+  const text = ta.value;
+  let copied = false;
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch(e) {}
+  }
+  if (!copied) {
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    document.execCommand('copy');
+    ta.blur();
+  }
+  const orig = btn.innerText;
+  btn.innerText = '✅ Reply Copied!';
+  setTimeout(() => { btn.innerText = orig; }, 2500);
+}
+</script>
+</body>
+</html>

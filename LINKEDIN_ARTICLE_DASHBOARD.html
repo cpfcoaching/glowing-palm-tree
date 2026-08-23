@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The 72-Hour TPRM Triage: How CISOs Stop Vendor Breaches Before the Board Finds Out</title>
+<style>
+  :root {
+    --bg-primary: #090d16;
+    --bg-card: #131b2e;
+    --border: #24324f;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #0a66c2;
+    --accent-light: #38bdf8;
+    --green: #4ade80;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text);
+    padding: 32px 20px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .badge {
+    background: rgba(10, 102, 194, 0.2);
+    color: var(--accent-light);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .btn {
+    background: #0a66c2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn:hover { background: #004182; }
+  textarea {
+    width: 100%;
+    height: 320px;
+    background: #060911;
+    color: #e2e8f0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+    margin-top: 14px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header-actions">
+    <span class="badge">💼 LINKEDIN EXECUTIVE ARTICLE / NEWSLETTER</span>
+    <button class="btn" onclick="copyArticle(this)">📋 Copy Full LinkedIn Article</button>
+  </div>
+  <h1 style="color: var(--accent-light); font-size: 24px; margin: 0 0 8px 0;">The 72-Hour TPRM Triage: How CISOs Stop Vendor Breaches Before the Board Finds Out</h1>
+  <div style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px;">Why 90% of Vendor Risk Assessments Are Security Theater (And the 3-Step Playbook for Active Cloud Governance)</div>
+  <textarea id="raw-li-article" readonly># The 72-Hour TPRM Triage: How CISOs Stop Vendor Breaches Before the Board Finds Out
+### *Why 90% of Vendor Risk Assessments Are Security Theater (And the 3-Step Playbook for Active Cloud Governance)*
+**By Christophe Foulon, CISSP, CRISC** • *Fractional CISO & Executive Cyber Risk Advisor* • *August 23, 2026*
+
+---
+
+If your Third-Party Risk Management (TPRM) program relies on sending annual 200-question SIG or CAIQ spreadsheets that vendors check off with zero verification, **you do not have a vendor risk program—you have a paper trail for liability.**
+
+Last week, two major mid-market SaaS providers suffered upstream credential compromises. In both cases, the breached organizations had 'passed' their clients' annual security questionnaires with flying colors less than 90 days prior.
+
+When a critical cloud vendor goes dark or leaks customer records, your Audit Committee will not ask: *"Did they fill out our questionnaire?"*  
+They will ask: **“What data did they have, what was our blast radius, and why weren't their access tokens revoked within 60 minutes?”**
+
+Here is the exact **3-Step Tactical Triage** I implement with executive security teams to turn static vendor risk into active, defensible controls:
+
+---
+
+## 🛠️ The 3-Step CISO Tactical Triage
+
+### 1️⃣ Map the True Blast Radius (Within 48 Hours)
+Stop treating all 140 vendors equally. Tier them strictly by **Direct Cloud Data Access** and **Identity Integration**:
+* 🔍 **Cloud IAM Audit via Wiz:** Query your **Wiz Cloud Security Graph** for third-party IAM roles or service accounts granted broad cross-account assume-role permissions (`sts:AssumeRole`) connected to production S3 buckets or databases.
+* 🌐 **Egress Data Flow Mapping in Elastic Security / Wazuh:** Inspect NetFlow logs for external SaaS endpoints receiving >50MB/week and revoke unapproved OAuth apps (`Files.ReadWrite.All`, `Directory.Read.All`) in Okta / Microsoft Entra ID.
+* ⚡ **Tier-1 Kill-Switch Isolation:** Verify whether emergency API token rotation takes < 15 minutes for your top 5 mission-critical vendors.
+
+---
+
+### 2️⃣ Enforce Active Governance & Contractual Guardrails
+Move from passive trust to automated verification:
+* 🔐 **Mandatory SSO & Phishing-Resistant MFA:** Require FIDO2 WebAuthn or device certificates via central IdP with 24-hour automated deprovisioning on termination.
+* ⚖️ **The 24-Hour Breach Notification Clause:** Insert an explicit obligation requiring vendor notification of any confirmed incident within 24 hours—backed by a **15% contract fee clawback** for non-compliance.
+* 📡 **Continuous SIEM Posture Monitoring:** Ingest external attack surface telemetry into Elastic Security to trigger reviews if a partner drops below baseline.
+
+---
+
+### 3️⃣ Present Defensible Metrics to the Board & Audit Committee
+Do not show the Board a 30-page spreadsheet. Present this **1-slide executive scorecard**:
+
+* 🟢 **Tier-1 Vendors with Phishing-Resistant SSO:** 94% (Target: 100%)
+* 🟢 **Average Blast-Radius Revocation Time:** 18 Mins (Target: < 30 Mins)
+* 🟢 **Wiz Toxic Combinations & IAM Cross-Roles:** 0 High-Risk Exposures
+* 🟢 **Critical Vendors with Missing DPAs:** 0 (100% Contractual Compliance)
+
+---
+
+## 🎙️ Podcast Masterclass of the Week
+
+In our latest **Breaking Into Cybersecurity** episode, we break down how customer service, crisis de-escalation, and cross-functional leadership translate into elite security operations with **Anthony Merlas**.
+
+* 📺 **Watch the Full Video on YouTube:** https://www.youtube.com/watch?v=P1Or_C-3Gx8
+* 🎧 **Listen to the Direct Audio on Spotify:** https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k
+
+---
+
+## 🛡️ Executive Advisory Action
+
+If your organization is looking to:
+1. Conduct an independent **Vendor Risk & Cloud Blast-Radius Architecture Review**
+2. Build an audit-defensible **Board Cyber Risk Dashboard**
+3. Implement **Fractional CISO Governance** without full-time executive overhead
+
+👉 **Schedule an Executive Advisory Session:** https://calendarbridge.com/book/cpf-coaching/
+
+---
+
+#vCISO #CISO #CyberSecurity #RiskManagement #CloudSecurity #InformationSecurity #BoardGovernance #InfoSec
+</textarea>
+</div>
+<script>
+async function copyArticle(btn) {
+  const ta = document.getElementById('raw-li-article');
+  const text = ta.value;
+  let copied = false;
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch(e) {}
+  }
+  if (!copied) {
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    document.execCommand('copy');
+    ta.blur();
+  }
+  const orig = btn.innerText;
+  btn.innerText = '✅ Full Article Copied!';
+  btn.style.background = '#16a34a';
+  setTimeout(() => {
+    btn.innerText = orig;
+    btn.style.background = '#0a66c2';
+  }, 2500);
+}
+</script>
+</body>
+</html>

@@ -164,22 +164,55 @@ def run_community_queue():
         logger.error(f"❌ Community Engine error: {e}")
         return False
 
-def run_spotify_publisher():
-    logger.info("🎙️ [PHASE 8] Checking Spotify Podcast Publishing Queue...")
-    cron_script = SPOTIFY_DIR / "auto_publish_cron.py"
-    if not cron_script.exists():
-        logger.info("Spotify uploader not present, skipping.")
+def run_linkedin_article():
+    logger.info("💼 [PHASE 9] Repurposing vCISO Brief into LinkedIn Executive Article...")
+    li_script = YOUTUBE_DIR / "linkedin_article_repurposer.py"
+    if not li_script.exists():
         return True
         
-    py_bin = PYTHON_SPOTIFY if PYTHON_SPOTIFY.exists() else sys.executable
-    cmd = [str(py_bin), str(cron_script)]
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(li_script)]
     
     try:
-        res = subprocess.run(cmd, cwd=str(SPOTIFY_DIR), capture_output=True, text=True, timeout=300)
-        logger.info("✅ Spotify Podcast Drip Publisher Check Completed.")
+        subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
+        logger.info("✅ LinkedIn Executive Article Drafted.")
         return True
     except Exception as e:
-        logger.error(f"❌ Spotify Publisher error: {e}")
+        logger.error(f"❌ LinkedIn Repurposer error: {e}")
+        return False
+
+def run_spotify_show_notes():
+    logger.info("🎙️ [PHASE 10] Generating Rich Spotify Episode Show Notes & Chapters...")
+    notes_script = YOUTUBE_DIR / "spotify_show_notes_engine.py"
+    if not notes_script.exists():
+        return True
+        
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(notes_script)]
+    
+    try:
+        subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
+        logger.info("✅ Spotify Episode Show Notes Ready.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Spotify Show Notes error: {e}")
+        return False
+
+def run_comment_triage():
+    logger.info("💬 [PHASE 11] Triaging Recent YouTube Comments & Generating Retention Replies...")
+    comm_script = YOUTUBE_DIR / "youtube_comment_responder.py"
+    if not comm_script.exists():
+        return True
+        
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(comm_script)]
+    
+    try:
+        subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
+        logger.info("✅ YouTube Comment Responses Prepared.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Comment Responder error: {e}")
         return False
 
 def execute_full_cycle():
@@ -196,10 +229,13 @@ def execute_full_cycle():
     substack_ok = run_substack_drafter()
     comm_ok = run_community_queue()
     spotify_ok = run_spotify_publisher()
+    li_ok = run_linkedin_article()
+    notes_ok = run_spotify_show_notes()
+    triage_ok = run_comment_triage()
     
     elapsed = (datetime.now() - start_time).total_seconds()
     logger.info("===================================================================")
-    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (8-Phase Engine Active)")
+    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (11-Phase Multi-Platform Engine Active)")
     logger.info("===================================================================\n")
 
 def run_daemon(interval_minutes=360):

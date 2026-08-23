@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spotify Show Notes Dashboard</title>
+<style>
+  :root {
+    --bg-primary: #090d16;
+    --bg-card: #131b2e;
+    --border: #24324f;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --spotify-green: #1db954;
+    --accent: #38bdf8;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text);
+    padding: 32px 20px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 24px;
+  }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+  .btn {
+    background: var(--spotify-green);
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn:hover { background: #1ed760; }
+  textarea {
+    width: 100%;
+    height: 240px;
+    background: #060911;
+    color: #e2e8f0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 style="color: var(--spotify-green); margin:0 0 8px 0;">🎙️ Spotify Show Notes & Chapter Sync Dashboard</h1>
+  <p style="color: var(--text-muted); margin:0 0 24px 0;">Rich episode descriptions, chapters, and cross-platform CTAs ready for 1-click Spotify for Podcasters releases.</p>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div style="font-size: 18px; font-weight: 700; color: var(--accent);">Hospitality to Cyber Operations & Leadership | Anthony Merlas | Breaking Into Cybersecurity</div>
+        <div style="color: var(--text-muted); font-size: 14px;">Guest: Anthony Merlas (Cybersecurity Operations & Threat Management Leader)</div>
+      </div>
+      <button class="btn" onclick="copyNotes(0, this)">📋 Copy Show Notes</button>
+    </div>
+    <textarea id="notes-0" readonly>How do you transition from managing high-pressure hospitality operations into leading IT security and risk operations? In this episode, Anthony Merlas shares his journey breaking into cybersecurity and how crisis de-escalation, customer empathy, and cross-functional communication became his superpowers in security operations.
+
+⏱️ TIMESTAMPS & CHAPTERS:
+00:00 - Introduction & Anthony Merlas Background
+03:15 - From Hospitality Management to Information Security
+09:40 - Translating Crisis De-escalation into Incident Response
+16:20 - Overcoming Imposter Syndrome in Technical Interviews
+24:10 - Building a Hands-on Lab vs Cold Applying
+32:45 - Advice for Mid-Career Pivoters & Rising Leaders
+
+💡 KEY TAKEAWAYS:
+• Soft skills like crisis communication and stakeholder empathy are critical differentiators in modern SOC and security leadership roles.
+• Hands-on homelab documentation (Wazuh/Elastic) beats sending 500 uncustomized resumes.
+• Networking through community events and podcast participation accelerates interview callbacks.
+
+🔗 CONNECT & RESOURCES:
+• YouTube Video: https://www.youtube.com/watch?v=P1Or_C-3Gx8
+• Substack Newsletter: https://vciso.substack.com
+• 1-on-1 Strategy Session: https://calendarbridge.com/book/cpf-coaching/
+</textarea>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div style="font-size: 18px; font-weight: 700; color: var(--accent);">Breaking into Cybersecurity Leadership | Mike Lossman | Breaking Into Cybersecurity</div>
+        <div style="color: var(--text-muted); font-size: 14px;">Guest: Mike Lossman (Security Leadership Strategist & CISO Advisor)</div>
+      </div>
+      <button class="btn" onclick="copyNotes(1, this)">📋 Copy Show Notes</button>
+    </div>
+    <textarea id="notes-1" readonly>Transitioning from a hands-on technical engineer into a strategic security leader requires an entirely different playbook. Mike Lossman joins Christophe Foulon to unpack the leadership principles, executive presence, and business risk alignment needed to reach the CISO level.
+
+⏱️ TIMESTAMPS & CHAPTERS:
+00:00 - Welcome & Executive Introduction
+04:30 - The Shift from Hands-on Keyboard to Business Strategy
+12:15 - Speaking the Language of the Board & CFO
+21:00 - Managing High-Performing Security Teams
+31:20 - Building Your Personal Brand in Cyber Leadership
+
+💡 KEY TAKEAWAYS:
+• Executive leadership is about risk quantification and business enablement, not just technical security controls.
+• Communicating with the CFO requires translating vulnerabilities into operational downtime and balance sheet risk.
+
+🔗 CONNECT & RESOURCES:
+• YouTube Video: https://www.youtube.com/watch?v=7AqcMgsXhEI
+• Substack Newsletter: https://vciso.substack.com
+• 1-on-1 Strategy Session: https://calendarbridge.com/book/cpf-coaching/
+</textarea>
+  </div>
+
+</div>
+<script>
+async function copyNotes(idx, btn) {
+  const ta = document.getElementById('notes-' + idx);
+  const text = ta.value;
+  let copied = false;
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch(e) {}
+  }
+  if (!copied) {
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    document.execCommand('copy');
+    ta.blur();
+  }
+  const orig = btn.innerText;
+  btn.innerText = '✅ Show Notes Copied!';
+  setTimeout(() => { btn.innerText = orig; }, 2500);
+}
+</script>
+</body>
+</html>
