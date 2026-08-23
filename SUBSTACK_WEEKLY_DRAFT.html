@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The vCISO Brief #48: Why 500 Job Applications Fail (And What Hiring Managers Actually Test)</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #f8fafc; padding: 32px; line-height: 1.7; }
+  .container { max-width: 780px; margin: 0 auto; background: #1e293b; padding: 40px; border-radius: 12px; border: 1px solid #334155; }
+  h1 { color: #38bdf8; font-size: 26px; margin-bottom: 8px; }
+  h2 { color: #4ade80; font-size: 20px; margin-top: 32px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+  .subtitle { color: #94a3b8; font-size: 16px; margin-bottom: 24px; }
+  .callout { background: #090d16; border-left: 4px solid #38bdf8; padding: 16px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  .btn-copy { background: #2563eb; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; float: right; }
+  .btn-copy:hover { background: #1d4ed8; }
+  a { color: #38bdf8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+  <button class="btn-copy" onclick="copyMarkdown()">📋 Copy Substack Markdown</button>
+  <h1>The vCISO Brief #48: Why 500 Job Applications Fail (And What Hiring Managers Actually Test)</h1>
+  <div class="subtitle">Pragmatic cybersecurity career growth, executive risk governance, and this week's podcast deep dive.</div>
+  <p><strong>By Christophe Foulon, CISSP, CRISC</strong> • <em>August 23, 2026</em></p>
+  <hr style="border: 0; border-top: 1px solid #334155; margin: 24px 0;">
+  
+  <p>Welcome to this week's edition of <strong>The vCISO Brief & Cyber Career Dispatch</strong>.</p>
+  <p>Every week, I mentor professionals breaking into cybersecurity while advising founders and executives on building pragmatic security programs.</p>
+
+  <h2>🎯 The 3-Project Rule: Stop Spraying 500 Resumes</h2>
+  <p>I spoke with three hiring managers this week, and they all echoed the same frustration: <em>“We receive 600 applications for an entry-level SOC role, and 90% have identical keyword-stuffed resumes with zero evidence of hands-on troubleshooting.”</em></p>
+  
+  <div class="callout">
+    <strong>The 3-Project Portfolio Framework:</strong>
+    <ol>
+      <li><strong>Detection Engineering:</strong> Simulated alerts documented in Wazuh/Elastic.</li>
+      <li><strong>Threat Modeling:</strong> STRIDE breakdown of an open-source SaaS app.</li>
+      <li><strong>Executive Incident Post-Mortem:</strong> 1-page non-technical summary for CFO/CEO.</li>
+    </ol>
+  </div>
+
+  <h2>🎙️ Podcast Spotlight of the Week</h2>
+  <p><strong>Hospitality to Cyber Pivot with Anthony Merlas</strong></p>
+  <p>How customer service and crisis resolution translate into elite cybersecurity operations.</p>
+  <p>📺 <a href="https://www.youtube.com/@BreakingIntoCybersecurity" target="_blank">Watch on YouTube</a> | 🎧 <a href="https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri" target="_blank">Listen on Spotify</a></p>
+
+  <h2>🚀 Take Action This Week</h2>
+  <p>👉 <strong><a href="https://calendarbridge.com/book/cpf-coaching/" target="_blank">Schedule a 30-minute Advisory / Coaching Call with Christophe</a></strong></p>
+</div>
+<script>
+function copyMarkdown() {
+  fetch('SUBSTACK_WEEKLY_DRAFT.md')
+    .then(r => r.text())
+    .then(t => {
+      navigator.clipboard.writeText(t);
+      const btn = document.querySelector('.btn-copy');
+      btn.innerText = '✅ Markdown Copied!';
+      setTimeout(() => { btn.innerText = '📋 Copy Substack Markdown'; }, 2000);
+    });
+}
+</script>
+</body>
+</html>

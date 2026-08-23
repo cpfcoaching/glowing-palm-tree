@@ -113,8 +113,59 @@ def run_draft_kit():
         logger.error(f"❌ Draft Kit error: {e}")
         return False
 
+def run_guest_kits():
+    logger.info("🎙️ [PHASE 5] Generating 1-Click Guest Co-Promotion Launch Kits...")
+    guest_script = YOUTUBE_DIR / "guest_launch_kit_engine.py"
+    if not guest_script.exists():
+        return True
+        
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(guest_script)]
+    
+    try:
+        subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
+        logger.info("✅ Guest Co-Promotion Launch Kits Ready.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Guest Kit error: {e}")
+        return False
+
+def run_substack_drafter():
+    logger.info("📰 [PHASE 6] Auto-Drafting Weekly Substack Newsletter (The vCISO Brief)...")
+    sub_script = YOUTUBE_DIR / "substack_newsletter_drafter.py"
+    if not sub_script.exists():
+        return True
+        
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(sub_script)]
+    
+    try:
+        subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
+        logger.info("✅ Weekly Substack Newsletter Drafted.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Substack Drafter error: {e}")
+        return False
+
+def run_community_queue():
+    logger.info("📊 [PHASE 7] Scheduling YouTube Community Tab Polls & Engagement...")
+    comm_script = YOUTUBE_DIR / "community_engagement_engine.py"
+    if not comm_script.exists():
+        return True
+        
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(comm_script)]
+    
+    try:
+        subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
+        logger.info("✅ YouTube Community Tab Engagement Refreshed.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Community Engine error: {e}")
+        return False
+
 def run_spotify_publisher():
-    logger.info("🎙️ [PHASE 5] Checking Spotify Podcast Publishing Queue...")
+    logger.info("🎙️ [PHASE 8] Checking Spotify Podcast Publishing Queue...")
     cron_script = SPOTIFY_DIR / "auto_publish_cron.py"
     if not cron_script.exists():
         logger.info("Spotify uploader not present, skipping.")
@@ -141,11 +192,14 @@ def execute_full_cycle():
     shorts_ok = run_shorts_rendering()
     staging_ok = run_shorts_staging()
     kit_ok = run_draft_kit()
+    guest_ok = run_guest_kits()
+    substack_ok = run_substack_drafter()
+    comm_ok = run_community_queue()
     spotify_ok = run_spotify_publisher()
     
     elapsed = (datetime.now() - start_time).total_seconds()
     logger.info("===================================================================")
-    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (YouTube: {yt_ok}, Shorts: {shorts_ok}, Staged: {staging_ok}, Spotify: {spotify_ok})")
+    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (8-Phase Engine Active)")
     logger.info("===================================================================\n")
 
 def run_daemon(interval_minutes=360):
