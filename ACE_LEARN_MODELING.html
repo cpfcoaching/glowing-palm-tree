@@ -187,13 +187,25 @@
       
       <div class="insight-item">
         <div class="insight-title">
-          <span>Transcript Parsing Quirks</span>
+          <span>The "Skip a Week" CISO Content Standard</span>
         </div>
         <div class="insight-desc">
-          Videos under 60 seconds (Shorts) and videos with disabled auto-captions fail transcript extraction and cause pipeline halts if not isolated.
+          Writing for executive security leaders demands real-world operational realism: Step A ➔ Step C execution blueprints, precise enterprise toolchains (Wiz CSPM/Graph, Elastic SIEM, Wazuh), and 1-slide board scorecards. Generic high-level fluff destroys credibility; if a piece cannot meet this rigorous bar, we skip rather than publish low-signal copy.
         </div>
         <div class="takeaway">
-          <strong>Optimization:</strong> Built the <code>backlog_failures.json</code> bypass queue to prevent any individual video error from stalling the pipeline.
+          <strong>Standard:</strong> Actionable technical rigor, direct episode URLs, and embedded visual architecture diagrams in every edition.
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">
+          <span>Direct Link Resolution & Clipboard Resiliency</span>
+        </div>
+        <div class="insight-desc">
+          Audiences abandon generic links. We resolve exact YouTube video IDs (<code>youtube.com/watch?v=...</code>) and Spotify episode slugs. For UI dashboards, we implement async multi-tier clipboard copying to eliminate truncation.
+        </div>
+        <div class="takeaway">
+          <strong>Optimization:</strong> Zero generic landing pages; async clipboard API + selection fallback across all HTML dashboards.
         </div>
       </div>
     </div>
