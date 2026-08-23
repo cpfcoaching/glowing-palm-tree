@@ -134,14 +134,32 @@ Here is a 3-step project you can document on GitHub or Substack:
 
 </div>
 <script>
-function copyPost(idx) {
+async function copyPost(idx) {
   const el = document.getElementById('comm-' + idx);
-  el.select();
-  document.execCommand('copy');
+  const text = el.value;
   const btn = event.target;
+  let copied = false;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch (e) {
+      console.warn('Clipboard API error, fallback', e);
+    }
+  }
+
+  if (!copied) {
+    el.focus();
+    el.select();
+    el.setSelectionRange(0, text.length);
+    document.execCommand('copy');
+    el.blur();
+  }
+
   const old = btn.innerText;
   btn.innerText = '✅ Copied!';
-  setTimeout(() => { btn.innerText = old; }, 2000);
+  setTimeout(() => { btn.innerText = old; }, 2500);
 }
 </script>
 </body>

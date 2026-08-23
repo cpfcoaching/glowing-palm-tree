@@ -196,18 +196,36 @@ Drop your current stage in the comments, and we'll address it in the upcoming li
 
 </div>
 <script>
-function copyText(idx) {
+async function copyText(idx) {
   const ta = document.getElementById('post-' + idx);
-  ta.select();
-  document.execCommand('copy');
+  const text = ta.value;
   const btn = event.target;
+  let copied = false;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch (e) {
+      console.warn('Clipboard API error, falling back', e);
+    }
+  }
+
+  if (!copied) {
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    document.execCommand('copy');
+    ta.blur();
+  }
+
   const original = btn.innerText;
-  btn.innerText = '✅ Copied!';
+  btn.innerText = '✅ Copied Full Post!';
   btn.classList.add('copied');
   setTimeout(() => {
     btn.innerText = original;
     btn.classList.remove('copied');
-  }, 2000);
+  }, 2500);
 }
 </script>
 </body>

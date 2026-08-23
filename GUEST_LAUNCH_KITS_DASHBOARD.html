@@ -283,14 +283,32 @@ A huge thank you to Christophe for having me on the show! What questions do you 
 
 </div>
 <script>
-function copyField(id) {
+async function copyField(id) {
   const el = document.getElementById(id);
-  el.select();
-  document.execCommand('copy');
+  const text = el.value;
   const btn = event.target;
+  let copied = false;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch (e) {
+      console.warn('Clipboard API error, fallback to select', e);
+    }
+  }
+
+  if (!copied) {
+    el.focus();
+    el.select();
+    el.setSelectionRange(0, text.length);
+    document.execCommand('copy');
+    el.blur();
+  }
+
   const old = btn.innerText;
   btn.innerText = '✅ Copied!';
-  setTimeout(() => { btn.innerText = old; }, 2000);
+  setTimeout(() => { btn.innerText = old; }, 2500);
 }
 </script>
 </body>

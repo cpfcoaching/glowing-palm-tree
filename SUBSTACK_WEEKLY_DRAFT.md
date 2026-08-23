@@ -68,7 +68,7 @@ Do not show the Board a 30-page vendor list. Present this **single executive sco
 | :--- | :--- | :--- | :--- |
 | **Tier-1 Vendors with Phishing-Resistant SSO** | 100% | 94% | 🟢 **Controlled** (2 legacy vendors migrating) |
 | **Average Blast-Radius Revocation Time** | < 30 Mins | 18 Mins | 🟢 **Defensible** (Tested quarterly) |
-| **Wiz Toxic Combinations & Unused IAM Cross-Roles** | 0 | 0 | 🟢 **Zero High-Risk Exposure** |
+| **Wiz Toxic Combinations & IAM Cross-Roles** | 0 | 0 | 🟢 **Zero High-Risk Exposure** |
 | **Critical Vendors with Missing DPAs** | 0 | 0 | 🟢 **100% Contractual Compliance** |
 
 > **Executive Rule of Thumb:** If you cannot produce this table during an active incident, your cyber insurance carrier and board will treat the breach as systemic negligence.
