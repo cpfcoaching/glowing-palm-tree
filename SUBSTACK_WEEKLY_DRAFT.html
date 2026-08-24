@@ -2,128 +2,95 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The vCISO Brief #49: The 72-Hour TPRM & Cloud Blast-Radius Triage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breaking Into Cybersecurity Kit #49: The 3-Project Portfolio That Beats 500 Resumes</title>
 <style>
   :root {
     --bg-primary: #090d16;
     --bg-card: #131b2e;
     --border: #24324f;
-    --text: #f8fafc;
+    --text-primary: #f8fafc;
     --text-muted: #94a3b8;
-    --accent-blue: #38bdf8;
-    --accent-green: #4ade80;
-    --accent-amber: #fbbf24;
+    --accent: #ff6719;
+    --accent-light: #38bdf8;
+    --green: #4ade80;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: var(--bg-primary);
-    color: var(--text);
-    padding: 36px 20px;
+    color: var(--text-primary);
+    padding: 32px 20px;
     line-height: 1.7;
     margin: 0;
   }
   .container {
-    max-width: 840px;
+    max-width: 860px;
     margin: 0 auto;
     background: var(--bg-card);
-    padding: 44px;
+    padding: 40px;
     border-radius: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
   }
   .header-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     flex-wrap: wrap;
     gap: 12px;
   }
-  .header-tag {
-    background: rgba(56, 189, 248, 0.15);
-    color: var(--accent-blue);
-    padding: 4px 12px;
+  .badge {
+    background: rgba(255, 103, 25, 0.15);
+    color: var(--accent);
+    padding: 6px 14px;
     border-radius: 6px;
     font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-size: 13px;
   }
   .btn-group {
     display: flex;
-    gap: 8px;
+    gap: 10px;
   }
-  h1 { color: var(--accent-blue); font-size: 26px; line-height: 1.3; margin: 0 0 12px 0; }
-  h2 { color: var(--accent-green); font-size: 19px; margin-top: 36px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-  h3 { color: #e2e8f0; font-size: 16px; margin-top: 24px; }
-  .subtitle { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; font-weight: 400; }
-  .author-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
-  .hero-img {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    margin-bottom: 28px;
-  }
-  .callout {
-    background: rgba(15, 23, 42, 0.8);
-    border-left: 4px solid var(--accent-blue);
-    padding: 16px 20px;
-    margin: 24px 0;
-    border-radius: 0 8px 8px 0;
-    font-size: 14px;
-  }
-  .step-box {
-    background: #0d1527;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  .step-title {
-    font-weight: 700;
-    color: var(--accent-amber);
-    margin-bottom: 8px;
-    font-size: 15px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 13px;
-  }
-  th, td {
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    text-align: left;
-  }
-  th { background: #0b1120; color: var(--text-muted); font-weight: 600; }
-  .btn-copy {
-    background: #2563eb;
+  .btn {
+    background: var(--accent);
     color: white;
     border: none;
     padding: 10px 18px;
     border-radius: 6px;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 14px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
   }
-  .btn-copy:hover { background: #1d4ed8; }
-  .btn-rich {
-    background: #059669;
+  .btn:hover { background: #e05307; }
+  .btn-alt {
+    background: #1e293b;
+    color: var(--accent-light);
+    border: 1px solid #334155;
   }
-  .btn-rich:hover { background: #047857; }
-  a { color: var(--accent-blue); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  textarea {
+  .btn-alt:hover { background: #334155; }
+  .infographic {
     width: 100%;
-    height: 240px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin: 20px 0;
+  }
+  .article-body {
     background: #060911;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-top: 20px;
+  }
+  textarea.raw-content {
+    width: 100%;
+    height: 320px;
+    background: #04060a;
     color: #e2e8f0;
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 14px;
-    font-family: monospace;
+    font-family: ui-monospace, monospace;
     font-size: 13px;
     box-sizing: border-box;
     margin-top: 14px;
@@ -131,245 +98,146 @@
 </style>
 </head>
 <body>
-<div class="container" id="article-content">
+<div class="container">
   <div class="header-actions">
-    <span class="header-tag">🛡️ EXECUTIVE CISO ACTION INTELLIGENCE</span>
+    <span class="badge">📰 BREAKING INTO CYBERSECURITY KIT NEWSLETTER</span>
     <div class="btn-group">
-      <button class="btn-copy" onclick="copyMarkdown(this)">📋 Copy Full Markdown</button>
-      <button class="btn-copy btn-rich" onclick="copyRichContent(this)">📄 Copy Formatted Article</button>
+      <button class="btn" onclick="copyFullMarkdown(this)">📋 Copy Full Markdown</button>
+      <button class="btn btn-alt" onclick="copyRichText(this)">📄 Copy Formatted Article</button>
     </div>
   </div>
 
-  <h1>The vCISO Brief #49: The 72-Hour TPRM & Cloud Blast-Radius Triage</h1>
-  <div class="subtitle">An actionable 3-step blueprint for CISOs to audit high-risk cloud vendors using Wiz & Elastic, enforce contract clawbacks, and present defensible risk metrics to the Board.</div>
-  <div class="author-meta"><strong>By Christophe Foulon, CISSP, CRISC</strong> • <em>vCISO Advisory & Cyber Risk Strategist</em> • August 23, 2026</div>
-  
-  <img class="hero-img" src="assets/ciso_security_framework_visual.jpg" alt="CISO Strategic Cybersecurity Architecture Visual">
+  <h1 style="color: var(--accent-light); font-size: 26px; margin: 0 0 8px 0;">Breaking Into Cybersecurity Kit #49: The 3-Project Portfolio That Beats 500 Resumes</h1>
+  <div style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px;">How to build proof-of-work in Detection Engineering (Wazuh/Elastic), STRIDE Threat Modeling, and Executive Post-Mortems to land high-paying SOC and security engineering roles.</div>
 
-  <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;">
+  <img src="assets/ciso_security_framework_visual.jpg" alt="Portfolio Infographic" class="infographic">
 
-  <h2>🏛️ The Boardroom Reality: Why 90% of Vendor Risk Assessments Are Security Theater</h2>
-  <p>If your Third-Party Risk Management (TPRM) program relies on sending annual 200-question spreadsheets that vendors check off with zero verification, <strong>you do not have a vendor risk program—you have a paper trail for liability.</strong></p>
-  
-  <p>When a critical cloud vendor goes dark or leaks customer records, the Audit Committee will not ask: <em>“Did they fill out our questionnaire?”</em> They will ask: <strong>“What data did they have, what was our blast radius, and why weren't their access tokens revoked within 60 minutes?”</strong></p>
-
-  <h2>🛠️ The Tactical CISO Playbook: Execute Steps A ➔ C</h2>
-
-  <div class="step-box">
-    <div class="step-title">🔹 STEP A: Map the True Cloud Blast Radius (Within 48 Hours)</div>
+  <div id="rich-article" class="article-body">
+    <h2>🎯 The Reality of Today's Cyber Job Market</h2>
+    <p>If you are applying to 500 cybersecurity job postings with a generic resume and a Security+ certification, <strong>you are competing against 800 other applicants in the exact same automated filter.</strong></p>
+    <p>Hiring managers in 2026 do not hire certificates—they hire <strong>risk reduction and problem solvers.</strong> When a SOC Manager or Security Director reviews candidate profiles, they look for one thing: <strong>Proof of Work.</strong></p>
+    
+    <h2>🛠️ The 3-Project Hands-On Portfolio</h2>
     <ul>
-      <li><strong>Audit Cloud IAM via Wiz:</strong> Query the <strong>Wiz Cloud Security Graph</strong> for cross-account roles (<code>sts:AssumeRole</code>) attached to production S3/database assets and remove toxic permissions.</li>
-      <li><strong>Execute Egress & OAuth Mapping in Elastic Security / Wazuh:</strong> Query NetFlow logs for external endpoints receiving &gt;50MB/week and revoke unapproved Entra ID / Okta OAuth apps.</li>
-      <li><strong>Establish Tier-1 Kill-Switch Isolation:</strong> Test API token rotation across top 5 critical vendors in &lt;15 minutes.</li>
+      <li><strong>Project 1: Detection Engineering (Wazuh / Elastic):</strong> Ingest simulated Atomic Red Team alerts, write custom Sigma/EQL detection rules, and publish public GitHub artifacts.</li>
+      <li><strong>Project 2: Application Threat Modeling (STRIDE):</strong> Build Data Flow Diagrams and map mitigations across Spoofing, Tampering, Repudiation, Info Disclosure, DoS, and Elevation of Privilege.</li>
+      <li><strong>Project 3: Executive Incident Post-Mortem:</strong> 1-page business impact summary translating technical logs into CFO/CEO language.</li>
     </ul>
-  </div>
 
-  <div class="step-box">
-    <div class="step-title">🔹 STEP B: Enforce Active Governance & Contractual Guardrails</div>
-    <ul>
-      <li><strong>Mandate SSO & Phishing-Resistant MFA:</strong> Require WebAuthn / FIDO2 for all vendor integrations with 24-hour deprovisioning.</li>
-      <li><strong>Implement the 24-Hour Breach Notification Clause:</strong> Require notification within 24h backed by a 15% contract fee clawback.</li>
-      <li><strong>Continuous Posture Monitoring:</strong> Ingest attack surface telemetry into Elastic Security SIEM over static annual reviews.</li>
-    </ul>
-  </div>
-
-  <div class="step-box">
-    <div class="step-title">🔹 STEP C: Present Defensible Metrics to the Board / Audit Committee</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Metric</th>
-          <th>Target SLA</th>
-          <th>Current Posture</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Tier-1 Vendors with Phishing-Resistant SSO</strong></td>
-          <td>100%</td>
-          <td>94%</td>
-          <td>🟢 Controlled</td>
-        </tr>
-        <tr>
-          <td><strong>Average Blast-Radius Revocation Time</strong></td>
-          <td>&lt; 30 Mins</td>
-          <td>18 Mins</td>
-          <td>🟢 Defensible</td>
-        </tr>
-        <tr>
-          <td><strong>Wiz Toxic Combinations & IAM Cross-Roles</strong></td>
-          <td>0</td>
-          <td>0</td>
-          <td>🟢 Zero High-Risk Exposure</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2>🎯 The 3-Project Strategic Framework (For Teams & Up-and-Coming Security Leaders)</h2>
-  <div class="callout">
-    <ol>
-      <li><strong>🧪 Cloud Detection Engineering:</strong> Automated attack-path detection rules in <strong>Wiz</strong> and <strong>Elastic Security / Wazuh</strong> to catch anomalous privilege escalation.</li>
-      <li><strong>🛡️ STRIDE Threat Modeling:</strong> Application data flow diagrams (DFD), trust boundaries, and cloud ingress/egress mapping.</li>
-      <li><strong>📄 Executive Incident Post-Mortem:</strong> 1-page financial and risk impact brief for the CEO & CFO.</li>
-    </ol>
-  </div>
-
-  <h2>🎙️ Executive Podcast Deep Dive of the Week</h2>
-  <div class="callout">
-    <strong>Episode Spotlight: Hospitality to Cyber Operations with Anthony Merlas</strong><br>
-    <em>How customer service, crisis de-escalation, and cross-functional communication translate into elite security operations and vendor risk governance.</em>
-    <p style="margin-top: 10px; margin-bottom: 0;">
-      📺 <a href="https://www.youtube.com/watch?v=P1Or_C-3Gx8" target="_blank">Watch Full Episode on YouTube</a> | 
-      🎧 <a href="https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k" target="_blank">Listen Directly on Spotify</a>
+    <h2>🎙️ Featured Podcast of the Week</h2>
+    <p><strong>Hospitality to Cyber Pivot with Anthony Merlas:</strong> How customer service and crisis de-escalation translate into elite security operations.</p>
+    <p>
+      📺 <a href="https://www.youtube.com/watch?v=P1Or_C-3Gx8" target="_blank" style="color: var(--accent-light);">Watch on YouTube</a> | 
+      🎧 <a href="https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k" target="_blank" style="color: var(--accent-light);">Listen on Spotify</a>
     </p>
+
+    <hr style="border-color: var(--border); margin: 24px 0;">
+    <h3>🛡️ Advisory & Coaching CTAs</h3>
+    <p>👉 <strong>1-on-1 Cyber Career Coaching & Portfolio Reviews:</strong> <a href="https://calendarbridge.com/book/cpf-coaching/" target="_blank" style="color: var(--accent-light);">Book with Christophe</a></p>
+    <p>👉 <strong>Executive Leaders & Fractional CISO Advisory:</strong> <a href="https://vciso.substack.com" target="_blank" style="color: var(--accent-light);">Explore vCISO Strategy on Substack</a></p>
   </div>
 
-  <h2>🛡️ Related Executive Case Study: AI Risks in Your Security Stack</h2>
-  <p>📺 <a href="https://www.youtube.com/watch?v=jXwo5gv7tGw" target="_blank">Watch: Can You Trust AI in Your Security Stack? The Hidden Risks & Best Practices</a></p>
-
-  <h2>🛡️ Strategic Advisory & Boardroom Action</h2>
-  <p>👉 <strong><a href="https://calendarbridge.com/book/cpf-coaching/" target="_blank">Schedule a 30-Minute Executive Advisory Session with Christophe Foulon</a></strong></p>
-
-  <label style="font-weight: 600; color: var(--text-muted); display: block; margin-top: 28px;">📋 Full Actionable Markdown Ready for Substack Broadcast:</label>
-  <textarea id="raw-ciso-md" readonly># The vCISO Brief #49: The 72-Hour TPRM & Cloud Blast-Radius Triage
-### *An actionable 3-step blueprint for CISOs to audit high-risk cloud vendors using Wiz & Elastic, enforce contract clawbacks, and present defensible risk metrics to the Board.*
-**By Christophe Foulon, CISSP, CRISC** • *vCISO Advisory & Cyber Risk Strategist* • *August 23, 2026*
+  <h3 style="margin-top: 24px; font-size: 15px; color: var(--text-muted);">Raw Markdown Output:</h3>
+  <textarea id="raw-markdown" class="raw-content" readonly># Breaking Into Cybersecurity Kit #49: The 3-Project Portfolio That Beats 500 Resumes
+### *How to build proof-of-work in Detection Engineering (Wazuh/Elastic), STRIDE Threat Modeling, and Executive Post-Mortems to land high-paying SOC and security engineering roles.*
+**By Christophe Foulon, CISSP, CRISC** • *Breaking Into Cybersecurity* • *August 24, 2026*
 
 ---
 
-![CISO Strategic Initiatives: Cloud Detection Engineering with Wiz & Elastic, STRIDE Threat Modeling, and Executive Scorecard](assets/ciso_security_framework_visual.jpg)
+![The 3-Project Cybersecurity Portfolio: Cloud Detection Engineering, STRIDE Threat Modeling, Executive Scorecard](assets/ciso_security_framework_visual.jpg)
 
 ---
 
-## 🏛️ The Boardroom Reality: Why 90% of Vendor Risk Assessments Are Security Theater
+## 🎯 The Reality of Today's Cyber Job Market
 
-If your Third-Party Risk Management (TPRM) program relies on sending annual 200-question SIG or CAIQ spreadsheets that vendors check off with zero verification, **you do not have a vendor risk program—you have a paper trail for liability.**
+If you are applying to 500 cybersecurity job postings with a generic resume and a Security+ certification, **you are competing against 800 other applicants in the exact same automated filter.**
 
-Last week, two major mid-market SaaS providers suffered upstream credential compromises. In both cases, the breached organizations had 'passed' their clients' annual security questionnaires with flying colors less than 90 days prior.
+Hiring managers in 2026 do not hire certificates—they hire **risk reduction and problem solvers.** When a SOC Manager or Security Director reviews candidate profiles, they look for one thing: **Proof of Work.**
 
-When a critical cloud vendor goes dark or leaks customer records, the Audit Committee will not ask: *"Did they fill out our questionnaire?"*  
-They will ask: **“What data did they have, what was our blast radius, and why weren't their access tokens revoked within 60 minutes?”**
-
-Here is the exact **3-Step Tactical Triage** I implement with executive security teams to turn static vendor risk into active, defensible controls using modern cloud detection and posture tooling.
+Here is the exact **3-Project Portfolio Framework** that consistently lands tier-1 SOC analyst, detection engineer, and security specialist interviews:
 
 ---
 
-## 🛠️ The Tactical CISO Playbook: Execute Steps A ➔ C
+## 🛠️ The 3-Project Hands-On Portfolio
 
 ```
-[ Step A: Map Cloud Blast Radius ] ──▶ [ Step B: Enforce Contractual Controls ] ──▶ [ Step C: Board Defensibility ]
- (Wiz Graph & Elastic SIEM Egress)       (Continuous IdP Revocation & DPA)            (1-Slide Audit Metric)
+[ Project 1: Detection Engineering ] ──▶ [ Project 2: STRIDE Threat Model ] ──▶ [ Project 3: Executive Post-Mortem ]
+   (Wazuh / Elastic SIEM Homelab)           (Open-Source SaaS Architecture)            (1-Page Business Impact Brief)
 ```
 
 ---
 
-### 🔹 STEP A: Map the True Blast Radius (Do This Within 48 Hours)
-
-Stop treating all 140 vendors equally. Tier them strictly by **Direct Cloud Data Access** and **Identity Integration**:
-
-1. **Audit Cloud Identity & Toxic Combinations via Wiz:**
-   * Query your **Wiz Cloud Security Graph** for third-party IAM roles or service accounts granted broad cross-account assume-role permissions (`sts:AssumeRole`) connected to sensitive S3 buckets or production databases.
-   * *The Action:* Immediately eliminate unused third-party IAM cross-account permissions and enforce least-privilege scoping.
-2. **Execute Egress & OAuth Data Flow Mapping in Elastic Security / Wazuh:**
-   * In **Elastic Security SIEM**, inspect egress network telemetry and NetFlow logs for external SaaS endpoints receiving >50MB/week.
-   * Query your Identity Provider (Okta / Microsoft Entra ID) logs for third-party OAuth apps granted tenant-wide permissions (`Files.ReadWrite.All`, `Directory.Read.All`). Revoke unauthorized tokens immediately.
-3. **Establish Tier 1 Kill-Switch Isolation:**
-   * Identify the 5 vendors whose compromise would paralyze operations (e.g., Cloud Hosting, Billing/Stripe, Customer CRM/Salesforce, Code Repo/GitHub, HRIS/Workday).
-   * Verify whether emergency API token rotation takes **< 15 minutes** or requires opening a multi-day support ticket.
+### 🔹 Project 1: Cloud & Host Detection Engineering (Wazuh / Elastic)
+* **Objective:** Prove you can ingest telemetry, write custom detection rules, and investigate suspicious behavior.
+* **The Stack:** Spin up a free cloud lab using **Elastic Security** or **Wazuh SIEM**.
+* **What to Document:**
+  1. Generate simulated credential access alerts using Atomic Red Team (`T1003 - OS Credential Dumping`).
+  2. Write a custom Sigma / EQL detection rule to detect pass-the-hash and privilege escalation.
+  3. Include a 2-page investigation walkthrough with sanitized screenshots and log artifacts in your public GitHub repository.
 
 ---
 
-### 🔹 STEP B: Enforce Active Governance & Contractual Guardrails
-
-Move from passive trust to automated verification:
-
-1. **Mandate SSO & Conditional Access with Phishing-Resistant MFA:**
-   * Never allow vendor accounts to log in with shared username/passwords. 
-   * Enforce FIDO2 WebAuthn or device-managed certificates via your central IdP, with automated 24-hour deprovisioning on role termination.
-2. **Implement the 24-Hour Breach Notification Clause:**
-   * In every Master Services Agreement (MSA) and DPA renewal, insert an explicit obligation requiring vendor notification of any confirmed security incident within **24 hours**—backed by a **15% contract fee clawback** for non-compliance.
-3. **Continuous SIEM Posture Monitoring Over Annual Audits:**
-   * Ingest external attack surface telemetry and vendor vulnerability alerts into Elastic Security to trigger an internal security review if a critical partner drops below your baseline threshold.
+### 🔹 Project 2: Application Threat Modeling (STRIDE)
+* **Objective:** Demonstrate that you understand architecture, trust boundaries, and mitigation design before vulnerabilities hit production.
+* **The Scope:** Pick an open-source SaaS application or cloud microservice.
+* **What to Document:**
+  1. Create a Data Flow Diagram (DFD) showing external entities, processes, and data stores.
+  2. Map at least two threats per STRIDE category (*Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege*).
+  3. Propose concrete security controls (e.g., FIDO2 MFA, Mutual TLS, KMS envelope encryption) for each identified risk.
 
 ---
 
-### 🔹 STEP C: Present Defensible Metrics to the Board / Audit Committee
-
-Do not show the Board a 30-page vendor list. Present this **single executive scorecard tile**:
-
-| Metric | Target SLA | Current Posture | Operational Risk Status |
-| :--- | :--- | :--- | :--- |
-| **Tier-1 Vendors with Phishing-Resistant SSO** | 100% | 94% | 🟢 **Controlled** (2 legacy vendors migrating) |
-| **Average Blast-Radius Revocation Time** | < 30 Mins | 18 Mins | 🟢 **Defensible** (Tested quarterly) |
-| **Wiz Toxic Combinations & IAM Cross-Roles** | 0 | 0 | 🟢 **Zero High-Risk Exposure** |
-| **Critical Vendors with Missing DPAs** | 0 | 0 | 🟢 **100% Contractual Compliance** |
-
-> **Executive Rule of Thumb:** If you cannot produce this table during an active incident, your cyber insurance carrier and board will treat the breach as systemic negligence.
+### 🔹 Project 3: 1-Page Executive Incident Post-Mortem
+* **Objective:** Prove you can translate technical alerts into the language of the CFO, CEO, and Board.
+* **What to Document:**
+  1. Summarize a realistic breach scenario in non-technical terms.
+  2. Map out the timeline, root cause, total financial/operational blast radius, and immediate remediation steps.
+  3. Provide a quantitative risk reduction scorecard showing how the controls prevent recurring downtime.
 
 ---
 
-## 🎯 The 3-Project Strategic Framework (For Teams & Up-and-Coming Security Leaders)
+## 🎙️ Podcast Spotlight of the Week
 
-If your internal team or engineers are looking to demonstrate proof of work to executive leadership:
+In this week's featured episode of **Breaking Into Cybersecurity**, we sit down with **Anthony Merlas** to explore how hospitality management, customer empathy, and crisis de-escalation translate directly into elite incident response and security leadership.
 
-1. **🧪 Cloud Detection Engineering:** Build automated attack-path detection rules in **Wiz** and **Elastic Security / Wazuh** to spot anomalous privilege escalation.
-2. **🛡️ STRIDE Threat Modeling:** Map application data flows, cloud ingress/egress, and trust boundaries before code hits production.
-3. **📄 Executive Incident Post-Mortem:** Deliver a 1-page financial and risk impact brief that the CEO and CFO can understand in under 2 minutes.
-
----
-
-## 🎙️ Executive Podcast Deep Dive of the Week
-
-### 🎧 Episode Spotlight: Hospitality to Cyber Operations & Risk Leadership with Anthony Merlas
-How do you transition from managing high-stakes hotel operations into leading IT security and governance? In this episode, **Anthony Merlas** breaks down how customer service, crisis de-escalation, and cross-functional communication translate into elite security operations and vendor risk management.
-
-* 📺 **Watch the Full Video Episode on YouTube:** [https://www.youtube.com/watch?v=P1Or_C-3Gx8](https://www.youtube.com/watch?v=P1Or_C-3Gx8)
-* 🎧 **Listen to the Direct Audio on Spotify:** [https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k](https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k)
+* 📺 **Watch the Full Video Masterclass on YouTube:**  
+  👉 https://www.youtube.com/watch?v=P1Or_C-3Gx8
+* 🎧 **Listen to the Direct Audio Episode on Spotify:**  
+  👉 https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k
 
 ---
 
-### 🛡️ Related Executive Deep Dive: AI in Your Security Stack & Vendor Risks
-* 📺 **Watch on YouTube:** [Can You Trust AI in Your Security Stack? The Hidden Risks & Best Practices](https://www.youtube.com/watch?v=jXwo5gv7tGw)
-* 🎧 **Listen on Spotify:** [Breaking Into Cybersecurity Podcast Archive](https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Breaking-into-Cybersecurity---Mike-Lossmann-e2qd5lv)
+## 🚀 Community Challenge of the Week
+
+Pick **one** of the three portfolio projects above, build it in your homelab or GitHub this week, and share your documentation in the community discussion!
 
 ---
 
-## 🛡️ Strategic Advisory & Boardroom Action
+## 🛡️ Advisory & 1-on-1 Coaching CTAs
 
-If you are a CISO, VP of Engineering, or CEO looking to:
-1. Conduct an independent **Vendor Risk & Cloud Blast-Radius Architecture Review**
-2. Build an audit-defensible **Board Cyber Risk Dashboard**
-3. Implement **Fractional CISO Governance** without the $350k+ full-time executive overhead
+* 💼 **Looking for 1-on-1 Cyber Career Coaching & Portfolio Reviews?**  
+  👉 Book a session with Christophe: https://calendarbridge.com/book/cpf-coaching/
 
-👉 **[Schedule a 30-Minute Executive Advisory Session with Christophe Foulon](https://calendarbridge.com/book/cpf-coaching/)**
+* 🏛️ **For Executive Leaders & Fractional CISO Advisory:**  
+  👉 Explore our strategic governance advisory & vCISO insights at https://vciso.substack.com
 
 ---
 
-*Delivered weekly to over 2,000 security executives and leaders. If this issue provided clear ROI, forward it to your security team.*
-
-**Christophe Foulon, CISSP, CRISC**  
-*Fractional CISO | Cybersecurity Executive Advisor | Host, Breaking Into Cybersecurity*  
-[Connect on LinkedIn](https://www.linkedin.com/in/christophefoulon/) • [Substack Archive](https://vciso.substack.com)
+*Breaking Into Cybersecurity • Empowering the next generation of cybersecurity leaders.*
 </textarea>
 </div>
 
 <script>
-async function copyMarkdown(btn) {
-  const ta = document.getElementById('raw-ciso-md');
+async function copyFullMarkdown(btn) {
+  const ta = document.getElementById('raw-markdown');
   const text = ta.value;
   let copied = false;
-  
   if (navigator.clipboard && window.isSecureContext) {
     try {
       await navigator.clipboard.writeText(text);
       copied = true;
-    } catch (e) {
-      console.warn('Clipboard API failed, using selection fallback', e);
-    }
+    } catch(e) {}
   }
-  
   if (!copied) {
     ta.focus();
     ta.select();
@@ -377,36 +245,41 @@ async function copyMarkdown(btn) {
     document.execCommand('copy');
     ta.blur();
   }
-
   const orig = btn.innerText;
-  btn.innerText = '✅ Full Markdown Copied!';
+  btn.innerText = '✅ Markdown Copied!';
   btn.style.background = '#16a34a';
   setTimeout(() => {
     btn.innerText = orig;
-    btn.style.background = '#2563eb';
+    btn.style.background = 'var(--accent)';
   }, 2500);
 }
 
-async function copyRichContent(btn) {
-  const el = document.getElementById('article-content');
-  try {
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-    document.execCommand('copy');
-    sel.removeAllRanges();
-  } catch (e) {
-    console.error('Rich copy failed', e);
+async function copyRichText(btn) {
+  const richEl = document.getElementById('rich-article');
+  let copied = false;
+  if (navigator.clipboard && window.isSecureContext && window.ClipboardItem) {
+    try {
+      const blob = new Blob([richEl.innerHTML], { type: 'text/html' });
+      const plainBlob = new Blob([richEl.innerText], { type: 'text/plain' });
+      const data = [new ClipboardItem({ 'text/html': blob, 'text/plain': plainBlob })];
+      await navigator.clipboard.write(data);
+      copied = true;
+    } catch(e) {}
   }
-
+  if (!copied) {
+    const range = document.createRange();
+    range.selectNode(richEl);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+  }
   const orig = btn.innerText;
   btn.innerText = '✅ Formatted Article Copied!';
   btn.style.background = '#16a34a';
   setTimeout(() => {
     btn.innerText = orig;
-    btn.style.background = '#059669';
+    btn.style.background = '#1e293b';
   }, 2500);
 }
 </script>

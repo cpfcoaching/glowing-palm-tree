@@ -1,4 +1,4 @@
-# 🎙️ Spotify Episode Show Notes (August 23, 2026)
+# 🎙️ Spotify Episode Show Notes (August 24, 2026)
 
 Ready-to-paste show notes formatted for Spotify for Podcasters / Apple Podcasts releases.
 

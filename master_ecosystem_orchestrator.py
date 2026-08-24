@@ -131,7 +131,7 @@ def run_guest_kits():
         return False
 
 def run_substack_drafter():
-    logger.info("📰 [PHASE 6] Auto-Drafting Weekly Substack Newsletter (The vCISO Brief)...")
+    logger.info("📰 [PHASE 6] Auto-Drafting Breaking Into Cybersecurity Kit Newsletter...")
     sub_script = YOUTUBE_DIR / "substack_newsletter_drafter.py"
     if not sub_script.exists():
         return True
@@ -141,7 +141,7 @@ def run_substack_drafter():
     
     try:
         subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
-        logger.info("✅ Weekly Substack Newsletter Drafted.")
+        logger.info("✅ Weekly Breaking Into Cybersecurity Kit Newsletter Drafted.")
         return True
     except Exception as e:
         logger.error(f"❌ Substack Drafter error: {e}")
@@ -164,8 +164,26 @@ def run_community_queue():
         logger.error(f"❌ Community Engine error: {e}")
         return False
 
+def run_spotify_publisher():
+    logger.info("🎙️ [PHASE 8] Checking Spotify Podcast Publishing Queue...")
+    cron_script = SPOTIFY_DIR / "auto_publish_cron.py"
+    if not cron_script.exists():
+        logger.info("Spotify uploader not present, skipping.")
+        return True
+        
+    py_bin = PYTHON_SPOTIFY if PYTHON_SPOTIFY.exists() else sys.executable
+    cmd = [str(py_bin), str(cron_script)]
+    
+    try:
+        res = subprocess.run(cmd, cwd=str(SPOTIFY_DIR), capture_output=True, text=True, timeout=300)
+        logger.info("✅ Spotify Podcast Drip Publisher Check Completed.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Spotify Publisher error: {e}")
+        return False
+
 def run_linkedin_article():
-    logger.info("💼 [PHASE 9] Repurposing vCISO Brief into LinkedIn Executive Article...")
+    logger.info("💼 [PHASE 9] Repurposing Newsletter into LinkedIn Article...")
     li_script = YOUTUBE_DIR / "linkedin_article_repurposer.py"
     if not li_script.exists():
         return True
@@ -175,7 +193,7 @@ def run_linkedin_article():
     
     try:
         subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=60)
-        logger.info("✅ LinkedIn Executive Article Drafted.")
+        logger.info("✅ LinkedIn Article Drafted.")
         return True
     except Exception as e:
         logger.error(f"❌ LinkedIn Repurposer error: {e}")

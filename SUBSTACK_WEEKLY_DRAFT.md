@@ -1,119 +1,86 @@
-# The vCISO Brief #49: The 72-Hour TPRM & Cloud Blast-Radius Triage
-### *An actionable 3-step blueprint for CISOs to audit high-risk cloud vendors using Wiz & Elastic, enforce contract clawbacks, and present defensible risk metrics to the Board.*
-**By Christophe Foulon, CISSP, CRISC** • *vCISO Advisory & Cyber Risk Strategist* • *August 23, 2026*
+# Breaking Into Cybersecurity Kit #49: The 3-Project Portfolio That Beats 500 Resumes
+### *How to build proof-of-work in Detection Engineering (Wazuh/Elastic), STRIDE Threat Modeling, and Executive Post-Mortems to land high-paying SOC and security engineering roles.*
+**By Christophe Foulon, CISSP, CRISC** • *Breaking Into Cybersecurity* • *August 24, 2026*
 
 ---
 
-![CISO Strategic Initiatives: Cloud Detection Engineering with Wiz & Elastic, STRIDE Threat Modeling, and Executive Scorecard](assets/ciso_security_framework_visual.jpg)
+![The 3-Project Cybersecurity Portfolio: Cloud Detection Engineering, STRIDE Threat Modeling, Executive Scorecard](assets/ciso_security_framework_visual.jpg)
 
 ---
 
-## 🏛️ The Boardroom Reality: Why 90% of Vendor Risk Assessments Are Security Theater
+## 🎯 The Reality of Today's Cyber Job Market
 
-If your Third-Party Risk Management (TPRM) program relies on sending annual 200-question SIG or CAIQ spreadsheets that vendors check off with zero verification, **you do not have a vendor risk program—you have a paper trail for liability.**
+If you are applying to 500 cybersecurity job postings with a generic resume and a Security+ certification, **you are competing against 800 other applicants in the exact same automated filter.**
 
-Last week, two major mid-market SaaS providers suffered upstream credential compromises. In both cases, the breached organizations had 'passed' their clients' annual security questionnaires with flying colors less than 90 days prior.
+Hiring managers in 2026 do not hire certificates—they hire **risk reduction and problem solvers.** When a SOC Manager or Security Director reviews candidate profiles, they look for one thing: **Proof of Work.**
 
-When a critical cloud vendor goes dark or leaks customer records, the Audit Committee will not ask: *"Did they fill out our questionnaire?"*  
-They will ask: **“What data did they have, what was our blast radius, and why weren't their access tokens revoked within 60 minutes?”**
-
-Here is the exact **3-Step Tactical Triage** I implement with executive security teams to turn static vendor risk into active, defensible controls using modern cloud detection and posture tooling.
+Here is the exact **3-Project Portfolio Framework** that consistently lands tier-1 SOC analyst, detection engineer, and security specialist interviews:
 
 ---
 
-## 🛠️ The Tactical CISO Playbook: Execute Steps A ➔ C
+## 🛠️ The 3-Project Hands-On Portfolio
 
 ```
-[ Step A: Map Cloud Blast Radius ] ──▶ [ Step B: Enforce Contractual Controls ] ──▶ [ Step C: Board Defensibility ]
- (Wiz Graph & Elastic SIEM Egress)       (Continuous IdP Revocation & DPA)            (1-Slide Audit Metric)
+[ Project 1: Detection Engineering ] ──▶ [ Project 2: STRIDE Threat Model ] ──▶ [ Project 3: Executive Post-Mortem ]
+   (Wazuh / Elastic SIEM Homelab)           (Open-Source SaaS Architecture)            (1-Page Business Impact Brief)
 ```
 
 ---
 
-### 🔹 STEP A: Map the True Blast Radius (Do This Within 48 Hours)
-
-Stop treating all 140 vendors equally. Tier them strictly by **Direct Cloud Data Access** and **Identity Integration**:
-
-1. **Audit Cloud Identity & Toxic Combinations via Wiz:**
-   * Query your **Wiz Cloud Security Graph** for third-party IAM roles or service accounts granted broad cross-account assume-role permissions (`sts:AssumeRole`) connected to sensitive S3 buckets or production databases.
-   * *The Action:* Immediately eliminate unused third-party IAM cross-account permissions and enforce least-privilege scoping.
-2. **Execute Egress & OAuth Data Flow Mapping in Elastic Security / Wazuh:**
-   * In **Elastic Security SIEM**, inspect egress network telemetry and NetFlow logs for external SaaS endpoints receiving >50MB/week.
-   * Query your Identity Provider (Okta / Microsoft Entra ID) logs for third-party OAuth apps granted tenant-wide permissions (`Files.ReadWrite.All`, `Directory.Read.All`). Revoke unauthorized tokens immediately.
-3. **Establish Tier 1 Kill-Switch Isolation:**
-   * Identify the 5 vendors whose compromise would paralyze operations (e.g., Cloud Hosting, Billing/Stripe, Customer CRM/Salesforce, Code Repo/GitHub, HRIS/Workday).
-   * Verify whether emergency API token rotation takes **< 15 minutes** or requires opening a multi-day support ticket.
+### 🔹 Project 1: Cloud & Host Detection Engineering (Wazuh / Elastic)
+* **Objective:** Prove you can ingest telemetry, write custom detection rules, and investigate suspicious behavior.
+* **The Stack:** Spin up a free cloud lab using **Elastic Security** or **Wazuh SIEM**.
+* **What to Document:**
+  1. Generate simulated credential access alerts using Atomic Red Team (`T1003 - OS Credential Dumping`).
+  2. Write a custom Sigma / EQL detection rule to detect pass-the-hash and privilege escalation.
+  3. Include a 2-page investigation walkthrough with sanitized screenshots and log artifacts in your public GitHub repository.
 
 ---
 
-### 🔹 STEP B: Enforce Active Governance & Contractual Guardrails
-
-Move from passive trust to automated verification:
-
-1. **Mandate SSO & Conditional Access with Phishing-Resistant MFA:**
-   * Never allow vendor accounts to log in with shared username/passwords. 
-   * Enforce FIDO2 WebAuthn or device-managed certificates via your central IdP, with automated 24-hour deprovisioning on role termination.
-2. **Implement the 24-Hour Breach Notification Clause:**
-   * In every Master Services Agreement (MSA) and DPA renewal, insert an explicit obligation requiring vendor notification of any confirmed security incident within **24 hours**—backed by a **15% contract fee clawback** for non-compliance.
-3. **Continuous SIEM Posture Monitoring Over Annual Audits:**
-   * Ingest external attack surface telemetry and vendor vulnerability alerts into Elastic Security to trigger an internal security review if a critical partner drops below your baseline threshold.
+### 🔹 Project 2: Application Threat Modeling (STRIDE)
+* **Objective:** Demonstrate that you understand architecture, trust boundaries, and mitigation design before vulnerabilities hit production.
+* **The Scope:** Pick an open-source SaaS application or cloud microservice.
+* **What to Document:**
+  1. Create a Data Flow Diagram (DFD) showing external entities, processes, and data stores.
+  2. Map at least two threats per STRIDE category (*Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege*).
+  3. Propose concrete security controls (e.g., FIDO2 MFA, Mutual TLS, KMS envelope encryption) for each identified risk.
 
 ---
 
-### 🔹 STEP C: Present Defensible Metrics to the Board / Audit Committee
-
-Do not show the Board a 30-page vendor list. Present this **single executive scorecard tile**:
-
-| Metric | Target SLA | Current Posture | Operational Risk Status |
-| :--- | :--- | :--- | :--- |
-| **Tier-1 Vendors with Phishing-Resistant SSO** | 100% | 94% | 🟢 **Controlled** (2 legacy vendors migrating) |
-| **Average Blast-Radius Revocation Time** | < 30 Mins | 18 Mins | 🟢 **Defensible** (Tested quarterly) |
-| **Wiz Toxic Combinations & IAM Cross-Roles** | 0 | 0 | 🟢 **Zero High-Risk Exposure** |
-| **Critical Vendors with Missing DPAs** | 0 | 0 | 🟢 **100% Contractual Compliance** |
-
-> **Executive Rule of Thumb:** If you cannot produce this table during an active incident, your cyber insurance carrier and board will treat the breach as systemic negligence.
+### 🔹 Project 3: 1-Page Executive Incident Post-Mortem
+* **Objective:** Prove you can translate technical alerts into the language of the CFO, CEO, and Board.
+* **What to Document:**
+  1. Summarize a realistic breach scenario in non-technical terms.
+  2. Map out the timeline, root cause, total financial/operational blast radius, and immediate remediation steps.
+  3. Provide a quantitative risk reduction scorecard showing how the controls prevent recurring downtime.
 
 ---
 
-## 🎯 The 3-Project Strategic Framework (For Teams & Up-and-Coming Security Leaders)
+## 🎙️ Podcast Spotlight of the Week
 
-If your internal team or engineers are looking to demonstrate proof of work to executive leadership:
+In this week's featured episode of **Breaking Into Cybersecurity**, we sit down with **Anthony Merlas** to explore how hospitality management, customer empathy, and crisis de-escalation translate directly into elite incident response and security leadership.
 
-1. **🧪 Cloud Detection Engineering:** Build automated attack-path detection rules in **Wiz** and **Elastic Security / Wazuh** to spot anomalous privilege escalation.
-2. **🛡️ STRIDE Threat Modeling:** Map application data flows, cloud ingress/egress, and trust boundaries before code hits production.
-3. **📄 Executive Incident Post-Mortem:** Deliver a 1-page financial and risk impact brief that the CEO and CFO can understand in under 2 minutes.
-
----
-
-## 🎙️ Executive Podcast Deep Dive of the Week
-
-### 🎧 Episode Spotlight: Hospitality to Cyber Operations & Risk Leadership with Anthony Merlas
-How do you transition from managing high-stakes hotel operations into leading IT security and governance? In this episode, **Anthony Merlas** breaks down how customer service, crisis de-escalation, and cross-functional communication translate into elite security operations and vendor risk management.
-
-* 📺 **Watch the Full Video Episode on YouTube:** [https://www.youtube.com/watch?v=P1Or_C-3Gx8](https://www.youtube.com/watch?v=P1Or_C-3Gx8)
-* 🎧 **Listen to the Direct Audio on Spotify:** [https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k](https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k)
+* 📺 **Watch the Full Video Masterclass on YouTube:**  
+  👉 https://www.youtube.com/watch?v=P1Or_C-3Gx8
+* 🎧 **Listen to the Direct Audio Episode on Spotify:**  
+  👉 https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Hospitality-to-Cyber-Pivot--Anthony-Merlas--Breaking-Into-Cybersecurity-e3n161k
 
 ---
 
-### 🛡️ Related Executive Deep Dive: AI in Your Security Stack & Vendor Risks
-* 📺 **Watch on YouTube:** [Can You Trust AI in Your Security Stack? The Hidden Risks & Best Practices](https://www.youtube.com/watch?v=jXwo5gv7tGw)
-* 🎧 **Listen on Spotify:** [Breaking Into Cybersecurity Podcast Archive](https://podcasters.spotify.com/pod/show/breaking-into-cybersecuri/episodes/Breaking-into-Cybersecurity---Mike-Lossmann-e2qd5lv)
+## 🚀 Community Challenge of the Week
+
+Pick **one** of the three portfolio projects above, build it in your homelab or GitHub this week, and share your documentation in the community discussion!
 
 ---
 
-## 🛡️ Strategic Advisory & Boardroom Action
+## 🛡️ Advisory & 1-on-1 Coaching CTAs
 
-If you are a CISO, VP of Engineering, or CEO looking to:
-1. Conduct an independent **Vendor Risk & Cloud Blast-Radius Architecture Review**
-2. Build an audit-defensible **Board Cyber Risk Dashboard**
-3. Implement **Fractional CISO Governance** without the $350k+ full-time executive overhead
+* 💼 **Looking for 1-on-1 Cyber Career Coaching & Portfolio Reviews?**  
+  👉 Book a session with Christophe: https://calendarbridge.com/book/cpf-coaching/
 
-👉 **[Schedule a 30-Minute Executive Advisory Session with Christophe Foulon](https://calendarbridge.com/book/cpf-coaching/)**
+* 🏛️ **For Executive Leaders & Fractional CISO Advisory:**  
+  👉 Explore our strategic governance advisory & vCISO insights at https://vciso.substack.com
 
 ---
 
-*Delivered weekly to over 2,000 security executives and leaders. If this issue provided clear ROI, forward it to your security team.*
-
-**Christophe Foulon, CISSP, CRISC**  
-*Fractional CISO | Cybersecurity Executive Advisor | Host, Breaking Into Cybersecurity*  
-[Connect on LinkedIn](https://www.linkedin.com/in/christophefoulon/) • [Substack Archive](https://vciso.substack.com)
+*Breaking Into Cybersecurity • Empowering the next generation of cybersecurity leaders.*

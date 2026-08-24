@@ -1,4 +1,4 @@
-# 🚀 Weekly Social Promotion Draft Kit (August 23, 2026)
+# 🚀 Weekly Social Promotion Draft Kit (August 24, 2026)
 
 Use these ready-to-publish draft posts across your distribution channels to drive YouTube subscribers, Substack readers, and coaching inquiries.
 
@@ -31,22 +31,28 @@ What was the single project that helped you land your first role in tech or cybe
 
 ---
 
-## 📱 LinkedIn (CISO & SMB Risk) — Post 2: AI Governance & Fractional CISO Reality for SMBs
+## 📱 LinkedIn (Hands-On Engineering & Pivots) — Post 2: How to Prove Hands-On Cyber Skills Without 5 Years of Experience
 
 ```text
-Small and mid-sized businesses don't need a 40-page compliance binder that collects dust.
+The #1 challenge entry-level and mid-career pivoters face: 'Every entry-level job requires 3-5 years of experience.'
 
-They need pragmatic risk governance:
-• Where is employee data and AI prompt data actually flowing?
-• What happens when a key vendor suffers an outage or ransomware attack?
-• How do you demonstrate security posture to enterprise clients without slowing down sales?
+Here is the truth: Hiring managers don't actually require 5 years of sitting in a chair—they require proof that you know how systems break and how to defend them.
 
-As a Fractional CISO, my focus is aligning cyber controls directly with revenue protection.
+How to create that proof this week:
+• Spin up a free cloud detection lab (Wazuh or Elastic).
+• Execute a simulated brute-force attack using Atomic Red Team.
+• Write an investigation post-mortem explaining what telemetry was captured.
 
-📅 If you're a founder or executive looking for practical security guidance without the full-time overhead, let's connect:
-👉 https://calendarbridge.com/book/cpf-coaching/
+When you bring a 1-page case study into a technical interview, the conversation shifts from 'Do you have 5 years experience?' to 'Walk me through how you wrote this detection rule.'
 
-#vCISO #CybersecurityStrategy #RiskManagement #SMB #AIGovernance #CPFCoaching
+🎥 Check out our latest video podcast on hospitality-to-cyber pivots: https://www.youtube.com/watch?v=P1Or_C-3Gx8
+
+---
+📅 Looking for 1-on-1 Cyber Career Mentorship or Fractional Advisory?
+👉 Book a strategy session: https://calendarbridge.com/book/cpf-coaching/
+🏛️ Read our executive risk series: https://vciso.substack.com
+
+#Cybersecurity #CareerPivot #InfoSec #SOC #DetectionEngineering #BreakingIntoCybersecurity
 ```
 
 ---
