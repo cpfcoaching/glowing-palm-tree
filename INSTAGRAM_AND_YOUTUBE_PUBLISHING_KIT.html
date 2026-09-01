@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPF Coaching LLC — YouTube Shorts & Instagram Reels Multi-Platform Launch Kit</title>
+<style>
+  :root {
+    --bg-primary: #090d16;
+    --bg-card: #131b2e;
+    --bg-inner: #0b1120;
+    --border: #24324f;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-yt: #ef4444;
+    --accent-ig: #ec4899;
+    --accent-cyan: #38bdf8;
+    --accent-emerald: #10b981;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text);
+    padding: 32px 20px 80px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1300px; margin: 0 auto; }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(236, 72, 153, 0.12), rgba(56, 189, 248, 0.08));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .header h1 { font-size: 26px; color: #fff; margin-bottom: 6px; }
+  .header p { color: var(--text-muted); font-size: 14.5px; max-width: 800px; }
+  .badge-stat {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid var(--accent-emerald);
+    color: #4ade80;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* Episode Container */
+  .episode-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+  .episode-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+  }
+  .episode-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .episode-sub { font-size: 13.5px; color: var(--text-muted); }
+  
+  .columns {
+    display: grid;
+    grid-template-columns: 320px 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 1024px) {
+    .columns { grid-template-columns: 1fr; }
+  }
+
+  /* Video Preview Column */
+  .video-col { display: flex; flex-direction: column; gap: 12px; }
+  .preview-frame {
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #000;
+  }
+  .preview-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Platform Columns */
+  .platform-card {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .platform-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .platform-yt { color: #f87171; }
+  .platform-ig { color: #f472b6; }
+
+  .copy-box {
+    background: #060911;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 12.5px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    max-height: 280px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+  }
+
+  /* Buttons */
+  .btn-group { display: flex; flex-direction: column; gap: 8px; }
+  .btn {
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 12.5px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-cyan { background: var(--accent-cyan); color: #090d16; }
+  .btn-cyan:hover { background: #7dd3fc; }
+  .btn-yt { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid #ef4444; }
+  .btn-yt:hover { background: rgba(239, 68, 68, 0.3); }
+  .btn-ig { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid #ec4899; }
+  .btn-ig:hover { background: rgba(236, 72, 153, 0.3); }
+
+  .footer-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13.5px;
+  }
+</style>
+<script>
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText).then(() => {
+    const orig = btn.innerText;
+    btn.innerText = "✅ Copied to Clipboard!";
+    setTimeout(() => { btn.innerText = orig; }, 2000);
+  });
+}
+</script>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div>
+      <h1>🚀 CPF Coaching LLC — YouTube Shorts & Instagram Reels Publishing Hub</h1>
+      <p>Autonomous multi-platform syndication for Northern Virginia SMBs, Cyber Executives & Founders. Voiced with ElevenLabs Island Boy.</p>
+    </div>
+    <div class="badge-stat">✨ 3 Episodes Ready to Publish</div>
+  </div>
+
+  <!-- Episode 1 -->
+  <div class="episode-card">
+    <div class="episode-header">
+      <div>
+        <div class="episode-title">Episode 1: The $50,000 Cyber Tool Mistake</div>
+        <div class="episode-sub">Why SMBs buy complex tools before establishing basic asset hygiene & the 3-Tier Maturity Ladder.</div>
+      </div>
+      <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_01_50k_tool_mistake.mp4" class="btn btn-cyan" style="width: auto;">▶️ Open MP4 Video</a>
+    </div>
+
+    <div class="columns">
+      <!-- Video Preview -->
+      <div class="video-col">
+        <div class="preview-frame">
+          <img src="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_01_50k_tool_mistake_slide_0.png" alt="Episode 1 Slide" />
+        </div>
+        <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_01_50k_tool_mistake.mp4" class="btn btn-cyan">📥 Download 9:16 Video</a>
+      </div>
+
+      <!-- YouTube Shorts Kit -->
+      <div class="platform-card">
+        <div>
+          <div class="platform-header platform-yt">
+            <span>📺</span> YouTube Shorts Kit (@cpfcoachingLLC)
+          </div>
+          <div class="copy-box" id="yt-ep1">The $50,000 Cyber Tool Mistake 90% of SMBs Make #Shorts
+
+Why do growth-stage businesses spend $50k on enterprise security tools before knowing who has admin access to their systems?
+
+Maturity always beats complexity. Here is the 3-Tier Cybersecurity Maturity Ladder for Small Businesses & Leaders:
+1️⃣ Tier 1: 100% Asset & Identity Visibility
+2️⃣ Tier 2: FIDO2 MFA & Baseline Hygiene
+3️⃣ Tier 3: Rapid Incident Response & Backups
+
+🛡️ Coaching Cyber Leaders & Small Businesses in Northern Virginia and Remote Worldwide.
+📅 Schedule your Free Security Snapshot: https://cpf-coaching.com
+📬 Join our Executive Substack: https://vciso.substack.com
+
+#smallbusiness #cybersecurity #ciso #vciso #riskmanagement #infosec #shorts</div>
+        <div class="btn-group">
+          <a href="https://www.youtube.com/shorts/2w8-ht3V8bk" target="_blank" class="btn btn-yt">▶️ Watch on YouTube Shorts</a>
+          <a href="https://studio.youtube.com/video/2w8-ht3V8bk/edit" target="_blank" class="btn btn-yt">⚙️ Open in YouTube Studio</a>
+          <button class="btn btn-cyan" onclick="copyText('yt-ep1', this)">📋 Copy YouTube Description</button>
+        </div>
+      </div>
+
+      <!-- Instagram Reels Kit -->
+      <div class="platform-card">
+        <div>
+          <div class="platform-header platform-ig">
+            <span>📸</span> Instagram Reels Kit (@cpfcoachingllc)
+          </div>
+          <div class="copy-box" id="ig-ep1">The biggest mistake small businesses make with cybersecurity? Spending $50k on complex tools before fixing basic hygiene. ❌
+
+Buying an expensive alarm system doesn't protect a house with open windows. Here's how practical CISOs build real defense:
+
+1️⃣ 100% Asset & SaaS Visibility (Know what you own)
+2️⃣ FIDO2 MFA & Identity Hygiene (Hardware keys on IdPs)
+3️⃣ Tested Backups & Incident Response (Immutable recovery)
+
+Maturity beats complexity every single time. 🛡️
+
+👉 Need to evaluate your security program? DM us 'SNAPSHOT' or click the link in bio for a 1-on-1 Advisory Session with @cpfcoachingLLC.
+
+#cybersecurity #smallbusinesssecurity #ciso #vciso #novabusiness #northernvirginia #infosec #riskmanagement #entrepreneur #startups #securityleadership #techleaders</div>
+        </div>
+        <button class="btn btn-ig" onclick="copyText('ig-ep1', this)">📋 Copy Instagram Caption & Tags</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Episode 2 -->
+  <div class="episode-card">
+    <div class="episode-header">
+      <div>
+        <div class="episode-title">Episode 2: Shadow AI in Your 50-Person Company</div>
+        <div class="episode-sub">How non-technical founders secure employee LLM usage via a 3-step audit.</div>
+      </div>
+      <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_02_shadow_ai_audit.mp4" class="btn btn-cyan" style="width: auto;">▶️ Open MP4 Video</a>
+    </div>
+
+    <div class="columns">
+      <!-- Video Preview -->
+      <div class="video-col">
+        <div class="preview-frame">
+          <img src="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_02_shadow_ai_audit_slide_0.png" alt="Episode 2 Slide" />
+        </div>
+        <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_02_shadow_ai_audit.mp4" class="btn btn-cyan">📥 Download 9:16 Video</a>
+      </div>
+
+      <!-- YouTube Shorts Kit -->
+      <div class="platform-card">
+        <div>
+          <div class="platform-header platform-yt">
+            <span>📺</span> YouTube Shorts Kit (@cpfcoachingLLC)
+          </div>
+          <div class="copy-box" id="yt-ep2">Shadow AI is in Your 50-Person Company: The 3-Step Audit #Shorts
+
+If your company has more than 10 employees, you already have Shadow AI.
+
+Employees are pasting proprietary data and customer PII into public LLMs. Banning AI doesn't work—practical governance does.
+
+Here is the 3-Step Shadow AI Audit Playbook for Non-Technical Founders:
+1️⃣ Step 1: Anonymous Tooling Discovery Survey
+2️⃣ Step 2: 1-Page Clear Acceptable Use Policy
+3️⃣ Step 3: Enterprise Accounts with Data Isolation
+
+🛡️ CPF Coaching LLC — Empowering Northern Virginia SMBs & Leaders with Tailored Cyber Guidance.
+📅 Audit Your AI Footprint: https://cpf-coaching.com
+📬 Read the Full Guide on Substack: https://vciso.substack.com
+
+#shadowai #aigovernance #smbsecurity #founders #startups #ciso #shorts</div>
+        <div class="btn-group">
+          <a href="https://www.youtube.com/shorts/1f11Ms605J0" target="_blank" class="btn btn-yt">▶️ Watch on YouTube Shorts</a>
+          <a href="https://studio.youtube.com/video/1f11Ms605J0/edit" target="_blank" class="btn btn-yt">⚙️ Open in YouTube Studio</a>
+          <button class="btn btn-cyan" onclick="copyText('yt-ep2', this)">📋 Copy YouTube Description</button>
+        </div>
+      </div>
+
+      <!-- Instagram Reels Kit -->
+      <div class="platform-card">
+        <div>
+          <div class="platform-header platform-ig">
+            <span>📸</span> Instagram Reels Kit (@cpfcoachingllc)
+          </div>
+          <div class="copy-box" id="ig-ep2">Your employees are already using ChatGPT and Claude at work—the real question is: what proprietary data are they pasting into it? ⚠️
+
+Banning AI completely fails because staff will just use their personal phones. Instead, run this 3-Step Founder Audit:
+
+1️⃣ Anonymous Discovery: Find out what AI tools your team loves.
+2️⃣ 1-Page AUP: Set zero-PII and zero-source-code rules.
+3️⃣ Enterprise Isolation: Provide licensed accounts with privacy guarantees.
+
+Governance enables innovation without reckless exposure. 🚀
+
+👉 Want our 48-Hour Shadow AI Review for your team? DM 'AI AUDIT' or visit the link in bio.
+
+#aigovernance #shadowai #cybersecurity #generativeai #chatgpt #startuptips #smallbusinesstips #founders #ciso #novatech #businessgrowth #infosec</div>
+        </div>
+        <button class="btn btn-ig" onclick="copyText('ig-ep2', this)">📋 Copy Instagram Caption & Tags</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Episode 3 -->
+  <div class="episode-card">
+    <div class="episode-header">
+      <div>
+        <div class="episode-title">Episode 3: How to Speak Cyber Risk to Your Board</div>
+        <div class="episode-sub">Translating technical CVE counts into CFO balance sheet risk and downtime tolerance.</div>
+      </div>
+      <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_03_speak_cyber_risk.mp4" class="btn btn-cyan" style="width: auto;">▶️ Open MP4 Video</a>
+    </div>
+
+    <div class="columns">
+      <!-- Video Preview -->
+      <div class="video-col">
+        <div class="preview-frame">
+          <img src="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_03_speak_cyber_risk_slide_0.png" alt="Episode 3 Slide" />
+        </div>
+        <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_03_speak_cyber_risk.mp4" class="btn btn-cyan">📥 Download 9:16 Video</a>
+      </div>
+
+      <!-- YouTube Shorts Kit -->
+      <div class="platform-card">
+        <div>
+          <div class="platform-header platform-yt">
+            <span>📺</span> YouTube Shorts Kit (@cpfcoachingLLC)
+          </div>
+          <div class="copy-box" id="yt-ep3">How to Speak Cyber Risk to Your Board (Without Jargon) #Shorts
+
+Why do executive boards tune out when security leaders present vulnerability lists?
+
+Because Boards and CFOs do not care about CVSS scores—they care about operational downtime, customer trust, and financial exposure.
+
+The 3 Questions Every Board Cares About:
+1️⃣ What is our Maximum Tolerable Downtime?
+2️⃣ How are our Primary Revenue Streams Guarded?
+3️⃣ What is our Financial Exposure vs Cyber Insurance Limits?
+
+📈 Shift cybersecurity from an IT cost center into a strategic business enabler.
+📅 Book 1-on-1 Executive Mentorship with Christophe Foulon: https://cpf-coaching.com
+📬 Executive Governance Insights: https://vciso.substack.com
+
+#boardreporting #ciso #securityleadership #executivecoaching #cyberrisk #cfo #shorts</div>
+        <div class="btn-group">
+          <a href="https://www.youtube.com/shorts/p32E19AsNzM" target="_blank" class="btn btn-yt">▶️ Watch on YouTube Shorts</a>
+          <a href="https://studio.youtube.com/video/p32E19AsNzM/edit" target="_blank" class="btn btn-yt">⚙️ Open in YouTube Studio</a>
+          <button class="btn btn-cyan" onclick="copyText('yt-ep3', this)">📋 Copy YouTube Description</button>
+        </div>
+      </div>
+
+      <!-- Instagram Reels Kit -->
+      <div class="platform-card">
+        <div>
+          <div class="platform-header platform-ig">
+            <span>📸</span> Instagram Reels Kit (@cpfcoachingllc)
+          </div>
+          <div class="copy-box" id="ig-ep3">When security leaders walk into the boardroom with a list of 4,000 low CVEs, the board tunes out immediately. 🛑
+
+The Board of Directors and CFO don't speak CVSS scores or firewall ports. They speak cash flow, revenue downtime, and business liability.
+
+Translate your cyber risk into 3 questions:
+1️⃣ How many hours of downtime can we afford before business loss?
+2️⃣ What controls guard the crown jewels that drive our valuation?
+3️⃣ Does our insurance coverage actually match our blast radius?
+
+When you speak business, security becomes a strategic enabler. 📈
+
+👉 Ready to elevate your executive presence? DM 'COACHING' or visit the link in bio to book with @cpfcoachingLLC.
+
+#ciso #securityleadership #boardofdirectors #executivecoaching #cfotips #cyberrisk #leadershipdevelopment #infosec #techleaders #novabusiness</div>
+        </div>
+        <button class="btn btn-ig" onclick="copyText('ig-ep3', this)">📋 Copy Instagram Caption & Tags</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-box">
+    📍 <strong>CPF Coaching LLC</strong> • Multi-Platform Publishing Engine • <a href="https://cpf-coaching.com" style="color: var(--accent-cyan);">cpf-coaching.com</a> • <a href="https://vciso.substack.com" style="color: var(--accent-emerald);">vciso.substack.com</a>
+  </div>
+
+</div>
+</body>
+</html>
