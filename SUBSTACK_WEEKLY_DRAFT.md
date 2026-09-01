@@ -1,6 +1,6 @@
 # Breaking Into Cybersecurity Kit #49: The 3-Project Portfolio That Beats 500 Resumes
 ### *How to build proof-of-work in Detection Engineering (Wazuh/Elastic), STRIDE Threat Modeling, and Executive Post-Mortems to land high-paying SOC and security engineering roles.*
-**By Christophe Foulon, CISSP, CRISC** • *Breaking Into Cybersecurity* • *August 24, 2026*
+**By Christophe Foulon, CISSP, CRISC** • *Breaking Into Cybersecurity* • *September 01, 2026*
 
 ---
 

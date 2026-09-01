@@ -1,4 +1,4 @@
-# 📊 YouTube Community Tab Engagement Schedule (August 24, 2026)
+# 📊 YouTube Community Tab Engagement Schedule (September 01, 2026)
 
 Post these high-engagement polls and discussion starters on the Breaking Into Cybersecurity Community tab to drive channel retention and algorithm reactivation.
 

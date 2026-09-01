@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPF Coaching LLC — Executive Shorts Studio Dashboard</title>
+<style>
+  :root {
+    --bg-primary: #090d16;
+    --bg-card: #131b2e;
+    --bg-inner: #0b1120;
+    --border: #24324f;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-amber: #fbbf24;
+    --accent-purple: #c084fc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text);
+    padding: 32px 20px 80px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(16, 185, 129, 0.08));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .header h1 { font-size: 26px; color: var(--accent); margin-bottom: 6px; }
+  .header p { color: var(--text-muted); font-size: 14.5px; max-width: 800px; }
+  .badge-stat {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid var(--accent-emerald);
+    color: #4ade80;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header { margin-bottom: 16px; }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .badge-topic { background: rgba(56, 189, 248, 0.15); color: var(--accent); }
+  .badge-qa { background: rgba(16, 185, 129, 0.15); color: #4ade80; }
+  .badge-voice { background: rgba(192, 132, 252, 0.15); color: var(--accent-purple); }
+  .card-title { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .card-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+
+  /* Visual Preview */
+  .preview-frame {
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    background: #000;
+  }
+  .preview-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Script Box */
+  .script-box {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 12.5px;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+    max-height: 140px;
+    overflow-y: auto;
+  }
+
+  /* Actions */
+  .btn {
+    background: var(--accent);
+    color: #090d16;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn:hover { background: #7dd3fc; }
+
+  .footer-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13.5px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div>
+      <h1>🛡️ CPF Coaching LLC — Executive Shorts Studio</h1>
+      <p>Autonomous Program Maturity & Cybersecurity Leadership Shorts for Northern Virginia SMBs & Cyber Executives. Voiced with ElevenLabs Island Boy.</p>
+    </div>
+    <div class="badge-stat">⚡ 3 Episodes Ready (100% QA Passed)</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div>
+        <div class="card-header">
+          <span class="badge badge-topic">SMB Risk Governance</span>
+          <span class="badge badge-voice">🎙️ ElevenLabs: Island Boy</span>
+          <span class="badge badge-qa">✅ QA Passed</span>
+          <div class="card-title">The $50,000 Tool Mistake</div>
+          <div class="card-sub">Why SMBs buy complex tech before fixing basic asset hygiene.</div>
+        </div>
+
+        <div class="preview-frame">
+          <img src="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_01_50k_tool_mistake_slide_0.png" alt="Slide 1 Preview" />
+        </div>
+
+        <div class="script-box">
+          <strong>🎙️ Island Boy Narration:</strong><br>
+          "Here is a mistake I see small businesses make all the time: They spend fifty thousand dollars on enterprise security tools like complex SIEMs, but they do not have an updated inventory of who has admin access to their cloud environment. Buying tools before establishing visibility is like buying an expensive security alarm for a house with open windows..."
+        </div>
+      </div>
+      <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_01_50k_tool_mistake.mp4" class="btn">▶️ Open Rendered 9:16 Video</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div>
+        <div class="card-header">
+          <span class="badge badge-topic">Shadow AI Governance</span>
+          <span class="badge badge-voice">🎙️ ElevenLabs: Island Boy</span>
+          <span class="badge badge-qa">✅ QA Passed</span>
+          <div class="card-title">Shadow AI in Your 50-Person Company</div>
+          <div class="card-sub">3-step practical audit playbook for non-technical founders.</div>
+        </div>
+
+        <div class="preview-frame">
+          <img src="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_02_shadow_ai_audit_slide_0.png" alt="Slide 2 Preview" />
+        </div>
+
+        <div class="script-box">
+          <strong>🎙️ Island Boy Narration:</strong><br>
+          "If your company has more than ten employees, you already have Shadow AI. Your team is using ChatGPT, Claude, and writing assistants to speed up work. The danger is not the AI itself—it is employees pasting customer data and proprietary source code into public tools. Do not ban AI. Instead, follow this three-step audit..."
+        </div>
+      </div>
+      <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_02_shadow_ai_audit.mp4" class="btn">▶️ Open Rendered 9:16 Video</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div>
+        <div class="card-header">
+          <span class="badge badge-topic">Board & CISO Leadership</span>
+          <span class="badge badge-voice">🎙️ ElevenLabs: Island Boy</span>
+          <span class="badge badge-qa">✅ QA Passed</span>
+          <div class="card-title">How to Speak Cyber Risk to Your Board</div>
+          <div class="card-sub">Translating technical vulnerabilities into CFO balance sheet terms.</div>
+        </div>
+
+        <div class="preview-frame">
+          <img src="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_03_speak_cyber_risk_slide_0.png" alt="Slide 3 Preview" />
+        </div>
+
+        <div class="script-box">
+          <strong>🎙️ Island Boy Narration:</strong><br>
+          "When cybersecurity leaders walk into the boardroom with a list of technical vulnerabilities, the board tunes out. The Board of Directors and CFO do not care about port numbers or CVSS scores. They care about operational downtime, customer trust, and financial liability..."
+        </div>
+      </div>
+      <a href="file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YouTubeSEOMaximizer/outputs/shorts/cpf_coaching/cpf_03_speak_cyber_risk.mp4" class="btn">▶️ Open Rendered 9:16 Video</a>
+    </div>
+
+  </div>
+
+  <div class="footer-box">
+    📍 <strong>CPF Coaching LLC</strong> • Serving Cyber Leaders & Small Businesses in Northern Virginia and Remote Nationwide • <a href="https://cpf-coaching.com" style="color: var(--accent);">cpf-coaching.com</a> • <a href="https://vciso.substack.com" style="color: var(--accent-emerald);">vciso.substack.com</a>
+  </div>
+
+</div>
+</body>
+</html>

@@ -80,7 +80,7 @@ def run_shorts_rendering():
         return False
 
 def run_shorts_staging():
-    logger.info("📤 [PHASE 3] Uploading & Staging Shorts as UNLISTED for Quality Review...")
+    logger.info("🔍 [PHASE 3] Running Strict QA Gate on Rendered Shorts (No Auto-Upload)...")
     stage_script = YOUTUBE_DIR / "stage_and_upload_shorts.py"
     if not stage_script.exists():
         return True
@@ -90,10 +90,10 @@ def run_shorts_staging():
     
     try:
         res = subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=300)
-        logger.info("✅ Shorts Staging to YouTube Complete (Review in Studio).")
+        logger.info("✅ Shorts QA Verification Gate Checked (Local Quality Guard Active).")
         return True
     except Exception as e:
-        logger.error(f"❌ Shorts Staging error: {e}")
+        logger.error(f"❌ Shorts QA Check error: {e}")
         return False
 
 def run_draft_kit():

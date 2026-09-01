@@ -1,4 +1,4 @@
-# 💬 YouTube Community Comment Triage (August 24, 2026)
+# 💬 YouTube Community Comment Triage (September 01, 2026)
 
 Pre-drafted, high-retention replies designed to answer questions, boost watch time, and funnel viewers to Substack and Spotify.
 

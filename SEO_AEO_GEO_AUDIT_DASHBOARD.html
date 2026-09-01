@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO / AEO / GEO Strategic Audit & Optimization Roadmap | CPF Coaching LLC</title>
+<style>
+  :root {
+    --bg-dark: #090d16;
+    --bg-card: #131b2e;
+    --bg-card-hover: #1c2742;
+    --bg-inner: #0b1120;
+    --border: #24324f;
+    --border-accent: #3b82f6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --accent-blue: #38bdf8;
+    --accent-cyan: #06b6d4;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-rose: #f43f5e;
+    --accent-purple: #a855f7;
+    --tag-bg: rgba(56, 189, 248, 0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.55;
+    padding: 32px 20px 80px;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .audit-header {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+  }
+  .audit-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #10b981, #a855f7);
+  }
+  .badge-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+  .badge-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .header-desc {
+    color: var(--text-muted);
+    font-size: 16px;
+    max-width: 860px;
+    margin-bottom: 20px;
+  }
+
+  /* Score Overview Grid */
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .score-card {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+  }
+  .score-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .score-val {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .score-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  /* Filter Tabs */
+  .nav-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    overflow-x: auto;
+  }
+  .tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .tab-btn:hover {
+    color: #fff;
+    background: var(--bg-card);
+  }
+  .tab-btn.active {
+    background: #1e293b;
+    color: #38bdf8;
+    border-color: #334155;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Grid Layouts */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 24px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    border-color: #3b4e77;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+  }
+  .card-title .icon {
+    font-size: 22px;
+  }
+
+  /* Tables */
+  .audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 16px 0;
+  }
+  .audit-table th {
+    background: var(--bg-inner);
+    color: var(--text-muted);
+    text-align: left;
+    padding: 12px 14px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+  .audit-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-main);
+    vertical-align: top;
+  }
+  .audit-table tr:hover td {
+    background: rgba(255,255,255,0.02);
+  }
+
+  /* Severity tags */
+  .sev {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .sev-critical { background: rgba(244, 63, 94, 0.2); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.4); }
+  .sev-high { background: rgba(245, 158, 11, 0.2); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); }
+  .sev-med { background: rgba(56, 189, 248, 0.2); color: #bae6fd; border: 1px solid rgba(56, 189, 248, 0.4); }
+  .sev-pass { background: rgba(16, 185, 129, 0.2); color: #a7f3d0; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+  /* Two Column Layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .box {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .box-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Code Block */
+  pre, code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  pre {
+    background: #060911;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    overflow-x: auto;
+    font-size: 12.5px;
+    color: #e2e8f0;
+    margin: 12px 0;
+  }
+
+  /* Action Checklist */
+  .checklist {
+    list-style: none;
+  }
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-inner);
+    margin-bottom: 10px;
+  }
+  .check-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    background: rgba(6, 182, 212, 0.1);
+  }
+  .check-content h4 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .check-content p {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Button Actions */
+  .btn-action {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .btn-action:hover { opacity: 0.9; }
+
+  .highlight-pill {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Main Header -->
+  <div class="audit-header">
+    <div class="badge-row">
+      <span class="badge badge-blue">🌐 Target: cpf-coaching.com</span>
+      <span class="badge badge-emerald">🛡️ Practice: CPF Coaching LLC / Christophe Foulon</span>
+      <span class="badge badge-purple">🤖 Audit Framework: SEO + AEO + GEO v2.5</span>
+      <span class="badge badge-amber">📅 Audit Date: August 31, 2026</span>
+    </div>
+    <h1>Comprehensive SEO / AEO / GEO Audit & Strategy</h1>
+    <p class="header-desc">
+      A forensic evaluation of search visibility (Google/Bing), Answer Engine zero-click direct extraction (ChatGPT Search, Perplexity, Claude, AI Overviews), and Generative Engine knowledge grounding for high-ticket Virtual CISO advisory, risk assessments, and compliance readiness.
+    </p>
+
+    <!-- Score Overview -->
+    <div class="score-grid">
+      <div class="score-card">
+        <div class="score-title">
+          <span>Traditional SEO</span>
+          <span class="sev sev-med">Grade B+</span>
+        </div>
+        <div class="score-val" style="color: #38bdf8;">84<span style="font-size: 20px; color: var(--text-dim);">/100</span></div>
+        <div class="score-sub">Strong metadata & clean structure; sitemap-robots crawl sync needed.</div>
+      </div>
+
+      <div class="score-card">
+        <div class="score-title">
+          <span>Answer Engine (AEO)</span>
+          <span class="sev sev-pass">Grade A-</span>
+        </div>
+        <div class="score-val" style="color: #10b981;">88<span style="font-size: 20px; color: var(--text-dim);">/100</span></div>
+        <div class="score-sub">Outstanding comparison table & direct answers on key commercial hubs.</div>
+      </div>
+
+      <div class="score-card">
+        <div class="score-title">
+          <span>Generative Engine (GEO)</span>
+          <span class="sev sev-pass">Grade A</span>
+        </div>
+        <div class="score-val" style="color: #c084fc;">92<span style="font-size: 20px; color: var(--text-dim);">/100</span></div>
+        <div class="score-sub">Active llms.txt, tight sameAs entity schema & verified practitioner depth.</div>
+      </div>
+
+      <div class="score-card">
+        <div class="score-title">
+          <span>Entity Authority (E-E-A-T)</span>
+          <span class="sev sev-pass">Grade A+</span>
+        </div>
+        <div class="score-val" style="color: #f59e0b;">96<span style="font-size: 20px; color: var(--text-dim);">/100</span></div>
+        <div class="score-sub">Published author (3 books), Bellevue adjunct, CISSP/GSLC, podcast host.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1: Executive Summary & Priority Matrix -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">🎯</span> Strategic Executive Summary</div>
+      <span class="badge badge-emerald">3 Immediate High-ROI Wins Identified</span>
+    </div>
+    
+    <p style="color: var(--text-muted); margin-bottom: 16px;">
+      CPF-Coaching.com has already implemented several advanced next-generation optimizations (including a structured <span class="highlight-pill">llms.txt</span>, JSON-LD Schema graphs, and direct comparison pages). To maximize organic lead generation and dominate AI answer engines when buyers ask <em>"Who is the best Virtual CISO for a 50-person SaaS company?"</em> or <em>"How much does a SOC 2 readiness sprint cost?"</em>, the following optimization plan addresses technical crawl hygiene, entity reinforcement, and snippet formatting.
+    </p>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="box-title">🏆 Top Core Strengths</div>
+        <ul style="list-style: none; font-size: 13.5px; color: var(--text-main); display: flex; flex-direction: column; gap: 8px;">
+          <li>✅ <strong>Native LLM Protocol:</strong> Active <span class="highlight-pill">/llms.txt</span> with strict content-signals and canonical entity boundaries.</li>
+          <li>✅ <strong>High-Intent Commercial Content:</strong> <span class="highlight-pill">/vciso-vs-full-time-ciso</span> and <span class="highlight-pill">/glossary</span> provide immediate pricing numbers and concise definitions.</li>
+          <li>✅ <strong>E-E-A-T Moat:</strong> Deep practitioner credentials (Christophe Foulon, CISSP, GSLC, Bellevue Adjunct, 3 books).</li>
+          <li>✅ <strong>Zero-Click Comparison Tables:</strong> Structured comparison data for automated scraper ingestion.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <div class="box-title">⚠️ Key Vulnerabilities & Bottlenecks</div>
+        <ul style="list-style: none; font-size: 13.5px; color: var(--text-main); display: flex; flex-direction: column; gap: 8px;">
+          <li>❌ <strong>Sitemap vs Robots.txt Conflict:</strong> <span class="highlight-pill">sitemap.xml</span> exposes disallowed routes (<span class="highlight-pill">/Admin</span>, <span class="highlight-pill">/ClientPortal</span>, <span class="highlight-pill">/LeadActivityLog</span>).</li>
+          <li>❌ <strong>Raw HTML Shell vs Client-Side Hydration:</strong> Base44 SSR shell injects generic boilerplate into initial raw HTML before React mounts.</li>
+          <li>❌ <strong>Missing llms-full.txt:</strong> No single compiled authoritative text document for direct 1-shot LLM context loading.</li>
+          <li>❌ <strong>Schema Gaps on Service Retainers:</strong> Core service pages lack dedicated <span class="highlight-pill">FAQPage</span> and <span class="highlight-pill">Service</span> microdata.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Detailed Pillar 1 - Traditional SEO Audit -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">🔍</span> Pillar 1: Search Engine Optimization (SEO) Deep Dive</div>
+      <span class="sev sev-med">Technical & On-Page Audit</span>
+    </div>
+
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Audit Dimension</th>
+          <th style="width: 14%;">Status</th>
+          <th style="width: 34%;">Current Observation & Live Analysis</th>
+          <th style="width: 30%;">Recommended Optimization Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>XML Sitemap Indexing</strong></td>
+          <td><span class="sev sev-critical">Critical Fix</span></td>
+          <td>
+            <code>sitemap.xml</code> lists 33 URLs including <code>/Admin</code>, <code>/ClientPortal</code>, <code>/LeadActivityLog</code>, and <code>/sales-assistant</code>.
+          </td>
+          <td>
+            Prune non-public/protected URLs from <code>sitemap.xml</code> immediately to prevent GSC crawl errors and conserve crawl budget.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Robots.txt Configuration</strong></td>
+          <td><span class="sev sev-pass">Passed (Opt)</span></td>
+          <td>
+            Clean bot segmentation. Allows <code>OAI-SearchBot</code>, <code>ChatGPT-User</code>, <code>Claude-SearchBot</code>, <code>PerplexityBot</code>, and <code>bingbot</code> while blocking training scrapers.
+          </td>
+          <td>
+            Add <code>User-agent: Applebot-Extended</code> and <code>Amazonbot</code> directives to complete bot governance coverage.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>SSR vs CSR Pre-rendering</strong></td>
+          <td><span class="sev sev-high">High Priority</span></td>
+          <td>
+            Raw HTML payload contains builder placeholder: <em>"CPF Coaching Hub manages 5 data types..."</em> inside a hidden 1px snapshot div.
+          </td>
+          <td>
+            Ensure Vite SSG / prerenderer writes the true marketing H1, title, and descriptive copy directly into the static HTML template.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>URL Hierarchy & Casing</strong></td>
+          <td><span class="sev sev-med">Medium Priority</span></td>
+          <td>
+            Mix of PascalCase (<code>/RetainedServices</code>, <code>/RiskAssessments</code>) and lowercase kebab-case (<code>/compliance-sprint</code>, <code>/vciso-vs-full-time-ciso</code>).
+          </td>
+          <td>
+            Standardize on all lowercase kebab-case (e.g. <code>/retained-services</code>) with 301 redirects to eliminate canonical ambiguity.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Local & Regional DMV SEO</strong></td>
+          <td><span class="sev sev-pass">Good</span></td>
+          <td>
+            Dedicated page exists at <code>/virtual-ciso-washington-dc</code> targeting Washington D.C., MD, and NoVA.
+          </td>
+          <td>
+            Add <code>LocalBusiness</code> schema with geo-coordinates, service radius (Fairfax, Montgomery, Arlington, Loudoun), and Google Business Profile cross-link.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Core Web Vitals & Script Loading</strong></td>
+          <td><span class="sev sev-pass">Optimized</span></td>
+          <td>
+            GA4 and Clarity use intelligent idle scheduling (<code>requestIdleCallback</code> and interaction listeners) to prevent main-thread blocking.
+          </td>
+          <td>
+            Maintain idle hydration pattern. Verify LCP image preloading on mobile devices for hero backgrounds.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 3: Detailed Pillar 2 - Answer Engine Optimization (AEO) -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">💬</span> Pillar 2: Answer Engine Optimization (AEO)</div>
+      <span class="sev sev-pass">Zero-Click & Direct Retrieval</span>
+    </div>
+
+    <p style="color: var(--text-muted); margin-bottom: 16px;">
+      Answer engines (ChatGPT Search, Perplexity Pro, Claude Search, Google AI Overviews) reward pages structured in the <strong>Inverted Pyramid</strong>: direct, unambiguous numerical answers in the first 40 words, followed by structured justification tables and definitive FAQs.
+    </p>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="box-title">✅ Benchmark Excellence: CISO Comparison Page</div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+          The <code>/vciso-vs-full-time-ciso</code> page is an exemplary AEO model:
+        </p>
+        <pre><code>Q: "How much does a vCISO cost?"
+A: "$1,500 to $12,000 per month depending on scope,
+company size, and regulatory exposure..."
+- SMBs (10-50): $1,500 - $3,000/mo
+- Growth (50-200): $3,000 - $12,000/mo
+- Full-time CISO benchmark: $250,000 - $500,000/yr</code></pre>
+        <p style="font-size: 12.5px; color: var(--accent-emerald);">
+          ✓ Extracted effortlessly by Perplexity and Google SGE snippets.
+        </p>
+      </div>
+
+      <div class="box">
+        <div class="box-title">⚡ AEO Optimization Needed: Service Retainers</div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+          <code>/RetainedServices</code> & <code>/RiskAssessments</code> currently open with passive text:
+        </p>
+        <pre><code>Current: "Maintaining a robust cybersecurity posture in
+today's ever-evolving digital landscape requires continuous..."
+
+Recommended AEO Opening:
+"A Virtual CISO (vCISO) from CPF Coaching provides senior
+security leadership for SMBs (25-300 employees) starting at
+$2,500/mo, delivering audit readiness in 4-5 months."</code></pre>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h3 style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px;">📋 AEO Schema Deployment Matrix</h3>
+      <table class="audit-table">
+        <thead>
+          <tr>
+            <th>Page Route</th>
+            <th>Current Schema</th>
+            <th>Recommended AEO Schemas to Add</th>
+            <th>Expected AI Engine Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/RetainedServices</code></td>
+            <td><code>Service</code>, <code>Offer</code></td>
+            <td><code>FAQPage</code> (5 core pricing & SLA questions), <code>HowTo</code> (Onboarding 30-day roadmap)</td>
+            <td>Triggers AI Overviews for "How does vCISO onboarding work?"</td>
+          </tr>
+          <tr>
+            <td><code>/RiskAssessments</code></td>
+            <td><code>Service</code></td>
+            <td><code>FAQPage</code>, <code>DefinedTerm</code> (NIST CSF 2.0, Risk Register)</td>
+            <td>Captures queries on "SMB cybersecurity risk assessment cost & timeline"</td>
+          </tr>
+          <tr>
+            <td><code>/compliance-sprint</code></td>
+            <td><code>Article</code></td>
+            <td><code>HowTo</code> (SOC 2 in 90 days), <code>Offer</code> (Fixed-fee sprint)</td>
+            <td>Direct extraction for fast-track compliance inquiries</td>
+          </tr>
+          <tr>
+            <td><code>/glossary</code></td>
+            <td><code>DefinedTermSet</code></td>
+            <td>Add <code>SpeakableSpecification</code> and <code>hasDefinedTerm</code> anchors</td>
+            <td>Primary grounding source for CUEC, control inheritance & TPRM queries</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 4: Detailed Pillar 3 - Generative Engine Optimization (GEO) -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">🧠</span> Pillar 3: Generative Engine Optimization (GEO)</div>
+      <span class="sev sev-pass">Knowledge Graph & LLM Grounding</span>
+    </div>
+
+    <p style="color: var(--text-muted); margin-bottom: 16px;">
+      GEO focuses on how Large Language Models (LLMs) like GPT-4o, Claude 3.7 Sonnet, Gemini 2.0, and DeepSeek reason about, cite, and reference your brand when generating synthesis responses.
+    </p>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="box-title">📄 Deploying <code>/llms-full.txt</code></div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+          While <code>/llms.txt</code> provides index pointers, creating a compiled <code>/llms-full.txt</code> provides complete synthesized practitioner context in one fetch for AI agents doing in-depth vendor evaluations.
+        </p>
+        <ul style="font-size: 13px; color: var(--text-main); margin-left: 16px; margin-top: 6px;">
+          <li>Full tier breakdowns (Advisory Essentials, Fractional CISO, Enterprise)</li>
+          <li>Detailed framework mapping (NIST CSF 2.0, SOC 2, HIPAA, CMMC, HITRUST)</li>
+          <li>Empirical case summaries with quantified client outcomes</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <div class="box-title">🔗 Entity Disambiguation (Knowledge Graph Expansion)</div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+          Supercharge the <code>sameAs</code> array in <code>index.html</code> JSON-LD to link all authoritative third-party references:
+        </p>
+        <pre><code>"sameAs": [
+  "https://www.linkedin.com/in/christophefoulon/",
+  "https://amazon.com/author/christophefoulon",
+  "https://open.spotify.com/show/breaking-into-cybersecurity",
+  "https://substack.cpf-coaching.com",
+  "https://cisoadvisor.us",
+  "https://bellevue.edu/faculty/christophe-foulon"
+]</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: High-Impact Optimization Action Plan -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">🚀</span> Implementation Roadmap & Checklist</div>
+      <span class="badge badge-purple">Recommended Execution Order</span>
+    </div>
+
+    <ul class="checklist">
+      <li class="checklist-item">
+        <div class="check-box">1</div>
+        <div class="check-content">
+          <h4>Prune Non-Public Pages from <code>sitemap.xml</code></h4>
+          <p>Remove <code>/Admin</code>, <code>/ClientPortal</code>, <code>/LeadActivityLog</code>, <code>/sales-assistant</code>, and <code>/linkedin-post-review</code>. Ensure only publicly indexable commercial and educational URLs are listed.</p>
+        </div>
+      </li>
+      <li class="checklist-item">
+        <div class="check-box">2</div>
+        <div class="check-content">
+          <h4>Generate and Host <code>/public/llms-full.txt</code></h4>
+          <p>Create a single comprehensive markdown file bundling all service descriptions, methodologies, pricing matrices, and practitioner bios for deep AI reasoning engine ingestion.</p>
+        </div>
+      </li>
+      <li class="checklist-item">
+        <div class="check-box">3</div>
+        <div class="check-content">
+          <h4>Deploy FAQPage Schema Across Core Service Hubs</h4>
+          <p>Add 5 targeted buyer-intent Q&As with <code>FAQPage</code> schema to <code>/RetainedServices</code>, <code>/RiskAssessments</code>, and <code>/compliance-sprint</code>.</p>
+        </div>
+      </li>
+      <li class="checklist-item">
+        <div class="check-box">4</div>
+        <div class="check-content">
+          <h4>Refactor Static Index Shell to Replace Generic Base44 Snapshot</h4>
+          <p>Update <code>index.html</code> static SSR fallback copy so non-JS web scrapers and unfurl bots receive the exact branded positioning instead of generic placeholder text.</p>
+        </div>
+      </li>
+      <li class="checklist-item">
+        <div class="check-box">5</div>
+        <div class="check-content">
+          <h4>Enhance Knowledge Graph <code>sameAs</code> Schema</h4>
+          <p>Link Amazon Author Page, Podcast Feeds, Bellevue University credentials, and CISO Advisor domains directly into the root JSON-LD graph.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

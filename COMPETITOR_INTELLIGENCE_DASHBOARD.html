@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitor Watch & Market Counter-Strategy Dashboard | CPF Coaching LLC</title>
+<style>
+  :root {
+    --bg-dark: #090d16;
+    --bg-card: #131b2e;
+    --bg-card-hover: #1c2742;
+    --bg-inner: #0b1120;
+    --border: #24324f;
+    --border-accent: #38bdf8;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --accent-blue: #38bdf8;
+    --accent-cyan: #06b6d4;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-rose: #f43f5e;
+    --accent-purple: #a855f7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.55;
+    padding: 32px 20px 80px;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .audit-header {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+  }
+  .audit-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b, #38bdf8, #10b981);
+  }
+  .badge-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .badge-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+  .badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .badge-rose { background: rgba(244, 63, 94, 0.15); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.3); }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .header-desc {
+    color: var(--text-muted);
+    font-size: 15.5px;
+    max-width: 900px;
+    margin-bottom: 20px;
+  }
+
+  /* Metric summary cards */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .metric-card {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .metric-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .metric-val {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .metric-sub {
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+
+  /* Cards */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .card-title {
+    font-size: 19px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+  }
+
+  /* Tables */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 16px 0;
+  }
+  .comp-table th {
+    background: var(--bg-inner);
+    color: var(--text-muted);
+    text-align: left;
+    padding: 12px 14px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+  .comp-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-main);
+    vertical-align: top;
+  }
+  .comp-table tr:hover td {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: ui-monospace, monospace;
+  }
+  .pill-green { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .pill-red { background: rgba(244, 63, 94, 0.2); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.3); }
+  .pill-blue { background: rgba(56, 189, 248, 0.2); color: #bae6fd; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .pill-amber { background: rgba(245, 158, 11, 0.2); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+  /* Two Column Layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .box {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .box-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .tag {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11.5px;
+  }
+  .tag-highlight {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.4);
+    color: #7dd3fc;
+  }
+  .tag-gap {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #6ee7b7;
+    font-weight: 600;
+  }
+
+  /* Utility classes */
+  .val-blue { color: #38bdf8; }
+  .val-rose { color: #f43f5e; }
+  .val-green { color: #10b981; }
+  .val-amber { color: #f59e0b; }
+  .th-col-18 { width: 18%; }
+  .th-col-16 { width: 16%; }
+  .th-col-36 { width: 36%; }
+  .th-col-30 { width: 30%; }
+  .text-xs-dim { font-size: 11px; color: var(--text-dim); }
+  .text-sm-muted { font-size: 12px; color: var(--text-muted); }
+  .text-amber { color: #fbbf24; }
+  .text-emerald { color: #34d399; }
+  .text-blue { color: #38bdf8; }
+  .text-green { color: #10b981; }
+  .text-purple { color: #a855f7; }
+  .card-no-mb { margin-bottom: 0; }
+  .stack-16 { display: flex; flex-direction: column; gap: 16px; }
+  .stack-12 { display: flex; flex-direction: column; gap: 12px; }
+  .box-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  .box-section-title { font-weight: 700; color: #fff; margin-bottom: 6px; font-size: 13.5px; }
+  .box-section-title-moat { font-weight: 700; color: #34d399; margin-bottom: 6px; font-size: 13.5px; }
+  .box-footer-note { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+  .desc-note { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="audit-header">
+    <div class="badge-row">
+      <span class="badge badge-amber">⚡ Weekly Competitor Intelligence</span>
+      <span class="badge badge-blue">🎯 Target: 5 Tracked Advisory Competitors</span>
+      <span class="badge badge-emerald">📅 Week of August 31, 2026</span>
+    </div>
+    <h1>Competitor Shift Analysis & Organic Counter-Offensive</h1>
+    <p class="header-desc">
+      Forensic breakdown of traffic spikes, topic pivots, and publishing cadence adjustments across the top 5 tracked cybersecurity & vCISO competitors, with direct action items for <strong>CPF Coaching LLC</strong>.
+    </p>
+
+    <!-- Top Stats -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">FRSecure Traffic Surge</div>
+        <div class="metric-val val-blue">+177%</div>
+        <div class="metric-sub">4,500 → 12,500 monthly visits (DA 48)</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">CompassMSP Decline</div>
+        <div class="metric-val val-rose">-47%</div>
+        <div class="metric-sub">8,500 → 4,500 monthly visits (Retreated from AI Governance)</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Macro Content Trend</div>
+        <div class="metric-val val-green">600-800w</div>
+        <div class="metric-sub">Competitors shifting to tight, direct AEO answers & video</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Key Moat Openings</div>
+        <div class="metric-val val-amber">2 Major Gaps</div>
+        <div class="metric-sub">Shadow AI Governance & vCISO Budget Calculators</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Competitor Breakdown Table -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">📊</span> 5 Tracked Competitors: Shift Matrix</div>
+      <span class="badge badge-blue">Forensic Intelligence</span>
+    </div>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th class="th-col-18">Competitor</th>
+          <th class="th-col-16">Traffic & DA</th>
+          <th class="th-col-36">Observed Shifts & Strategy Pivots</th>
+          <th class="th-col-30">Strategic Threat & CPF Opportunity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>frsecure.com</strong><br>
+            <span class="text-xs-dim">Enterprise / Midmarket vCISO</span>
+          </td>
+          <td>
+            <span class="pill pill-green">12,500/mo</span> (was 4.5k)<br>
+            <span class="text-sm-muted">DA 48</span>
+          </td>
+          <td>
+            <strong>Aggressive focus shift:</strong> Moved from generic governance/training to <span class="pill pill-blue">vCISO Service Models</span>, <span class="pill pill-blue">Cybersecurity Budget Optimization</span>, and <span class="pill pill-blue">Small Business Security Posture</span>.
+          </td>
+          <td>
+            <strong class="text-amber">High Threat:</strong> Capturing high-intent organic traffic on buyer comparisons. <br>
+            <span class="text-emerald">CPF Advantage:</span> Intercept via CPF's <code>/vciso-vs-full-time-ciso</code> and transparent fixed pricing tiers ($2.5k / $5k vs FRSecure's hidden custom quotes).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>compassmsp.com</strong><br>
+            <span class="text-xs-dim">MSP / vCIO / CMMC</span>
+          </td>
+          <td>
+            <span class="pill pill-red">4,500/mo</span> (was 8.5k)<br>
+            <span class="text-sm-muted">DA 42</span>
+          </td>
+          <td>
+            <strong>Significant retreat:</strong> Dropped Generative AI Governance & Shadow AI topics. Narrowed publishing to bi-weekly standard managed IT and CMMC compliance.
+          </td>
+          <td>
+            <strong class="text-emerald">Massive Opportunity:</strong> CompassMSP abandoned the Shadow AI topic cluster. CPF Coaching's <code>/shadow-ai-review</code> can dominate this vacuum with zero-click AEO definitions and LLM citations.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>TrustedCISO</strong><br>
+            <span class="text-xs-dim">Boutique vCISO</span>
+          </td>
+          <td>
+            <span class="pill pill-green">400-800/mo</span><br>
+            <span class="text-sm-muted">DA 25-30</span>
+          </td>
+          <td>
+            <strong>Format Innovation:</strong> Introduced bi-monthly blog posts paired with short-form video updates. Added <span class="pill pill-blue">Risk Quantification</span> and <span class="pill pill-blue">Neurodiversity in Cybersecurity</span>. Length dropped to 800-1200w.
+          </td>
+          <td>
+            <span class="text-emerald">CPF Opportunity:</span> Embed Christophe's existing <em>Breaking into Cybersecurity</em> video shorts directly onto CPF landing pages to boost engagement time and video rich snippet carousels.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>CISO Advisory LLC</strong><br>
+            <span class="text-xs-dim">AI-Focused vCISO</span>
+          </td>
+          <td>
+            <span class="pill pill-green">200-500/mo</span> (was 100)<br>
+            <span class="text-sm-muted">DA 15-22</span>
+          </td>
+          <td>
+            <strong>Content Compression:</strong> Slashed post length from 1,200 words to <span class="pill pill-amber">600-800 words</span>. Targeting AI-enabled cybersecurity leadership & executive board reporting.
+          </td>
+          <td>
+            <span class="text-emerald">CPF Opportunity:</span> Confirms that concise, high-density AEO answers beat long-form fluff in 2026 answer engine rankings.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>CyberFuse LLC</strong><br>
+            <span class="text-xs-dim">SME Advisory</span>
+          </td>
+          <td>
+            <span class="pill pill-amber">150-300/mo</span><br>
+            <span class="text-sm-muted">DA 12</span>
+          </td>
+          <td>
+            <strong>Topic Consolidation:</strong> Trimmed long-tail ISO 27001/cyber insurance to focus purely on core vCISO leadership, TPRM, and risk assessments.
+          </td>
+          <td>
+            Low competitive threat. CPF retains deep authority advantage across book authorship and Bellevue academic credentials.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Strategic Counter-Offensive Plan -->
+  <div class="two-col">
+    <!-- Left Box: High-Impact Interceptions -->
+    <div class="card card-no-mb">
+      <div class="card-header">
+        <div class="card-title"><span class="icon">🎯</span> 3 Immediate Counter-Plays</div>
+      </div>
+      
+      <div class="stack-16">
+        <div class="box">
+          <div class="box-title text-blue">1. Intercept FRSecure on "Cybersecurity Budget Optimization"</div>
+          <p class="box-desc">
+            FRSecure's 177% traffic surge is driven by budget-conscious SMB executives searching for how to allocate security spend without a full-time $350k CISO.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag tag-highlight">Action: Deploy interactive SMB Budget Matrix on /pricing & /vciso-vs-full-time-ciso</span>
+            <span class="tag tag-gap">Target: "vCISO cost calculator", "SMB security budget allocation"</span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title text-green">2. Seize the "Shadow AI Governance" Vacated by CompassMSP</div>
+          <p class="box-desc">
+            With CompassMSP retreating to standard IT/CMMC, CPF Coaching can monopolize answer engines for <em>"How to audit Shadow AI in a 50-person company"</em>.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag tag-highlight">Action: Expand /shadow-ai-review with direct FAQ schema & 40-word definition box</span>
+            <span class="tag tag-gap">Target: "Shadow AI risk assessment", "SMB AI policy template"</span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title text-purple">3. Replicate the Short-Form Video Advantage</div>
+          <p class="box-desc">
+            TrustedCISO gained ground by embedding short-form video. CPF has dozens of video shorts from the <em>Breaking into Cybersecurity</em> channel that can be embedded on `/learning-center` and `/RetainedServices`.
+          </p>
+          <div class="tag-cloud">
+            <span class="tag tag-highlight">Action: Embed relevant YouTube Shorts onto service landing pages</span>
+            <span class="tag tag-gap">Target: Video carousel rich snippets on Google & YouTube SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Box: Keyword & Topic Moat Matrix -->
+    <div class="card card-no-mb">
+      <div class="card-header">
+        <div class="card-title"><span class="icon">🛡️</span> Topic Defense & Attack Map</div>
+      </div>
+
+      <div class="desc-note">
+        Comparing topic density between CPF Coaching and the top 5 tracked competitors:
+      </div>
+
+      <div class="stack-12">
+        <div class="box">
+          <div class="box-section-title">🔥 High Competitive Pressure (Battleground Topics)</div>
+          <div class="tag-cloud">
+            <span class="tag tag-highlight">vCISO Service Delivery Models</span>
+            <span class="tag tag-highlight">SOC 2 Readiness Timeline</span>
+            <span class="tag tag-highlight">Third-Party & Vendor Risk (TPRM)</span>
+            <span class="tag tag-highlight">Incident Response Retainers</span>
+          </div>
+          <p class="box-footer-note">CPF Strategy: Win on price transparency, practitioner credibility (books/adjunct), and direct AEO tables.</p>
+        </div>
+
+        <div class="box">
+          <div class="box-section-title-moat">💎 High-Ground Moats (Uncontested / Low Competition)</div>
+          <div class="tag-cloud">
+            <span class="tag tag-gap">Shadow AI Review & Governance for SMBs</span>
+            <span class="tag tag-gap">SOC 2 for Manufacturing SMBs</span>
+            <span class="tag tag-gap">Cybersecurity for Non-Technical Founders</span>
+            <span class="tag tag-gap">CUEC & Cloud Control Inheritance Plain English</span>
+            <span class="tag tag-gap">Fixed-Fee 90-Day Compliance Sprints</span>
+          </div>
+          <p class="box-footer-note">CPF Strategy: Accelerate LLM citations via <code>/llms-full.txt</code> and targeted FAQ schemas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

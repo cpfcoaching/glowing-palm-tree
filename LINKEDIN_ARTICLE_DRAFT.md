@@ -1,6 +1,6 @@
 # The 3-Project Cybersecurity Portfolio That Beats 500 Resumes
 ### *Why Certifications Alone Won't Get You Hired in 2026 (And the Exact Hands-On Proof of Work Hiring Managers Look For)*
-**By Christophe Foulon, CISSP, CRISC** • *Breaking Into Cybersecurity* • *August 24, 2026*
+**By Christophe Foulon, CISSP, CRISC** • *Breaking Into Cybersecurity* • *September 01, 2026*
 
 ---
 

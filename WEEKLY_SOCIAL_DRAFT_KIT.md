@@ -1,4 +1,4 @@
-# 🚀 Weekly Social Promotion Draft Kit (August 24, 2026)
+# 🚀 Weekly Social Promotion Draft Kit (September 01, 2026)
 
 Use these ready-to-publish draft posts across your distribution channels to drive YouTube subscribers, Substack readers, and coaching inquiries.
 
