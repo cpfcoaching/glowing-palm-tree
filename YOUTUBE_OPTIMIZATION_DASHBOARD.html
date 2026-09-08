@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Telemetry & Optimization Command Center | CPF Coaching & Breaking Into Cybersecurity</title>
+<style>
+  :root {
+    --bg-dark: #090d16;
+    --bg-card: #131b2e;
+    --bg-card-hover: #1c2742;
+    --bg-inner: #0b1120;
+    --border: #24324f;
+    --border-accent: #38bdf8;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --accent-red: #ef4444;
+    --accent-blue: #38bdf8;
+    --accent-cyan: #06b6d4;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-rose: #f43f5e;
+    --accent-purple: #a855f7;
+    --accent-gold: #fbbf24;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.55;
+    padding: 32px 20px 80px;
+  }
+
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .audit-header {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .audit-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #ff0000, #38bdf8, #10b981);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .yt-badge-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff0000;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+  }
+  .header-title h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .header-title p {
+    color: var(--text-muted);
+    font-size: 13.5px;
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .date-pill {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .status-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-emerald);
+    box-shadow: 0 0 10px var(--accent-emerald);
+    display: inline-block;
+  }
+
+  /* Metric Cards Grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+  .kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-accent);
+  }
+  .kpi-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .kpi-value {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .kpi-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .tag-pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  .pill-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .pill-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+  .pill-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+  .pill-cyan { background: rgba(6, 182, 212, 0.15); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.3); }
+
+  /* Sections */
+  .section-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px 28px;
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .section-title span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Table styling */
+  .data-table-wrapper {
+    overflow-x: auto;
+  }
+  table.telemetry-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+  }
+  table.telemetry-table th {
+    background: var(--bg-inner);
+    color: var(--text-dim);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  table.telemetry-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(36, 50, 79, 0.6);
+    vertical-align: middle;
+  }
+  table.telemetry-table tr:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .video-title-cell {
+    font-weight: 600;
+    color: var(--text-main);
+  }
+  .video-meta-tag {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 3px;
+  }
+
+  /* Retention bar */
+  .retention-bar-bg {
+    width: 100px;
+    height: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  .retention-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .outlier-row {
+    background: rgba(251, 191, 36, 0.05);
+    border-left: 3px solid var(--accent-gold);
+  }
+
+  /* Insights Grid */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .insight-box {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .insight-box h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .insight-box p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Execution roadmap steps */
+  .step-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .step-card {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    position: relative;
+  }
+  .step-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .step-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Quick action buttons */
+  .btn-filter {
+    background: var(--bg-inner);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-filter.active, .btn-filter:hover {
+    background: var(--accent-blue);
+    color: #000;
+    font-weight: 700;
+    border-color: var(--accent-blue);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="audit-header">
+    <div class="header-left">
+      <span class="yt-badge-logo">▶ YouTube</span>
+      <div class="header-title">
+        <h1>Telemetry & Video Optimization Command Center</h1>
+        <p>Breaking Into Cybersecurity (@BreakingIntoCybersecurity) &bull; CPF Coaching LLC Ecosystem</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="date-pill">
+        <span class="status-pulse"></span>
+        Snapshot: Sep 1 – Sep 7, 2026
+      </div>
+    </div>
+  </header>
+
+  <!-- Key Metrics Row -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Total Views
+        <span class="tag-pill pill-cyan">7-Day</span>
+      </div>
+      <div class="kpi-value" style="color: var(--accent-cyan);">190.0</div>
+      <div class="kpi-sub">Across 82 active catalog assets</div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Total Watch Time
+        <span class="tag-pill pill-amber">Cumulative</span>
+      </div>
+      <div class="kpi-value" style="color: var(--accent-amber);">40:30</div>
+      <div class="kpi-sub">40 min 30 sec total duration</div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Average View Duration
+        <span class="tag-pill pill-rose">Bottleneck</span>
+      </div>
+      <div class="kpi-value" style="color: var(--accent-rose);">00:00:26</div>
+      <div class="kpi-sub">Immediate 2s–6s drop on 9/10 assets</div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Net Subscribers
+        <span class="tag-pill pill-emerald">+100% Retained</span>
+      </div>
+      <div class="kpi-value" style="color: var(--accent-emerald);">+1.0</div>
+      <div class="kpi-sub">+1.0 Added &bull; 0.0 Removed</div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">
+        Engagement & Shares
+        <span class="tag-pill pill-rose">Inertia</span>
+      </div>
+      <div class="kpi-value" style="color: var(--text-dim);">0 / 0</div>
+      <div class="kpi-sub">0 Likes &bull; 0 Comments &bull; 0 Shares</div>
+    </div>
+  </div>
+
+  <!-- Outlier Banner: The 7m 42s Phenomenon -->
+  <div class="section-card" style="border-left: 4px solid var(--accent-gold); background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(19, 27, 46, 0.95));">
+    <div class="section-title">
+      <span>🌟 Telemetry Outlier Champion: Deep Long-Form Engagement (00:07:42)</span>
+      <span class="tag-pill pill-amber">18x Channel Average Retention</span>
+    </div>
+    <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">
+      While 9 out of 10 top videos experienced immediate bounce within 2 to 22 seconds, <strong>Asset #9 (Breaking into Cybersecurity Full Case Study)</strong> captured an extraordinary <strong>7 minutes and 42 seconds</strong> average watch duration. This proves that high-intent cybersecurity career pivoters will watch long-form when the guest story delivers immediate substance.
+    </p>
+  </div>
+
+  <!-- Top 10 Watched Table -->
+  <div class="section-card">
+    <div class="section-title">
+      <span>🎬 Top 10 Weekly Watched Assets (1–10 of 82 Active Catalog Videos)</span>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-filter active" onclick="filterTable('all')">All (10)</button>
+        <button class="btn-filter" onclick="filterTable('leak')">⚠️ Hook Leaks (5)</button>
+        <button class="btn-filter" onclick="filterTable('star')">🌟 High Retention (1)</button>
+      </div>
+    </div>
+
+    <div class="data-table-wrapper">
+      <table class="telemetry-table" id="telemetryTable">
+        <thead>
+          <tr>
+            <th style="width: 50px;">Rank</th>
+            <th>Video Title & Target Focus</th>
+            <th style="width: 130px;">Relative Volume</th>
+            <th style="width: 140px;">Avg Watch Time</th>
+            <th style="width: 80px;">Shares</th>
+            <th>Retention Triage & Prescribed Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-category="leak">
+            <td><strong>#1</strong></td>
+            <td class="video-title-cell">
+              SOC Analyst Mock Interview
+              <div class="video-meta-tag">Career / Interview Prep &bull; High Search Intent</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 100%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--accent-cyan); font-weight: 700;">Top Views</span>
+            </td>
+            <td><code style="color: var(--accent-rose); font-weight: 700;">00:00:02</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-rose">Critical Leak</span> 2s bounce! Viewers search mock interviews but bounce before intro. Add 10s cold hook.</td>
+          </tr>
+
+          <tr data-category="leak">
+            <td><strong>#2</strong></td>
+            <td class="video-title-cell">
+              CyberMentor: Autonomous Pentesting
+              <div class="video-meta-tag">Guest Feature &bull; Authority Brand Keyword</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 75%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--accent-cyan);">High</span>
+            </td>
+            <td><code style="color: var(--accent-amber);">00:00:17</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-amber">Intro Stall</span> Viewers drop before core discussion. Add visual jump cards and chapter index.</td>
+          </tr>
+
+          <tr data-category="leak">
+            <td><strong>#3</strong></td>
+            <td class="video-title-cell">
+              Bug Bounty to Pro | Career Path
+              <div class="video-meta-tag">Technical Skill &bull; Pivoting Roadmap</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 45%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--text-dim);">Medium</span>
+            </td>
+            <td><code style="color: var(--accent-rose); font-weight: 700;">00:00:03</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-rose">Instant Bounce</span> 3s retention indicates title/intro mismatch. Inject immediate thesis statement.</td>
+          </tr>
+
+          <tr data-category="leak">
+            <td><strong>#4</strong></td>
+            <td class="video-title-cell">
+              Stop Paying $15,000 for Bootcamps
+              <div class="video-meta-tag">Controversial &bull; Career Advice</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 40%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--text-dim);">Medium</span>
+            </td>
+            <td><code style="color: var(--accent-rose);">00:00:06</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-rose">Hook Delay</span> 6s drop. Must explicitly reveal the free alternative roadmap within 5 seconds.</td>
+          </tr>
+
+          <tr data-category="leak">
+            <td><strong>#5</strong></td>
+            <td class="video-title-cell">
+              How to Actually Land an Entry-Level Cyber Job
+              <div class="video-meta-tag">Job Hunt &bull; ATS / Resume Tactics</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 38%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--text-dim);">Medium</span>
+            </td>
+            <td><code style="color: var(--accent-rose);">00:00:06</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-rose">Action Gap</span> Search intent is massive; add on-screen chapter transitions to retain skippers.</td>
+          </tr>
+
+          <tr data-category="mid">
+            <td><strong>#6</strong></td>
+            <td class="video-title-cell">
+              Breaking into Cybersecurity (Series Feature)
+              <div class="video-meta-tag">Pillar Catalog Episode</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 32%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+            </td>
+            <td><code style="color: var(--accent-blue);">00:00:14</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-cyan">Standard Intro</span> Baseline 14s. Standardize guest intro pacing.</td>
+          </tr>
+
+          <tr data-category="mid">
+            <td><strong>#7</strong></td>
+            <td class="video-title-cell">
+              LLM Reasoning Guide for Security Analysts
+              <div class="video-meta-tag">AI & Emerging Tech &bull; High Organic Interest</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 30%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+            </td>
+            <td><code style="color: var(--accent-emerald);">00:00:22</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-emerald">Prime Shorts Candidate</span> High engagement topic; slice into 45s vertical Shorts.</td>
+          </tr>
+
+          <tr data-category="mid">
+            <td><strong>#8</strong></td>
+            <td class="video-title-cell">
+              Join us on Breaking into Cybersecurity
+              <div class="video-meta-tag">Live Stream Announcement</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 25%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+            </td>
+            <td><code style="color: var(--accent-blue);">00:00:13</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-cyan">Promo Asset</span> Live show invite format.</td>
+          </tr>
+
+          <tr class="outlier-row" data-category="star">
+            <td><strong>#9</strong></td>
+            <td class="video-title-cell">
+              Breaking into Cybersecurity (Full Case Study)
+              <div class="video-meta-tag" style="color: var(--accent-gold);">Deep Dive Interview &bull; Benchmark Format</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 25%; background: var(--accent-gold);"></div></div>
+              <span style="font-size: 12px; color: var(--accent-gold); font-weight: 700;">Champion</span>
+            </td>
+            <td><code style="color: var(--accent-gold); font-weight: 800; font-size: 14px;">00:07:42</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-amber">🌟 Outlier Gold</span> 7m 42s retention! Viewers stayed through deep storytelling. Model this structure.</td>
+          </tr>
+
+          <tr data-category="mid">
+            <td><strong>#10</strong></td>
+            <td class="video-title-cell">
+              How to Transfer IT Skills into Cyber
+              <div class="video-meta-tag">Career Switcher Target Audience</div>
+            </td>
+            <td>
+              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 22%; background: var(--accent-cyan);"></div></div>
+              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+            </td>
+            <td><code style="color: var(--accent-blue);">00:00:14</code></td>
+            <td>0</td>
+            <td><span class="tag-pill pill-cyan">Conversion Target</span> Ideal for pinned comment linking to CPF Coaching Career Snapshot.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Diagnostic Findings & Levers -->
+  <div class="section-card">
+    <div class="section-title">
+      <span>🔍 Strategic Telemetry Findings & 3 Core Growth Levers</span>
+    </div>
+    <div class="insights-grid">
+      <div class="insight-box" style="border-top: 3px solid var(--accent-rose);">
+        <h3>⚠️ 1. The 2-to-6 Second "Hook Drop"</h3>
+        <p>
+          High click volume on <em>SOC Analyst Mock Interview</em> and <em>Bootcamp Alternatives</em> demonstrates that Christophe's SEO titles and topics are highly attractive. However, viewers bounce before the interview content begins. 
+          <br><br>
+          <strong>Immediate Fix:</strong> Eliminate 15s generic bumper intros. Replace with a 5-second teaser quote of the guest's best advice before the logo stinger.
+        </p>
+      </div>
+
+      <div class="insight-box" style="border-top: 3px solid var(--accent-amber);">
+        <h3>💬 2. Pinned Debate Loops (Zero-Engagement Fix)</h3>
+        <p>
+          190 views across 82 catalog assets yielded 0 comments and 0 likes. Viewers are consuming in "passive search mode" without feeling an obligation or incentive to interact.
+          <br><br>
+          <strong>Immediate Fix:</strong> Deploy automated pinned comments on the top 10 assets asking specific polarizing questions (e.g. <em>"Are bootcamps still worth it in 2026? Drop your honest take below."</em>).
+        </p>
+      </div>
+
+      <div class="insight-box" style="border-top: 3px solid var(--accent-cyan);">
+        <h3>✂️ 3. Shorts-to-Longform Traffic Bridge</h3>
+        <p>
+          Catalog depth is strong (82 videos generated views organically with zero ad spend). Splicing 30–60 second vertical Shorts from high-retention assets (like Asset #9 and the LLM guide) will funnel thousands of mobile browse impressions into the long-form catalog.
+          <br><br>
+          <strong>Immediate Fix:</strong> Extract 3 Shorts weekly via <code>YouTubeSEOMaximizer</code> and link directly back to the full episode.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weekly Execution Plan -->
+  <div class="section-card">
+    <div class="section-title">
+      <span>📈 WoW Execution Cadence (Sep 2026 Implementation)</span>
+    </div>
+    <div class="step-grid">
+      <div class="step-card">
+        <div class="step-num">Step 01 &bull; Active Now</div>
+        <div class="step-title">Telemetry Ingestion & Top 10 Triage</div>
+        <div class="step-desc">Weekly telemetry ingested; identified 7m42s retention benchmark and 2s intro bounce leaks across top search assets.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">Step 02 &bull; Sprint 1</div>
+        <div class="step-title">Pinned Debate Comments</div>
+        <div class="step-desc">Deploy provocative discussion prompts in the top 10 traffic-driving assets to ignite YouTube comment velocity.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">Step 03 &bull; Sprint 2</div>
+        <div class="step-title">Guest Co-Promotion Kits</div>
+        <div class="step-desc">Automate 1-click social kit delivery (vertical clip + pre-written post) to guests within 24h of publish.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">Step 04 &bull; Sprint 3</div>
+        <div class="step-title">Shorts Splicing Funnel</div>
+        <div class="step-desc">Produce 3–5 vertical Shorts weekly highlighting peak insights, routing mobile viewers to back-catalog episodes.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function filterTable(type) {
+    const rows = document.querySelectorAll('#telemetryTable tbody tr');
+    const buttons = document.querySelectorAll('.btn-filter');
+    buttons.forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    rows.forEach(row => {
+      if (type === 'all') {
+        row.style.display = '';
+      } else if (type === 'leak') {
+        row.style.display = row.dataset.category === 'leak' ? '' : 'none';
+      } else if (type === 'star') {
+        row.style.display = row.dataset.category === 'star' ? '' : 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
