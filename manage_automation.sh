@@ -5,7 +5,7 @@ set -euo pipefail
 
 WORKSPACE_DIR="/Volumes/Crucial X9 Pro For Mac/GDriveSync/Antigravity"
 YOUTUBE_DIR="$WORKSPACE_DIR/YouTubeSEOMaximizer"
-SPOTIFY_DIR="/Volumes/Crucial X9 Pro For Mac/Tools/spotify-creators-uploader"
+export SPOTIFY_DIR="/Volumes/Crucial X9 Pro For Mac/Tools/spotify-creators-uploader"
 PYTHON_FAST="$YOUTUBE_DIR/.venv_fast/bin/python"
 
 usage() {
@@ -17,6 +17,7 @@ usage() {
   echo "Commands:"
   echo "  status       Show live running processes, PIDs, and latest logs"
   echo "  run-now      Trigger immediate full ecosystem synchronization cycle"
+  echo "  saturday-strategy Trigger Saturday YouTube analytics telemetry & strategy refresh"
   echo "  start-daemon Launch the continuous background growth daemon"
   echo "  stop-daemon  Stop any running background growth daemons"
   echo "  logs         Tail the master orchestrator execution log"
@@ -24,6 +25,7 @@ usage() {
   echo "  uninstall-launchagent Remove the native macOS LaunchAgent"
   echo "  status-launchagent    Check status of macOS LaunchAgent"
   echo "  install-cron Setup a 6-hour crontab check on macOS"
+  echo "  install-saturday-cron Setup automated Saturday 8:00 AM crontab schedule"
   echo "==================================================================="
   exit 1
 }
@@ -107,6 +109,21 @@ case "$cmd" in
     (crontab -l 2>/dev/null | grep -v "master_ecosystem_orchestrator.py"; echo "$CRON_CMD") | crontab -
     echo "✅ Crontab entry installed (runs every 6 hours):"
     crontab -l | grep "master_ecosystem_orchestrator"
+    ;;
+
+  saturday-strategy)
+    echo "📊 Running Saturday YouTube Analytics Telemetry & Strategy Refresh..."
+    mkdir -p "$WORKSPACE_DIR/logs"
+    "$PYTHON_FAST" "$WORKSPACE_DIR/YouTubeSEOMaximizer/saturday_analytics_strategy_engine.py" --force
+    ;;
+
+  install-saturday-cron)
+    echo "⏰ Installing user crontab entry for Saturday 8:00 AM YouTube Strategy..."
+    mkdir -p "$WORKSPACE_DIR/logs"
+    SAT_CRON_CMD="0 8 * * 6 $PYTHON_FAST $WORKSPACE_DIR/YouTubeSEOMaximizer/saturday_analytics_strategy_engine.py >> $WORKSPACE_DIR/logs/saturday_cron.log 2>&1"
+    (crontab -l 2>/dev/null | grep -v "saturday_analytics_strategy_engine.py"; echo "$SAT_CRON_CMD") | crontab -
+    echo "✅ Saturday 8:00 AM crontab entry installed:"
+    crontab -l | grep "saturday_analytics_strategy_engine"
     ;;
 
   *)

@@ -233,7 +233,31 @@ def run_comment_triage():
         logger.error(f"❌ Comment Responder error: {e}")
         return False
 
-def execute_full_cycle():
+def run_saturday_analytics(force=False):
+    sat_script = YOUTUBE_DIR / "saturday_analytics_strategy_engine.py"
+    if not sat_script.exists():
+        return True
+
+    now = datetime.now()
+    if not force and now.weekday() != 5:
+        # Not Saturday, silently skip during normal weekday cycles
+        return True
+
+    logger.info("📈 [PHASE 12] Executing Saturday YouTube Analytics Telemetry & Strategy Refresh...")
+    py_bin = PYTHON_FAST if PYTHON_FAST.exists() else sys.executable
+    cmd = [str(py_bin), str(sat_script)]
+    if force:
+        cmd.append("--force")
+
+    try:
+        res = subprocess.run(cmd, cwd=str(YOUTUBE_DIR), capture_output=True, text=True, timeout=120)
+        logger.info("✅ Saturday YouTube Analytics & Strategy Refresh Complete.")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Saturday Analytics error: {e}")
+        return False
+
+def execute_full_cycle(force_saturday=False):
     start_time = datetime.now()
     logger.info("===================================================================")
     logger.info(f"🚀 Starting ACE Autonomous Ecosystem Cycle at {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
@@ -250,10 +274,11 @@ def execute_full_cycle():
     li_ok = run_linkedin_article()
     notes_ok = run_spotify_show_notes()
     triage_ok = run_comment_triage()
+    sat_ok = run_saturday_analytics(force=force_saturday)
     
     elapsed = (datetime.now() - start_time).total_seconds()
     logger.info("===================================================================")
-    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (11-Phase Multi-Platform Engine Active)")
+    logger.info(f"✨ Full Ecosystem Cycle Complete in {elapsed:.1f}s (12-Phase Multi-Platform Engine Active)")
     logger.info("===================================================================\n")
 
 def run_daemon(interval_minutes=360):
@@ -270,11 +295,14 @@ def run_daemon(interval_minutes=360):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="ACE Master Autonomous Ecosystem Orchestrator")
     parser.add_argument("--run-now", action="store_true", help="Run one full multi-platform synchronization cycle now")
+    parser.add_argument("--saturday-strategy", action="store_true", help="Trigger Saturday YouTube analytics and strategy update")
     parser.add_argument("--daemon", action="store_true", help="Run continuously in background")
     parser.add_argument("--interval", type=int, default=360, help="Interval in minutes (default: 360)")
     args = parser.parse_args()
     
-    if args.daemon:
+    if args.saturday_strategy:
+        run_saturday_analytics(force=True)
+    elif args.daemon:
         run_daemon(args.interval)
     else:
         execute_full_cycle()

@@ -1,1 +1,2 @@
 {"id":"int-e4ec745c","kind":"field_change","created_at":"2026-09-08T14:05:32.233113Z","actor":"CPF-Coaching","issue_id":"Antigravity-3jn","extra":{"field":"status","new_value":"closed","old_value":"in_progress","reason":"Closed"}}
+{"id":"int-f330ff42","kind":"field_change","created_at":"2026-09-08T14:11:19.610908Z","actor":"CPF-Coaching","issue_id":"Antigravity-02d","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
