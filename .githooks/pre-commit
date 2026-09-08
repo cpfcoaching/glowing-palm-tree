@@ -1,0 +1,25 @@
+#!/bin/bash
+# ACE Automated Security Guard: GitGuardian + OWASP Top 10 + OWASP GenAI Top 10
+
+echo "🔍 [ACE Security Gate] Executing Pre-Commit Security Checks..."
+
+# 1. GitGuardian Secrets Scan
+if command -v ggshield >/dev/null 2>&1; then
+    ggshield secret scan pre-commit "$@" || {
+        echo "❌ [Security Alert] GitGuardian detected secret leak in staged commit."
+        exit 1
+    }
+fi
+
+# 2. OWASP Top 10 & OWASP GenAI Top 10 Scanner
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || dirname "$(dirname "$0")")"
+SCANNER="$REPO_ROOT/scripts/security/owasp_scanner.py"
+
+if [ -f "$SCANNER" ]; then
+    python3 "$SCANNER" --staged || {
+        echo "❌ [Security Alert] OWASP / GenAI Top 10 security policy violation detected in staged files."
+        exit 1
+    }
+fi
+
+echo "✅ [ACE Security Gate] All pre-commit security gates passed."
