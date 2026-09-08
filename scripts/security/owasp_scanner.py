@@ -50,12 +50,15 @@ IGNORED_PATTERNS = [
     r"__pycache__",
     r"\.beads/",
     r"\.agent/skills/",
+    r"\.skills_backup/",
+    r"skills-library/",
     r"package-lock\.json$",
     r"yarn\.lock$",
     r"\.min\.js$",
     r"\.min\.css$",
     r"logs/",
     r"scratch/",
+    r"\.next/",
     r"scripts/security/owasp_scanner\.py$"
 ]
 
@@ -113,7 +116,7 @@ RULES = [
         "id": "OWASP-A03-CODE-INJECTION",
         "category": "OWASP A03: Injection",
         "severity": "HIGH",
-        "regex": r"(?<!ast\.)\beval\s*\((?!['\"][0-9\s\+\-\*\/\(\)]+['\"])|(?<!ast\.)\bexec\s*\(",
+        "regex": r"(?<![\.a-zA-Z0-9_])\beval\s*\((?!['\"][0-9\s\+\-\*\/\(\)]+['\"])|(?<![\.a-zA-Z0-9_])\bexec\s*\(",
         "description": "Unsafe code execution via eval() or exec(). Use ast.literal_eval() or safe expression parsers.",
         "extensions": [".py", ".js", ".ts"]
     },
@@ -273,15 +276,52 @@ def get_all_tracked_files():
             ["git", "ls-files"],
             capture_output=True, text=True, check=True
         )
-        files = [line.strip() for line in res.stdout.splitlines() if line.strip()]
+        files = [line.strip() for line in res.stdout.splitlines() if line.strip() and not is_ignored(line.strip())]
         return files
     except Exception as e:
         print(f"Warning: Unable to get git tracked files: {e}")
         return []
 
+def get_branch_files(base_branch=None):
+    """Returns list of files modified on current branch compared to base_branch."""
+    try:
+        curr_branch = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True, text=True, check=True
+        ).stdout.strip()
+        
+        target_base = base_branch if base_branch else "main"
+
+        # Check if origin/<target_base> exists
+        check_remote = subprocess.run(
+            ["git", "rev-parse", f"origin/{target_base}"],
+            capture_output=True, text=True
+        )
+        ref_to_diff = f"origin/{target_base}" if check_remote.returncode == 0 else target_base
+
+        if curr_branch == target_base and ref_to_diff == target_base:
+            ref_to_diff = "HEAD~1"
+
+        res = subprocess.run(
+            ["git", "diff", f"{ref_to_diff}...HEAD", "--name-only", "--diff-filter=ACM"],
+            capture_output=True, text=True
+        )
+        if res.returncode != 0 or not res.stdout.strip():
+            res = subprocess.run(
+                ["git", "diff", ref_to_diff, "--name-only", "--diff-filter=ACM"],
+                capture_output=True, text=True
+            )
+
+        files = [line.strip() for line in res.stdout.splitlines() if line.strip() and not is_ignored(line.strip())]
+        return files, curr_branch, ref_to_diff
+    except Exception as e:
+        print(f"Warning: Unable to get branch files: {e}")
+        return [], "HEAD", "main"
+
 def main():
     parser = argparse.ArgumentParser(description="OWASP Top 10 & OWASP GenAI Top 10 Security Scanner")
     parser.add_argument("--staged", action="store_true", help="Scan only git staged files (default for pre-commit)")
+    parser.add_argument("--branch", nargs="?", const="main", default=None, help="Scan files modified on current branch compared to base (default: main)")
     parser.add_argument("--all", action="store_true", help="Scan all tracked files in repository")
     parser.add_argument("--path", type=str, help="Specific file or directory to scan")
     parser.add_argument("--severity", choices=["ALL", "MEDIUM", "HIGH", "CRITICAL"], default="HIGH", help="Minimum severity threshold to block (default: HIGH)")
@@ -289,26 +329,36 @@ def main():
     args = parser.parse_args()
 
     files_to_scan = []
+    scan_scope_desc = ""
+
     if args.path:
         p = Path(args.path)
         if p.is_file():
             files_to_scan = [str(p)]
         elif p.is_dir():
             files_to_scan = [str(f) for f in p.rglob("*") if f.is_file() and not is_ignored(str(f))]
+        scan_scope_desc = f"path '{args.path}'"
+    elif args.branch is not None:
+        files_to_scan, curr_b, ref_d = get_branch_files(args.branch)
+        scan_scope_desc = f"branch '{curr_b}' (against '{ref_d}')"
     elif args.all:
         files_to_scan = get_all_tracked_files()
+        scan_scope_desc = "entire repository (all tracked files)"
     else:
         # Default to staged files if in git repo, else current dir
         files_to_scan = get_staged_files()
+        scan_scope_desc = "staged files"
         if not files_to_scan and not args.staged:
             files_to_scan = get_all_tracked_files()
+            scan_scope_desc = "entire repository (all tracked files)"
 
     if not files_to_scan:
-        print(f"{GREEN}✔ No relevant code files to scan for security flaws.{RESET}")
+        print(f"{GREEN}✔ No relevant code files to scan in {scan_scope_desc}.{RESET}")
         sys.exit(0)
 
     print(f"\n{BOLD}{CYAN}🛡️  OWASP Top 10 & GenAI Security Audit Scanner{RESET}")
-    print(f"Checking {len(files_to_scan)} file(s) for OWASP & GenAI Top 10 vulnerabilities...")
+    print(f"Scope:    {scan_scope_desc}")
+    print(f"Target:   {len(files_to_scan)} file(s)")
     print("=" * 70)
 
     all_issues = []
