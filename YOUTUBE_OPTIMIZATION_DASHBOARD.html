@@ -155,6 +155,16 @@
     font-size: 12px;
     color: var(--text-muted);
   }
+
+  /* KPI Color Variations */
+  .val-cyan { color: var(--accent-cyan); }
+  .val-amber { color: var(--accent-amber); }
+  .val-rose { color: var(--accent-rose); }
+  .val-emerald { color: var(--accent-emerald); }
+  .val-dim { color: var(--text-dim); }
+  .val-gold { color: var(--accent-gold); }
+
+  /* Pill Badges */
   .tag-pill {
     font-size: 10px;
     font-weight: 700;
@@ -175,6 +185,16 @@
     padding: 26px 28px;
     margin-bottom: 28px;
   }
+  .banner-outlier {
+    border-left: 4px solid var(--accent-gold);
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(19, 27, 46, 0.95));
+  }
+  .banner-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
   .section-title {
     font-size: 18px;
     font-weight: 700;
@@ -187,6 +207,11 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  .filter-group {
+    display: flex;
+    gap: 8px;
   }
 
   /* Table styling */
@@ -218,6 +243,11 @@
     background: var(--bg-card-hover);
   }
 
+  .th-rank { width: 50px; }
+  .th-vol { width: 130px; }
+  .th-time { width: 140px; }
+  .th-shares { width: 80px; }
+
   .video-title-cell {
     font-weight: 600;
     color: var(--text-main);
@@ -226,6 +256,9 @@
     font-size: 11px;
     color: var(--text-dim);
     margin-top: 3px;
+  }
+  .meta-gold {
+    color: var(--accent-gold);
   }
 
   /* Retention bar */
@@ -243,6 +276,32 @@
     height: 100%;
     border-radius: 4px;
   }
+
+  /* Specific bar fill widths and colors */
+  .fill-100 { width: 100%; background: var(--accent-cyan); }
+  .fill-75 { width: 75%; background: var(--accent-cyan); }
+  .fill-45 { width: 45%; background: var(--accent-cyan); }
+  .fill-40 { width: 40%; background: var(--accent-cyan); }
+  .fill-38 { width: 38%; background: var(--accent-cyan); }
+  .fill-32 { width: 32%; background: var(--accent-cyan); }
+  .fill-30 { width: 30%; background: var(--accent-cyan); }
+  .fill-25 { width: 25%; background: var(--accent-cyan); }
+  .fill-25-gold { width: 25%; background: var(--accent-gold); }
+  .fill-22 { width: 22%; background: var(--accent-cyan); }
+
+  /* Volume labels */
+  .vol-top { font-size: 12px; color: var(--accent-cyan); font-weight: 700; }
+  .vol-high { font-size: 12px; color: var(--accent-cyan); }
+  .vol-med { font-size: 12px; color: var(--text-dim); }
+  .vol-champ { font-size: 12px; color: var(--accent-gold); font-weight: 700; }
+
+  /* Time labels */
+  .time-rose-bold { color: var(--accent-rose); font-weight: 700; }
+  .time-amber-bold { color: var(--accent-amber); font-weight: 700; }
+  .time-rose { color: var(--accent-rose); }
+  .time-blue { color: var(--accent-blue); }
+  .time-emerald { color: var(--accent-emerald); }
+  .time-gold-champ { color: var(--accent-gold); font-weight: 800; font-size: 14px; }
 
   .outlier-row {
     background: rgba(251, 191, 36, 0.05);
@@ -262,6 +321,10 @@
     border-radius: 12px;
     padding: 20px;
   }
+  .border-top-rose { border-top: 3px solid var(--accent-rose); }
+  .border-top-amber { border-top: 3px solid var(--accent-amber); }
+  .border-top-cyan { border-top: 3px solid var(--accent-cyan); }
+
   .insight-box h3 {
     font-size: 15px;
     font-weight: 700;
@@ -355,7 +418,7 @@
         Total Views
         <span class="tag-pill pill-cyan">7-Day</span>
       </div>
-      <div class="kpi-value" style="color: var(--accent-cyan);">190.0</div>
+      <div class="kpi-value val-cyan">190.0</div>
       <div class="kpi-sub">Across 82 active catalog assets</div>
     </div>
 
@@ -364,7 +427,7 @@
         Total Watch Time
         <span class="tag-pill pill-amber">Cumulative</span>
       </div>
-      <div class="kpi-value" style="color: var(--accent-amber);">40:30</div>
+      <div class="kpi-value val-amber">40:30</div>
       <div class="kpi-sub">40 min 30 sec total duration</div>
     </div>
 
@@ -373,7 +436,7 @@
         Average View Duration
         <span class="tag-pill pill-rose">Bottleneck</span>
       </div>
-      <div class="kpi-value" style="color: var(--accent-rose);">00:00:26</div>
+      <div class="kpi-value val-rose">00:00:26</div>
       <div class="kpi-sub">Immediate 2s–6s drop on 9/10 assets</div>
     </div>
 
@@ -382,7 +445,7 @@
         Net Subscribers
         <span class="tag-pill pill-emerald">+100% Retained</span>
       </div>
-      <div class="kpi-value" style="color: var(--accent-emerald);">+1.0</div>
+      <div class="kpi-value val-emerald">+1.0</div>
       <div class="kpi-sub">+1.0 Added &bull; 0.0 Removed</div>
     </div>
 
@@ -391,18 +454,18 @@
         Engagement & Shares
         <span class="tag-pill pill-rose">Inertia</span>
       </div>
-      <div class="kpi-value" style="color: var(--text-dim);">0 / 0</div>
+      <div class="kpi-value val-dim">0 / 0</div>
       <div class="kpi-sub">0 Likes &bull; 0 Comments &bull; 0 Shares</div>
     </div>
   </div>
 
   <!-- Outlier Banner: The 7m 42s Phenomenon -->
-  <div class="section-card" style="border-left: 4px solid var(--accent-gold); background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(19, 27, 46, 0.95));">
+  <div class="section-card banner-outlier">
     <div class="section-title">
       <span>🌟 Telemetry Outlier Champion: Deep Long-Form Engagement (00:07:42)</span>
       <span class="tag-pill pill-amber">18x Channel Average Retention</span>
     </div>
-    <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">
+    <p class="banner-desc">
       While 9 out of 10 top videos experienced immediate bounce within 2 to 22 seconds, <strong>Asset #9 (Breaking into Cybersecurity Full Case Study)</strong> captured an extraordinary <strong>7 minutes and 42 seconds</strong> average watch duration. This proves that high-intent cybersecurity career pivoters will watch long-form when the guest story delivers immediate substance.
     </p>
   </div>
@@ -411,7 +474,7 @@
   <div class="section-card">
     <div class="section-title">
       <span>🎬 Top 10 Weekly Watched Assets (1–10 of 82 Active Catalog Videos)</span>
-      <div style="display: flex; gap: 8px;">
+      <div class="filter-group">
         <button class="btn-filter active" onclick="filterTable('all')">All (10)</button>
         <button class="btn-filter" onclick="filterTable('leak')">⚠️ Hook Leaks (5)</button>
         <button class="btn-filter" onclick="filterTable('star')">🌟 High Retention (1)</button>
@@ -422,11 +485,11 @@
       <table class="telemetry-table" id="telemetryTable">
         <thead>
           <tr>
-            <th style="width: 50px;">Rank</th>
+            <th class="th-rank">Rank</th>
             <th>Video Title & Target Focus</th>
-            <th style="width: 130px;">Relative Volume</th>
-            <th style="width: 140px;">Avg Watch Time</th>
-            <th style="width: 80px;">Shares</th>
+            <th class="th-vol">Relative Volume</th>
+            <th class="th-time">Avg Watch Time</th>
+            <th class="th-shares">Shares</th>
             <th>Retention Triage & Prescribed Fix</th>
           </tr>
         </thead>
@@ -438,10 +501,10 @@
               <div class="video-meta-tag">Career / Interview Prep &bull; High Search Intent</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 100%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--accent-cyan); font-weight: 700;">Top Views</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-100"></div></div>
+              <span class="vol-top">Top Views</span>
             </td>
-            <td><code style="color: var(--accent-rose); font-weight: 700;">00:00:02</code></td>
+            <td><code class="time-rose-bold">00:00:02</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-rose">Critical Leak</span> 2s bounce! Viewers search mock interviews but bounce before intro. Add 10s cold hook.</td>
           </tr>
@@ -453,10 +516,10 @@
               <div class="video-meta-tag">Guest Feature &bull; Authority Brand Keyword</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 75%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--accent-cyan);">High</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-75"></div></div>
+              <span class="vol-high">High</span>
             </td>
-            <td><code style="color: var(--accent-amber);">00:00:17</code></td>
+            <td><code class="time-amber-bold">00:00:17</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-amber">Intro Stall</span> Viewers drop before core discussion. Add visual jump cards and chapter index.</td>
           </tr>
@@ -468,10 +531,10 @@
               <div class="video-meta-tag">Technical Skill &bull; Pivoting Roadmap</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 45%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--text-dim);">Medium</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-45"></div></div>
+              <span class="vol-med">Medium</span>
             </td>
-            <td><code style="color: var(--accent-rose); font-weight: 700;">00:00:03</code></td>
+            <td><code class="time-rose-bold">00:00:03</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-rose">Instant Bounce</span> 3s retention indicates title/intro mismatch. Inject immediate thesis statement.</td>
           </tr>
@@ -483,10 +546,10 @@
               <div class="video-meta-tag">Controversial &bull; Career Advice</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 40%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--text-dim);">Medium</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-40"></div></div>
+              <span class="vol-med">Medium</span>
             </td>
-            <td><code style="color: var(--accent-rose);">00:00:06</code></td>
+            <td><code class="time-rose">00:00:06</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-rose">Hook Delay</span> 6s drop. Must explicitly reveal the free alternative roadmap within 5 seconds.</td>
           </tr>
@@ -498,10 +561,10 @@
               <div class="video-meta-tag">Job Hunt &bull; ATS / Resume Tactics</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 38%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--text-dim);">Medium</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-38"></div></div>
+              <span class="vol-med">Medium</span>
             </td>
-            <td><code style="color: var(--accent-rose);">00:00:06</code></td>
+            <td><code class="time-rose">00:00:06</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-rose">Action Gap</span> Search intent is massive; add on-screen chapter transitions to retain skippers.</td>
           </tr>
@@ -513,10 +576,10 @@
               <div class="video-meta-tag">Pillar Catalog Episode</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 32%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-32"></div></div>
+              <span class="vol-med">Moderate</span>
             </td>
-            <td><code style="color: var(--accent-blue);">00:00:14</code></td>
+            <td><code class="time-blue">00:00:14</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-cyan">Standard Intro</span> Baseline 14s. Standardize guest intro pacing.</td>
           </tr>
@@ -528,10 +591,10 @@
               <div class="video-meta-tag">AI & Emerging Tech &bull; High Organic Interest</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 30%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-30"></div></div>
+              <span class="vol-med">Moderate</span>
             </td>
-            <td><code style="color: var(--accent-emerald);">00:00:22</code></td>
+            <td><code class="time-emerald">00:00:22</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-emerald">Prime Shorts Candidate</span> High engagement topic; slice into 45s vertical Shorts.</td>
           </tr>
@@ -543,10 +606,10 @@
               <div class="video-meta-tag">Live Stream Announcement</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 25%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-25"></div></div>
+              <span class="vol-med">Moderate</span>
             </td>
-            <td><code style="color: var(--accent-blue);">00:00:13</code></td>
+            <td><code class="time-blue">00:00:13</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-cyan">Promo Asset</span> Live show invite format.</td>
           </tr>
@@ -555,13 +618,13 @@
             <td><strong>#9</strong></td>
             <td class="video-title-cell">
               Breaking into Cybersecurity (Full Case Study)
-              <div class="video-meta-tag" style="color: var(--accent-gold);">Deep Dive Interview &bull; Benchmark Format</div>
+              <div class="video-meta-tag meta-gold">Deep Dive Interview &bull; Benchmark Format</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 25%; background: var(--accent-gold);"></div></div>
-              <span style="font-size: 12px; color: var(--accent-gold); font-weight: 700;">Champion</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-25-gold"></div></div>
+              <span class="vol-champ">Champion</span>
             </td>
-            <td><code style="color: var(--accent-gold); font-weight: 800; font-size: 14px;">00:07:42</code></td>
+            <td><code class="time-gold-champ">00:07:42</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-amber">🌟 Outlier Gold</span> 7m 42s retention! Viewers stayed through deep storytelling. Model this structure.</td>
           </tr>
@@ -573,10 +636,10 @@
               <div class="video-meta-tag">Career Switcher Target Audience</div>
             </td>
             <td>
-              <div class="retention-bar-bg"><div class="retention-bar-fill" style="width: 22%; background: var(--accent-cyan);"></div></div>
-              <span style="font-size: 12px; color: var(--text-dim);">Moderate</span>
+              <div class="retention-bar-bg"><div class="retention-bar-fill fill-22"></div></div>
+              <span class="vol-med">Moderate</span>
             </td>
-            <td><code style="color: var(--accent-blue);">00:00:14</code></td>
+            <td><code class="time-blue">00:00:14</code></td>
             <td>0</td>
             <td><span class="tag-pill pill-cyan">Conversion Target</span> Ideal for pinned comment linking to CPF Coaching Career Snapshot.</td>
           </tr>
@@ -591,7 +654,7 @@
       <span>🔍 Strategic Telemetry Findings & 3 Core Growth Levers</span>
     </div>
     <div class="insights-grid">
-      <div class="insight-box" style="border-top: 3px solid var(--accent-rose);">
+      <div class="insight-box border-top-rose">
         <h3>⚠️ 1. The 2-to-6 Second "Hook Drop"</h3>
         <p>
           High click volume on <em>SOC Analyst Mock Interview</em> and <em>Bootcamp Alternatives</em> demonstrates that Christophe's SEO titles and topics are highly attractive. However, viewers bounce before the interview content begins. 
@@ -600,7 +663,7 @@
         </p>
       </div>
 
-      <div class="insight-box" style="border-top: 3px solid var(--accent-amber);">
+      <div class="insight-box border-top-amber">
         <h3>💬 2. Pinned Debate Loops (Zero-Engagement Fix)</h3>
         <p>
           190 views across 82 catalog assets yielded 0 comments and 0 likes. Viewers are consuming in "passive search mode" without feeling an obligation or incentive to interact.
@@ -609,7 +672,7 @@
         </p>
       </div>
 
-      <div class="insight-box" style="border-top: 3px solid var(--accent-cyan);">
+      <div class="insight-box border-top-cyan">
         <h3>✂️ 3. Shorts-to-Longform Traffic Bridge</h3>
         <p>
           Catalog depth is strong (82 videos generated views organically with zero ad spend). Splicing 30–60 second vertical Shorts from high-retention assets (like Asset #9 and the LLM guide) will funnel thousands of mobile browse impressions into the long-form catalog.
