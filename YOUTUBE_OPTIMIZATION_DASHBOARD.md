@@ -1,7 +1,7 @@
 # 📺 YouTube Video Optimization & Growth Dashboard
 
 > **Channel:** Breaking Into Cybersecurity ([@BreakingIntoCybersecurity](https://www.youtube.com/@BreakingIntoCybersecurity)) & CPF Coaching Ecosystem  
-> **Status:** Full Back-Catalog Ingested & Funnel Connected | Weekly Telemetry Loop Active (Sep 1–7, 2026 Ingestion)  
+> **Status:** Live YouTube Analytics verified | Weekly telemetry: 2026-09-12 – 2026-09-18  
 > **Interactive View:** [YOUTUBE_OPTIMIZATION_DASHBOARD.html](file:///Volumes/Crucial%20X9%20Pro%20For%20Mac/GDriveSync/Antigravity/YOUTUBE_OPTIMIZATION_DASHBOARD.html)
 
 ---
@@ -10,56 +10,53 @@
 
 | Pillar / Initiative | Scope & Volume | Execution Status | Net Impact & Results |
 | :--- | :--- | :--- | :--- |
-| **Channel Telemetry** | **2,030 Subscribers \| 71,810 Lifetime Views** | **Live Data** | Channel baseline established across 1,159 indexed catalog videos. |
-| **Weekly Telemetry Loop** | **Sep 1 – Sep 7, 2026 Snapshot** | **Active Ingestion** | **190.0 Views**, **40:30 Watch Time** (26s avg), **+1.0 Net Sub**, **82 active catalog assets**. |
-| **Catalog Coverage** | **1,159 Total Videos** | **100% Ingested** | Complete channel catalog mapped, categorized, and indexed across all seasons and formats. |
+| **Channel Telemetry** | **2,030 Subscribers \| 72,606 Lifetime Views** | **Live Data** | 1,149 channel videos. |
+| **Weekly Telemetry Loop** | **2026-09-12 – 2026-09-18** | **Live API** | **76 Views**, **00:27:00 Watch Time**, **00:00:43 Avg**, **+1 Net Subscribers**, **62 active videos**. |
+| **Catalog Coverage** | **1,149 Channel Videos** | **Live Data** | Current YouTube channel video count. |
 | **CPF Coaching CTA Rollout** | **944 Videos Updated** (215 already had CTA) | **100% Coverage** | Every single video description now funnels viewers directly to the CPF Coaching Security Snapshot (`calendarbridge.com/book/cpf-coaching/`) and vCISO Substack. |
 | **SEO & Chaptering Pipeline** | **YouTubeSEOMaximizer** | **Active** | Automated generation of keyword-rich titles, structured descriptions, guest tags, and precise `[MM:SS]` chapter markers. |
 
 ---
 
-## 📡 Weekly Telemetry Snapshot (Sep 1, 2026 – Sep 7, 2026)
+## 📡 Weekly Telemetry Snapshot (2026-09-12 – 2026-09-18)
 
 ### 📊 Scorecard Metrics (7-Day Period)
 
 | Metric | Weekly Value | Status / Diagnostic | Strategic Context |
 | :--- | :---: | :---: | :--- |
-| **Total Views** | **190.0** | 🟡 Steady Long-Tail | Views distributed across **82 catalog videos** (out of 1,159 indexed). |
-| **Total Watch Time** | **40:30** | 🔴 Low Depth | Total weekly minutes watched: ~40.5 min. Viewers bounce early. |
-| **Average Watch Duration** | **00:00:26** | 🔴 Hook Bottleneck | Average view duration across all active assets is 26 seconds. |
-| **Subscriptions** | **+1.0 Net** (+1 Added, 0 Removed) | 🟢 Positive Delta | Conversion rate: 0.53% of views converted to a subscriber. |
-| **Likes & Dislikes** | **0.0 Net** (0 Added, 0 Removed) | ⚪ Passive Viewer Bias | Zero positive or negative explicit sentiment registered. |
-| **User & Video Comments** | **0** | 🔴 Engagement Gap | Zero comment velocity; urgent need for pinned debate prompts. |
-| **Video Shares** | **0.0** | 🔴 Virality Gap | Zero off-platform shares; co-promotion kits needed. |
-| **Geographic Reach** | **US Core + Global** | 🟢 Broad Baseline | Top traffic from US States with international discovery across EU, Asia, Africa. |
+| **Total Views** | **76** | Live API | Across **62 active videos** out of 1,149 channel videos. |
+| **Total Watch Time** | **00:27:00** | Live API | 27 total minutes watched. |
+| **Average Watch Duration** | **00:00:43** | Live API | 43 seconds per view. |
+| **Subscriptions** | **+1 Net** (2 Added, 1 Removed) | Live API | Previous seven complete days. |
+| **Likes & Dislikes** | **+0 Net** (0 Likes, 0 Dislikes) | Live API | Previous seven complete days. |
+| **User & Video Comments** | **0** | Live API | Previous seven complete days. |
+| **Video Shares** | **0** | Live API | Previous seven complete days. |
+| **Geographic Reach** | **Not queried** | Not evaluated | This run does not infer geography without a dedicated API query. |
 
 ---
 
-### 🎬 Top 10 Weekly Watched Videos Breakdown (1–10 of 82 Active Videos)
+### 🎬 Top Weekly Videos (1–10 of 62 Active Videos)
 
-| Rank | Video Title / Focus | Views | Avg Watch Time | Shares | Retention Diagnostic & Prescribed Optimization |
-| :---: | :--- | :---: | :---: | :---: | :--- |
-| 1 | **SOC Analyst Mock Interview** | ▓▓▓▓▓▓▓▓▓▓ | `00:00:02` | 0 | ⚠️ **Critical Intro Leak:** Immediate bounce after 2 seconds. Rewrite title/thumbnail alignment and inject a 10s teaser hook. |
-| 2 | **CyberMentor: Autonomous Pentesting** | ▓▓▓▓▓▓▓ | `00:00:17` | 0 | ⚠️ **Intro Stall:** High brand curiosity (CyberMentor), but viewers leave before core interview. Add visual jump cards. |
-| 3 | **Bug Bounty to Pro \| Career Path** | ▓▓▓ | `00:00:03` | 0 | ⚠️ **Instant Bounce:** 3s retention indicates mismatched expectations or dry intro silence. Add fast cold-open hook. |
-| 4 | **Stop Paying $15,000 for Bootcamps** | ▓▓▓ | `00:00:06` | 0 | ⚠️ **Controversial Hook Stall:** High click intent, 6s drop. Must immediately state the free alternative within 5s. |
-| 5 | **How to Actually Land an Entry-Level Cyber Job** | ▓▓▓ | `00:00:06` | 0 | ⚠️ **Action Gap:** Search intent is huge; viewers bounce before advice starts. Insert chapter markers in description & on-screen text. |
-| 6 | **Breaking into Cybersecurity (Series Feature)** | ▓▓ | `00:00:14` | 0 | 🟡 **Baseline Retention:** 14s view time. Needs guest intro tightening. |
-| 7 | **LLM Reasoning Guide for Security Analysts** | ▓▓ | `00:00:22` | 0 | 🟡 **Topic Interest:** 22s watch time. AI/LLM security is trending; extract into dedicated 45s Shorts. |
-| 8 | **Join us on Breaking into Cybersecurity** | ▓▓ | `00:00:13` | 0 | 🟡 **Format Transition:** 13s watch time on live show invitation. |
-| 9 | **Breaking into Cybersecurity (Full Case Study)** | ▓▓ | `00:07:42` | 0 | 🌟 **OUTLIER CHAMPION (7m 42s):** Phenomenal long-form retention! Retains viewers 18x longer than channel average. Analyze structure as gold-standard benchmark. |
-| 10 | **How to Transfer IT Skills into Cyber** | ▓▓ | `00:00:14` | 0 | 🟡 **Core Value Audience:** Re-target with pinned career audit CTA. |
+| Rank | Video | Views | Avg Watch Time | Shares |
+| :---: | :--- | :---: | :---: | :---: |
+| 1 | **AI + Cyber Mentorship Guide \| CPF Coaching LLC** (`ucU61U_IQ0w`) | 7 | 00:01:53 | 0 |
+| 2 | **CISO Tradecraft - Guest: Christophe Foulon \| CPF Coaching LLC** (`Jg_0laZpQWE`) | 4 | 00:00:03 | 0 |
+| 3 | **Leaving Stability for Cyber AI: Zaun.ai's Story \| CPF Coaching LLC** (`jGI5pbwuNO4`) | 4 | 00:00:11 | 0 |
+| 4 | **We're hacking resumes LIVE! w/ Naomi Buckwalter + Dr.... \| CPF Coaching LLC** (`PTJQumxFvew`) | 3 | 00:00:00 | 0 |
+| 5 | **SOC Interview Drill Guide \| CPF Coaching \| BIC** (`j5DPnaWebQo`) | 3 | 00:00:00 | 0 |
+| 6 | **Zaun.ai's AI Secret: Conviction & Innovation! \| CPF Coaching LLC** (`gvfcHDRAHwA`) | 3 | 00:00:24 | 0 |
+| 7 | **The 4 Cs of Effective Leadership: Insights Mattis &... \| CPF Coaching LLC** (`Vh5pj1k8G30`) | 2 | 00:00:21 | 0 |
+| 8 | **Charles Karanja: Community Interest \| CPF Coaching LLC** (`8MVJjYEYqU4`) | 2 | 00:00:00 | 0 |
+| 9 | **Are Cybersecurity Certifications Still Worth It? \| Jason Dion Interview** (`41Uon-hZXFU`) | 2 | 00:00:19 | 0 |
+| 10 | **Building the Cybersecurity Workforce: Eric Stride's... \| CPF Coaching LLC** (`IZozmrJrid0`) | 2 | 00:00:08 | 0 |
 
 ---
 
-### 🔍 Key Diagnostic Takeaways from Telemetry Snapshot
+### 🔍 Current Telemetry Findings
 
-1. **The 7m 42s Outlier Proves Audience Appetite:**  
-   Asset #9 held viewers for **7 minutes and 42 seconds**, while 8 of the other top 10 assets lost viewers within 15 seconds. This demonstrates that when the content delivers immediate narrative value without filler, engagement is exceptional. We must reverse-engineer Asset #9's pacing and structure.
-2. **The "2 to 6-Second Bounce Epidemic":**  
-   Assets like *SOC Analyst Mock Interview* and *Bug Bounty to Pro* attract strong search volume but suffer immediate drop-off within 2–3 seconds. This proves the **Title & Thumbnail are winning the click**, but the **first 10 seconds of video audio/video are losing the viewer**.
-3. **Zero-Friction Engagement Desert:**  
-   Zero comments and zero likes across 190 views proves audience inertia. Viewers consume passively unless explicitly challenged or invited to respond. Pinned debate questions are mandatory.
+1. **Top weekly video:** AI + Cyber Mentorship Guide | CPF Coaching LLC led with 7 views and 00:01:53 average watch time.
+2. **Audience depth:** Average view duration was 00:00:43 across 76 views.
+3. **Engagement:** 0 likes, 0 comments, and 0 shares were recorded in the period.
 
 ---
 
@@ -164,4 +161,4 @@ flowchart LR
 3. **Deploy Pinned Engagement Strategy:** Add high-conversion pinned comments to the top 10 traffic-driving videos.
 
 
-<!-- LAST_SATURDAY_SYNC: 2026-09-08 10:10:39 -->
+<!-- LAST_SATURDAY_SYNC: 2026-09-19 08:43:59 -->
