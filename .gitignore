@@ -50,3 +50,4 @@ instance/
 .dolt/
 .beads-credential-key
 master_orchestrator.log
+logs/
