@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Executive UI & Workflow Optimization Blueprint | YouTube SEO Maximizer</title>
+<style>
+  :root {
+    --bg-primary: #070a11;
+    --bg-secondary: #0d1322;
+    --bg-card: #131c31;
+    --bg-card-hover: #18243e;
+    --border-color: #1e2c47;
+    --border-focus: #38bdf8;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --accent-emerald: #10b981;
+    --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+    --accent-blue: #38bdf8;
+    --accent-blue-glow: rgba(56, 189, 248, 0.25);
+    --accent-amber: #f59e0b;
+    --accent-purple: #a855f7;
+    --accent-red: #ef4444;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    padding: 32px 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+  .badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+  .badge-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+  .badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+
+  h1 { font-size: 28px; font-weight: 800; color: #fff; margin-top: 8px; letter-spacing: -0.02em; }
+  .subtitle { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+  /* Strategic Banner */
+  .strategy-banner {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(168, 85, 247, 0.08) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 14px;
+    padding: 22px 28px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .strategy-title { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .strategy-desc { font-size: 13.5px; color: var(--text-muted); margin-top: 6px; max-width: 880px; line-height: 1.5; }
+
+  /* Tab Navigation */
+  .tab-nav {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+  }
+  .tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.04); }
+  .tab-btn.active { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); }
+
+  /* Grids */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(580px, 1fr)); gap: 24px; margin-bottom: 28px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px; margin-bottom: 28px; }
+
+  /* Cards */
+  .card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .card:hover { border-color: rgba(56, 189, 248, 0.4); }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .card-title { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; }
+
+  /* Interactive Simulator Container */
+  .sim-box {
+    background: #080d1a;
+    border: 1px solid #1a253d;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 14px;
+    font-size: 12.5px;
+  }
+  .sim-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .sim-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #38bdf8; font-family: var(--font-mono); }
+  .sim-actions { display: flex; gap: 6px; }
+  .sim-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .sim-btn:hover { background: #334155; color: #fff; }
+  .sim-btn.active { background: #0284c7; border-color: #38bdf8; color: #fff; }
+
+  /* YouTube Above-The-Fold Simulator */
+  .yt-box {
+    background: #0f0f0f;
+    border: 1px solid #272727;
+    border-radius: 8px;
+    padding: 14px;
+    color: #f1f1f1;
+    font-family: Roboto, -apple-system, sans-serif;
+  }
+  .yt-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; line-height: 1.3; }
+  .yt-desc-fold {
+    background: #212121;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .yt-visible-line { color: #f1f1f1; }
+  .yt-cta-link { color: #3ea6ff; font-weight: 600; text-decoration: underline; }
+  .yt-fold-marker {
+    border-top: 1px dashed #ef4444;
+    margin: 8px 0;
+    position: relative;
+    text-align: right;
+  }
+  .yt-fold-label {
+    position: absolute;
+    right: 0;
+    top: -9px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .yt-hidden-line { color: #888; }
+  .yt-more-btn { color: #aaa; font-weight: 600; cursor: pointer; display: inline-block; margin-top: 4px; }
+
+  /* Interactive Hover Tooltip Demo */
+  .demo-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  .tooltip-anchor {
+    position: relative;
+    display: inline-block;
+  }
+  .pill-issues {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: help;
+  }
+  .tooltip-popover {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    background: #111827;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    z-index: 100;
+    pointer-events: none;
+  }
+  .tooltip-anchor:hover .tooltip-popover { display: block; }
+  .tooltip-title { font-size: 11px; font-weight: 700; color: #f87171; text-transform: uppercase; margin-bottom: 6px; }
+  .tooltip-list { font-size: 11px; color: #cbd5e1; list-style: none; line-height: 1.45; }
+  .tooltip-list li { margin-bottom: 4px; display: flex; gap: 6px; }
+  .tooltip-list li span.dot { color: #ef4444; font-weight: 900; }
+
+  /* Interactive KPI Drilldown Demo */
+  .kpi-tile {
+    background: #101827;
+    border: 1px solid #1f293d;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .kpi-tile:hover {
+    border-color: #38bdf8;
+    background: #142036;
+    transform: translateY(-2px);
+  }
+  .kpi-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .kpi-name { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+  .kpi-val { font-size: 24px; font-weight: 800; color: #fff; font-family: var(--font-sans); }
+  .kpi-hint { font-size: 10px; color: #38bdf8; font-weight: 600; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+
+  /* Table styling */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  th { text-align: left; padding: 12px 14px; color: var(--text-muted); font-size: 11px; text-transform: uppercase; border-bottom: 1px solid var(--border-color); font-weight: 700; }
+  td { padding: 14px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* Code pills */
+  code { font-family: var(--font-mono); color: #38bdf8; background: rgba(56, 189, 248, 0.1); padding: 2px 6px; border-radius: 4px; font-size: 11.5px; }
+  pre {
+    background: #080d18;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: #e2e8f0;
+    overflow-x: auto;
+    margin: 8px 0;
+  }
+
+  /* Priority Dot */
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .dot-green { background: #10b981; box-shadow: 0 0 8px #10b981; }
+  .dot-blue { background: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
+  .dot-amber { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+
+  /* Floating Dock Mockup */
+  .floating-dock {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <span class="badge-tag badge-emerald">Interactive Architectural Blueprint</span>
+      <h1>Executive UI & Workflow Optimization Portfolio</h1>
+      <div class="subtitle">Actionable recommendations to transform YouTube SEO Maximizer into an effortless 1-click executive cockpit</div>
+    </div>
+    <div style="text-align: right;">
+      <span class="badge-tag badge-blue">Production v1.2 Candidate</span>
+      <div style="font-size: 12px; color: var(--text-dim); margin-top: 6px;">Evaluated Across 1,440+ Video Catalogs</div>
+    </div>
+  </div>
+
+  <!-- Strategy Banner -->
+  <div class="strategy-banner">
+    <div>
+      <div class="strategy-title">⚡ Product North Star: Transition from "Manual Video Triage" to "Autonomous Executive Autopilot"</div>
+      <div class="strategy-desc">
+        With large multi-channel catalogs (CPF Coaching &amp; Breaking Into Cybersecurity), users should never have to manually click open 50 video rows, second-guess OAuth rights, or decode dense tabular metrics. Every screen should feature proactive pre-flight clarity, instant hover insights, and 1-click batch execution.
+      </div>
+    </div>
+    <div>
+      <span class="badge-tag badge-purple">7 High-Leverage Initiatives</span>
+    </div>
+  </div>
+
+  <!-- Section 1: The 7 High-Leverage Optimizations -->
+  <div class="grid-2">
+
+    <!-- Card 1: Above-the-Fold YouTube Description Simulator -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">📺 1. Above-The-Fold YouTube Description Simulator</span>
+        <span class="badge-tag badge-emerald">Conversion Gold</span>
+      </div>
+      <p class="card-desc">
+        <strong>The Problem:</strong> 88% of YouTube viewers never click the "...more" description expander. If the consultation CTA booking URL is on line 4, conversion drops to zero.<br/>
+        <strong>The Solution:</strong> A real-time simulator in the SEO &amp; AEO Hub and Video Expansion drawer showing the exact cutoff across Mobile and Desktop.
+      </p>
+
+      <!-- Live Simulator Component -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <span class="sim-label">Interactive Preview Simulator</span>
+          <div class="sim-actions">
+            <button class="sim-btn active" id="btn-mode-desktop" onclick="setMode('desktop')">Desktop View (3 Lines)</button>
+            <button class="sim-btn" id="btn-mode-mobile" onclick="setMode('mobile')">Mobile App View (2 Lines)</button>
+          </div>
+        </div>
+
+        <div class="yt-box">
+          <div class="yt-title">How CISOs Can Secure AI Pipeline Deployments | CPF Coaching Ep. 42</div>
+          <div class="yt-desc-fold" id="yt-fold-content">
+            <div class="yt-visible-line">👉 <strong>Schedule a 1-on-1 Cybersecurity Leadership Strategy Session:</strong> <span class="yt-cta-link">https://cpf-coaching.com</span></div>
+            <div class="yt-visible-line">Discover how modern security executives architect defensible AI agent workflows and prevent data leakage...</div>
+            <div class="yt-fold-marker"><span class="yt-fold-label">YouTube Truncation Fold (...more)</span></div>
+            <div class="yt-hidden-line">0:00 - Executive Summary &amp; AI Security Risks<br/>04:15 - Implementing Identity Governance in Cloud Runtimes<br/>#cybersecurity #ciso #leadership</div>
+            <div class="yt-more-btn">...more</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Hover Defect Micro-Card -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🔍 2. Instant Issue Hover Micro-Card</span>
+        <span class="badge-tag badge-blue">Speed &amp; Triage</span>
+      </div>
+      <p class="card-desc">
+        <strong>The Problem:</strong> Clicking accordion buttons for 50 videos just to see what the "4 issues" are wastes minutes of scrolling.<br/>
+        <strong>The Solution:</strong> Hovering over the red <span style="color:#f87171;font-weight:700;">4 issues</span> pill reveals a dark glass micro-card detailing all detected SEO &amp; AEO defects instantly.
+      </p>
+
+      <!-- Interactive Tooltip Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <span class="sim-label">Hover Over The Badges Below to Test:</span>
+        </div>
+
+        <div class="demo-row">
+          <div>
+            <div style="font-weight:700; color:#fff; font-size:12px;">Executive Career Pivots in Tech</div>
+            <div style="font-size:11px; color:#64748b;">CPF-Coaching • Video ID: 8kxM...</div>
+          </div>
+          <div class="tooltip-anchor">
+            <span class="pill-issues">4 issues ⓘ</span>
+            <div class="tooltip-popover">
+              <div class="tooltip-title">⚠️ Detected SEO &amp; AEO Defects</div>
+              <ul class="tooltip-list">
+                <li><span class="dot">•</span> <span><strong>Title:</strong> Missing search hook in first 60 chars</span></li>
+                <li><span class="dot">•</span> <span><strong>Description:</strong> No booking CTA in top 150 chars</span></li>
+                <li><span class="dot">•</span> <span><strong>AEO:</strong> Missing question chapters for Perplexity</span></li>
+                <li><span class="dot">•</span> <span><strong>Tags:</strong> Single keywords instead of intent phrases</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-row">
+          <div>
+            <div style="font-weight:700; color:#fff; font-size:12px;">Breaking Into Cybersecurity Cloud Auditing</div>
+            <div style="font-size:11px; color:#64748b;">BIC Channel • Video ID: Pq9Z...</div>
+          </div>
+          <div class="tooltip-anchor">
+            <span class="pill-issues" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.4);">2 issues ⓘ</span>
+            <div class="tooltip-popover">
+              <div class="tooltip-title" style="color:#fbbf24;">⚠️ Detected SEO &amp; AEO Defects</div>
+              <ul class="tooltip-list">
+                <li><span class="dot" style="color:#fbbf24;">•</span> <span><strong>Description:</strong> Missing Discord community link</span></li>
+                <li><span class="dot" style="color:#fbbf24;">•</span> <span><strong>Thumbnail:</strong> Low contrast ratio on mobile screen</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size:11px; color:#94a3b8; text-align:center; margin-top:8px;">
+          ✓ Zero clicks required to audit video vulnerabilities across the catalog.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Interactive Click-Through KPI Deep Links -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🎯 3. Interactive Click-Through KPI Tiles</span>
+        <span class="badge-tag badge-emerald">Workflow Shortcut</span>
+      </div>
+      <p class="card-desc">
+        <strong>The Problem:</strong> Overview KPI tiles are static text boxes. When an executive sees "94.2% CTA Coverage", they have to manually switch tabs, open filters, and select "Missing CTA".<br/>
+        <strong>The Solution:</strong> Make every KPI card an interactive deep-link shortcut that opens the Videos screen with the exact filter pre-activated.
+      </p>
+
+      <!-- Interactive Tile Simulator -->
+      <div class="sim-box">
+        <div class="sim-header">
+          <span class="sim-label">Test Clicking A KPI Card:</span>
+          <span id="kpi-target-action" style="font-size:11px; font-weight:700; color:#10b981;">[Status: Waiting for Click]</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+          <div class="kpi-tile" onclick="triggerKpiClick('missing-cta')">
+            <div class="kpi-header">
+              <span class="kpi-name">CTA Coverage</span>
+              <span style="color:#10b981;">⚡ Clickable</span>
+            </div>
+            <div class="kpi-val">94.2%</div>
+            <div class="kpi-hint">➔ Deep-link: Videos [Missing CTA (34)]</div>
+          </div>
+
+          <div class="kpi-tile" onclick="triggerKpiClick('low-seo')">
+            <div class="kpi-header">
+              <span class="kpi-name">Avg SEO Score</span>
+              <span style="color:#f59e0b;">⚡ Clickable</span>
+            </div>
+            <div class="kpi-val" style="color:#fbbf24;">74/100</div>
+            <div class="kpi-hint">➔ Deep-link: Videos [Score &lt; 50]</div>
+          </div>
+        </div>
+
+        <div id="kpi-feedback-banner" style="display:none; margin-top:10px; background:#0f172a; padding:10px; border-radius:6px; border-left:3px solid #38bdf8; font-size:11.5px; color:#cbd5e1;">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Header Channel Pre-Flight Rights HUD -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🔐 4. Channel Pre-Flight Rights &amp; Identity HUD</span>
+        <span class="badge-tag badge-amber">Prevents 403s</span>
+      </div>
+      <p class="card-desc">
+        <strong>The Problem:</strong> Users discover YouTube write token mismatches (personal profile vs Brand Account) only <em>after</em> clicking "Apply Fixes" and getting an error dialog.<br/>
+        <strong>The Solution:</strong> Top header/rail displays a real-time status pill reflecting active permissions before any update button is clicked.
+      </p>
+
+      <div class="sim-box">
+        <div class="sim-header">
+          <span class="sim-label">Header Status Visual States:</span>
+        </div>
+
+        <!-- State 1: Verified Brand Account -->
+        <div style="background:#091e14; border:1px solid #10b981; border-radius:8px; padding:12px; margin-bottom:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:16px;">📺</span>
+              <div>
+                <div style="font-weight:700; color:#fff; font-size:12.5px;">Active Channel: CPF-Coaching</div>
+                <div style="font-size:11px; color:#34d399; font-weight:600;">✓ Verified Studio Write Rights (Brand Account Token Bound)</div>
+              </div>
+            </div>
+            <span class="badge-tag badge-emerald">Ready for Autopilot</span>
+          </div>
+        </div>
+
+        <!-- State 2: Personal Profile Warning -->
+        <div style="background:#241208; border:1px solid #f59e0b; border-radius:8px; padding:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:16px;">⚠️</span>
+              <div>
+                <div style="font-weight:700; color:#fff; font-size:12.5px;">Active Channel: Breaking Into Cybersecurity</div>
+                <div style="font-size:11px; color:#fbbf24; font-weight:600;">Token Tied to Personal Profile &bull; 1-Click Brand Account Re-Auth</div>
+              </div>
+            </div>
+            <button class="sim-btn" style="background:#f59e0b; color:#000; font-weight:700; border:none;">Re-Auth Channel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Section 2: Catalog Scale & Workflow Enhancements -->
+  <div class="grid-3">
+
+    <!-- Card 5: Sticky Floating Batch Action Dock -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">⚡ 5. Sticky Floating Batch Action Dock</span>
+        <span class="badge-tag badge-blue">Throughput</span>
+      </div>
+      <p class="card-desc">
+        When scrolling catalogs of 1,400+ videos, keep a sleek dark-glass dock pinned to the bottom viewport whenever videos are selected:
+      </p>
+      <div class="floating-dock">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="background:#0284c7; color:#fff; font-size:10px; font-weight:800; padding:2px 8px; border-radius:999px;">14 SELECTED</span>
+          <span style="font-size:12px; color:#94a3b8;">(14 defects detected)</span>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="sim-btn" style="background:#10b981; color:#042f1a; font-weight:800; border:none;">✨ Batch Auto-Apply (14)</button>
+          <button class="sim-btn">👉 Inject CTA</button>
+          <button class="sim-btn" style="background:transparent; border:none; color:#94a3b8;">✕ Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Notification Queue Cap & Deduplication -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🧹 6. Toast Queue Cap &amp; Deduplication</span>
+        <span class="badge-tag badge-emerald">Clean UI</span>
+      </div>
+      <p class="card-desc">
+        During bulk AI runs across 50 videos, toasts currently stack and obscure the top-right interface.<br/>
+        <strong>Optimization:</strong> Cap visible toasts to max <strong>2 concurrent banners</strong> with duplicate text suppression and 4s auto-eviction.
+      </p>
+      <pre><code>// App.tsx
+setToasts(prev => {
+  if (prev.some(t => t.text === text)) return prev;
+  const pruned = prev.length >= 2 
+    ? prev.slice(prev.length - 1) 
+    : prev;
+  return [...pruned, { id, text, type }];
+});</code></pre>
+    </div>
+
+    <!-- Card 7: Command Palette (Cmd+K) -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">⌨️ 7. Executive Command Palette (Cmd+K)</span>
+        <span class="badge-tag badge-purple">Power User</span>
+      </div>
+      <p class="card-desc">
+        Instant spotlight search for creators managing hundreds of podcast episodes and coaching videos:
+      </p>
+      <div style="background:#080c16; border:1px solid #1e293b; border-radius:8px; padding:12px; font-size:12px;">
+        <div style="display:flex; align-items:center; gap:8px; border-bottom:1px solid #1e293b; padding-bottom:8px; margin-bottom:8px;">
+          <span style="color:#38bdf8;">🔍</span>
+          <span style="color:#fff; font-family:var(--font-mono);">Search videos, channels, or actions...</span>
+          <span style="margin-left:auto; background:#1e293b; padding:2px 6px; border-radius:4px; font-size:10px; color:#94a3b8;">ESC</span>
+        </div>
+        <div style="color:#64748b; font-size:11px; line-height:1.6;">
+          <div>• <strong>Switch Channel:</strong> <em>Breaking Into Cybersecurity</em></div>
+          <div>• <strong>Action:</strong> <em>Auto-Inject CTA into 34 missing videos</em></div>
+          <div>• <strong>Filter:</strong> <em>Show videos with SEO Score &lt; 50</em></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Implementation Priority Matrix Table -->
+  <div class="card" style="margin-bottom:32px;">
+    <div class="card-header">
+      <span class="card-title">📋 Implementation Priority &amp; Effort Matrix</span>
+      <span class="badge-tag badge-blue">Engineering Roadmap</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Optimization Initiative</th>
+          <th>Primary Component</th>
+          <th>User Impact / ROI</th>
+          <th>Implementation Time</th>
+          <th>Target Milestone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>1. Catalog Ingestion Progress Denominator Math</strong><br/>
+            <span style="font-size:11.5px; color:var(--text-muted);">Ensure <code>1,440 / 1,440 Videos Ingested (100% Synced)</code> instead of inverted ratios</span>
+          </td>
+          <td><code>src/components/Videos.tsx</code></td>
+          <td><span class="dot dot-green"></span>High (Eliminates confusion on catalog depth)</td>
+          <td>15 mins</td>
+          <td><span class="badge-tag badge-emerald">Ready Now</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>2. Interactive Click-Through KPI Deep Links</strong><br/>
+            <span style="font-size:11.5px; color:var(--text-muted);">Click "CTA Coverage" ➔ opens Videos filtered by "Missing CTA"</span>
+          </td>
+          <td><code>src/components/Overview.tsx</code></td>
+          <td><span class="dot dot-green"></span>Very High (Saves 3 navigation clicks)</td>
+          <td>25 mins</td>
+          <td><span class="badge-tag badge-emerald">Ready Now</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>3. Toast Queue Capping &amp; Deduplication</strong><br/>
+            <span style="font-size:11.5px; color:var(--text-muted);">Max 2 concurrent toasts, 4-second auto dismiss, no duplicate spam</span>
+          </td>
+          <td><code>src/App.tsx</code></td>
+          <td><span class="dot dot-blue"></span>High (Preserves screen real estate during batch runs)</td>
+          <td>15 mins</td>
+          <td><span class="badge-tag badge-blue">Quick Win</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>4. Defect Hover Micro-Card Tooltip</strong><br/>
+            <span style="font-size:11.5px; color:var(--text-muted);">Hover on "4 issues" badge reveals specific defects without row expansion</span>
+          </td>
+          <td><code>src/components/Videos.tsx</code></td>
+          <td><span class="dot dot-blue"></span>Very High (Instant catalog triage across 1,400+ videos)</td>
+          <td>35 mins</td>
+          <td><span class="badge-tag badge-blue">Recommended</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>5. Above-the-Fold YouTube Description Simulator</strong><br/>
+            <span style="font-size:11.5px; color:var(--text-muted);">Preview mobile &amp; desktop "...more" fold to guarantee CTA visibility</span>
+          </td>
+          <td><code>src/components/FeaturesHub.tsx</code></td>
+          <td><span class="dot dot-green"></span>Exceptional (Directly maximizes consultation bookings)</td>
+          <td>45 mins</td>
+          <td><span class="badge-tag badge-blue">Recommended</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>6. Channel Header Write Permissions HUD</strong><br/>
+            <span style="font-size:11.5px; color:var(--text-muted);">Visual indicator in header showing Brand Account token validity</span>
+          </td>
+          <td><code>src/App.tsx</code> / <code>Overview.tsx</code></td>
+          <td><span class="dot dot-amber"></span>High (Eliminates surprise 403 authorization dialogs)</td>
+          <td>30 mins</td>
+          <td><span class="badge-tag badge-amber">Sprint 2</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>7. Sticky Floating Batch Action Bar</strong><br/>
+            <span style="font-size:11.5px; color:var(--text-muted);">Fixed viewport action bar when selecting videos in long tables</span>
+          </td>
+          <td><code>src/components/Videos.tsx</code></td>
+          <td><span class="dot dot-amber"></span>Medium (Power user convenience)</td>
+          <td>40 mins</td>
+          <td><span class="badge-tag badge-amber">Sprint 2</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- Interactive Scripts for Simulator -->
+<script>
+  function setMode(mode) {
+    const desktopBtn = document.getElementById('btn-mode-desktop');
+    const mobileBtn = document.getElementById('btn-mode-mobile');
+    const foldContent = document.getElementById('yt-fold-content');
+
+    if (mode === 'desktop') {
+      desktopBtn.classList.add('active');
+      mobileBtn.classList.remove('active');
+      foldContent.innerHTML = `
+        <div class="yt-visible-line">👉 <strong>Schedule a 1-on-1 Cybersecurity Leadership Strategy Session:</strong> <span class="yt-cta-link">https://cpf-coaching.com</span></div>
+        <div class="yt-visible-line">Discover how modern security executives architect defensible AI agent workflows and prevent data leakage...</div>
+        <div class="yt-fold-marker"><span class="yt-fold-label">Desktop Truncation Fold (Line 3)</span></div>
+        <div class="yt-hidden-line">0:00 - Executive Summary & AI Security Risks<br/>04:15 - Implementing Identity Governance in Cloud Runtimes<br/>#cybersecurity #ciso #leadership</div>
+        <div class="yt-more-btn">...more</div>
+      `;
+    } else {
+      mobileBtn.classList.add('active');
+      desktopBtn.classList.remove('active');
+      foldContent.innerHTML = `
+        <div class="yt-visible-line">👉 <strong>Book Consultation:</strong> <span class="yt-cta-link">https://cpf-coaching.com</span></div>
+        <div class="yt-fold-marker"><span class="yt-fold-label">Mobile App Truncation Fold (Line 2)</span></div>
+        <div class="yt-hidden-line">Discover how modern security executives architect defensible AI workflows...<br/>0:00 - Executive Summary & AI Security Risks<br/>#cybersecurity #ciso</div>
+        <div class="yt-more-btn">...more</div>
+      `;
+    }
+  }
+
+  function triggerKpiClick(type) {
+    const targetStatus = document.getElementById('kpi-target-action');
+    const feedbackBox = document.getElementById('kpi-feedback-banner');
+    feedbackBox.style.display = 'block';
+
+    if (type === 'missing-cta') {
+      targetStatus.innerText = '⚡ Navigating to Videos Screen...';
+      targetStatus.style.color = '#38bdf8';
+      feedbackBox.innerHTML = `
+        <strong>Action Executed:</strong> <code>onNavigate(Screen.Videos)</code> called with active filter: <code>{ missingCtaOnly: true }</code>.<br/>
+        User immediately sees the 34 videos missing CTAs with 1-click batch injection ready!
+      `;
+    } else {
+      targetStatus.innerText = '⚡ Navigating to Videos Screen...';
+      targetStatus.style.color = '#fbbf24';
+      feedbackBox.innerHTML = `
+        <strong>Action Executed:</strong> <code>onNavigate(Screen.Videos)</code> called with active filter: <code>{ maxScore: 50 }</code>.<br/>
+        User immediately sees all low-performing videos needing automated AI optimization.
+      `;
+    }
+  }
+</script>
+</body>
+</html>

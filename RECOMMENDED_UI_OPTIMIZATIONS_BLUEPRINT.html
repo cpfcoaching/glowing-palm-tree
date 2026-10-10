@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Executive UI & Workflow Optimization Blueprint | YouTube SEO Maximizer</title>
+<style>
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #162032;
+    --bg-card-hover: #1c2a42;
+    --border-color: #243552;
+    --border-focus: #38bdf8;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --accent-emerald: #10b981;
+    --accent-emerald-glow: rgba(16, 185, 129, 0.2);
+    --accent-amber: #f59e0b;
+    --accent-amber-glow: rgba(245, 158, 11, 0.2);
+    --accent-red: #ef4444;
+    --accent-blue: #38bdf8;
+    --accent-purple: #a855f7;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    padding: 28px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1240px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+  .badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+  .badge-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+  .badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+
+  h1 { font-size: 26px; font-weight: 800; color: #fff; margin-top: 8px; letter-spacing: -0.02em; }
+  .subtitle { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+  /* Quick Summary Banner */
+  .banner {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .banner-title { font-weight: 700; font-size: 15px; color: #fff; }
+  .banner-desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+  /* Grid Layouts */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 20px; margin-bottom: 28px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(560px, 1fr)); gap: 24px; margin-bottom: 28px; }
+
+  /* Card */
+  .card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .card:hover { border-color: rgba(56, 189, 248, 0.4); }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .card-title { font-size: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
+
+  /* Feature Item */
+  .opt-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .opt-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .opt-name { font-weight: 700; font-size: 13.5px; color: #fff; }
+  .opt-badge { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; }
+  .opt-badge.high { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+  .opt-badge.med { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+  .opt-detail { font-size: 12.5px; color: var(--text-muted); line-height: 1.45; }
+  .opt-detail strong { color: #e2e8f0; }
+
+  /* Interactive Wireframe Mockup */
+  .wireframe {
+    background: #080c14;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: #cbd5e1;
+  }
+  .wf-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-radius: 4px; }
+  .wf-row:hover { background: rgba(255,255,255,0.03); }
+  .wf-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #38bdf8;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+  }
+  .wf-pill {
+    padding: 2px 6px;
+    border-radius: 999px;
+    font-size: 9.5px;
+    font-weight: 800;
+  }
+  .wf-pill.green { background: rgba(16,185,129,0.2); color: #34d399; }
+  .wf-pill.red { background: rgba(239,68,68,0.2); color: #f87171; }
+  .wf-pill.amber { background: rgba(245,158,11,0.2); color: #fbbf24; }
+
+  /* Priority Matrix Table */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  th { text-align: left; padding: 10px 14px; color: var(--text-muted); font-size: 11px; text-transform: uppercase; border-bottom: 1px solid var(--border-color); font-weight: 700; }
+  td { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .impact-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .dot-green { background: #10b981; box-shadow: 0 0 6px #10b981; }
+  .dot-blue { background: #38bdf8; box-shadow: 0 0 6px #38bdf8; }
+  .dot-amber { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+
+  /* Code block */
+  code { font-family: var(--font-mono); color: #38bdf8; background: rgba(56, 189, 248, 0.1); padding: 2px 5px; border-radius: 4px; font-size: 11.5px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <span class="badge-tag badge-emerald">UI / UX Architectural Blueprint</span>
+      <h1>Executive UI & Workflow Recommendations</h1>
+      <div class="subtitle">Curated high-impact optimizations for YouTube SEO Maximizer based on real usage patterns</div>
+    </div>
+    <div style="text-align: right;">
+      <span class="badge-tag badge-blue">Target: Production v1.2</span>
+      <div style="font-size: 12px; color: var(--text-dim); margin-top: 6px;">Focus: Creator Clarity, Throughput & Flow</div>
+    </div>
+  </div>
+
+  <!-- Summary Banner -->
+  <div class="banner">
+    <div>
+      <div class="banner-title">⚡ Core Insight: Transition from Manual Management to "1-Click Executive Autopilot"</div>
+      <div class="banner-desc">Your users manage catalogs of 1,000+ videos. Optimizations should eliminate repetitive clicks, provide pre-flight clarity on OAuth rights, and make dashboard metrics instantly interactive.</div>
+    </div>
+  </div>
+
+  <!-- 3 Pillar Categories -->
+  <div class="grid-3">
+
+    <!-- Pillar 1: Video Catalog Experience -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🎥 1. Video SEO Index Table</span>
+        <span class="badge-tag badge-emerald">High Impact</span>
+      </div>
+      <p class="card-desc">Where users spend 85% of their working time triaging and optimizing back-catalog videos.</p>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">1. Catalog Ingestion Progress Math</span>
+          <span class="opt-badge high">Quick Win</span>
+        </div>
+        <p class="opt-detail">
+          Currently shows <code>1,440 / 326 VIDEOS INGESTED</code> when channel catalog expands beyond initial snippet cache. Update calculation to <code>Math.max(ingested, catalog)</code> so it cleanly reads <code>1,440 / 1,440 VIDEOS (100% Synced)</code>.
+        </p>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">2. Instant Issue Hover Micro-Card</span>
+          <span class="opt-badge high">High Polish</span>
+        </div>
+        <p class="opt-detail">
+          Hovering over the red <span style="color:#f87171; font-weight:700;">4 issues</span> pill reveals a tooltip listing the exact defects (e.g., <em>"Missing question in first 60 chars"</em>, <em>"No CTA URL in top 150 chars"</em>) without requiring row expansion.
+        </p>
+        <div class="wireframe">
+          <div style="color: #94a3b8; margin-bottom: 4px;">[Hover on "4 issues" pill]:</div>
+          <div style="background:#0f172a; padding:6px 10px; border-radius:4px; border-left: 2px solid #ef4444;">
+            <div>• Title: Missing search hook in first 60 chars</div>
+            <div>• Description: Missing booking link in top 150 chars</div>
+            <div>• AEO: No natural-language question chapters</div>
+            <div>• Tags: Loose keywords instead of intent clusters</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">3. Sticky Floating Batch Action Bar</span>
+          <span class="opt-badge med">Throughput</span>
+        </div>
+        <p class="opt-detail">
+          When scrolling down large catalogs (1,400+ videos), keep a sleek pill bar fixed at the bottom: <code>"Batch Fix Next 10 Defects"</code> and <code>"Jump to Missing CTAs (34 remaining)"</code>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Navigation & Dashboard Flow -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">📊 2. Overview & Dashboard Linking</span>
+        <span class="badge-tag badge-blue">Workflow</span>
+      </div>
+      <p class="card-desc">Transforming passive dashboard analytics into direct, clickable navigation shortcuts.</p>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">1. Interactive Click-Through KPI Cards</span>
+          <span class="opt-badge high">High Value</span>
+        </div>
+        <p class="opt-detail">
+          Clicking <strong>"CTA Coverage: 94.2%"</strong> on Overview directly opens the <strong>Videos</strong> screen with the <code>Missing CTA</code> filter pre-activated. Clicking <strong>"Average Score: 74/100"</strong> opens Videos filtered by <code>Score &lt; 50</code>.
+        </p>
+        <div class="wireframe">
+          <div class="wf-row">
+            <span>[Card: 94.2% CTA Coverage]</span>
+            <span class="wf-btn">Click ➔ Filter Missing CTAs</span>
+          </div>
+          <div class="wf-row" style="margin-top:4px;">
+            <span>[Card: 74/100 Avg SEO Score]</span>
+            <span class="wf-btn">Click ➔ Filter Score &lt; 50</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">2. Toast Notification Queue Management</span>
+          <span class="opt-badge high">Cleanliness</span>
+        </div>
+        <p class="opt-detail">
+          In bulk runs, multiple toasts currently stack vertically. Cap visible toasts to a maximum of <strong>2 concurrent banners</strong>, with automated 4-second auto-eviction and duplicate message suppression.
+        </p>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">3. Active Channel Health Ring</span>
+          <span class="opt-badge med">Visual WOW</span>
+        </div>
+        <p class="opt-detail">
+          An SVG radial progress dial in the top bar showing overall channel optimization level (e.g. <code>92% Catalog AEO Ready</code>) with color shifting from amber to emerald.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pillar 3: Permissions & Multi-Channel Switcher -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🔐 3. Channel & Permissions UX</span>
+        <span class="badge-tag badge-amber">Reliability</span>
+      </div>
+      <p class="card-desc">Eliminating authentication surprises and supporting seamless multi-channel advisory accounts.</p>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">1. Channel-Aware Write Token Badge</span>
+          <span class="opt-badge high">Prevents 403s</span>
+        </div>
+        <p class="opt-detail">
+          Toolbar badge explicitly displays the channel name it is authorized for: <code>✓ Studio Edit Rights: CPF-Coaching</code>. Switching to <em>Breaking Into Cybersecurity</em> visually switches to <code>⚠️ Authorize Write Rights for BIC</code> before any update is clicked.
+        </p>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">2. Inline Token Expiration Countdown</span>
+          <span class="opt-badge med">Prevent Expiry</span>
+        </div>
+        <p class="opt-detail">
+          Displays remaining lifespan: <code>ACTIVE (48m left)</code> with a 1-click refresh icon, so users can preemptively renew without ever seeing a 401 token expired dialog.
+        </p>
+      </div>
+
+      <div class="opt-item">
+        <div class="opt-header">
+          <span class="opt-name">3. Quick CTA Template Editor on SEO Hub</span>
+          <span class="opt-badge med">Convenience</span>
+        </div>
+        <p class="opt-detail">
+          Add an expandable drawer directly on the SEO & AEO page allowing users to preview and edit their consultation booking URL (e.g. <code>https://cpf-coaching.com</code>) before running automated catalog injections.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Priority Matrix Table -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">📋 Optimization Implementation Priority Matrix</span>
+      <span class="badge-tag badge-purple">Roadmap</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Optimization Item</th>
+          <th>Component File</th>
+          <th>User Impact</th>
+          <th>Development Effort</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Channel Ingestion Denominator Math</strong><br/><span style="font-size:11px;color:var(--text-muted)">Fix 1,440 / 326 ratio display</span></td>
+          <td><code>src/components/Videos.tsx</code></td>
+          <td><span class="impact-dot dot-green"></span>High (Eliminates confusion)</td>
+          <td>15 minutes</td>
+          <td><span class="badge-tag badge-emerald">Ready to Apply</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Interactive Deep-Link KPI Tiles</strong><br/><span style="font-size:11px;color:var(--text-muted)">Click tile ➔ open Videos with active filter</span></td>
+          <td><code>src/components/Overview.tsx</code></td>
+          <td><span class="impact-dot dot-green"></span>Very High (Saves 3 clicks)</td>
+          <td>30 minutes</td>
+          <td><span class="badge-tag badge-emerald">Ready to Apply</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Toast Queue Cap & Deduplication</strong><br/><span style="font-size:11px;color:var(--text-muted)">Max 2 concurrent toasts, 4s auto-dismiss</span></td>
+          <td><code>src/App.tsx</code></td>
+          <td><span class="impact-dot dot-blue"></span>High (Cleans screen real estate)</td>
+          <td>20 minutes</td>
+          <td><span class="badge-tag badge-blue">Recommended</span></td>
+        </tr>
+        <tr>
+          <td><strong>4. Hover Defect Preview Tooltip</strong><br/><span style="font-size:11px;color:var(--text-muted)">Instant preview of the 4 video issues</span></td>
+          <td><code>src/components/Videos.tsx</code></td>
+          <td><span class="impact-dot dot-blue"></span>High (Instant triage)</td>
+          <td>45 minutes</td>
+          <td><span class="badge-tag badge-blue">Recommended</span></td>
+        </tr>
+        <tr>
+          <td><strong>5. Sticky Bottom Batch Optimization Bar</strong><br/><span style="font-size:11px;color:var(--text-muted)">One-click batch fix while scrolling</span></td>
+          <td><code>src/components/Videos.tsx</code></td>
+          <td><span class="impact-dot dot-amber"></span>Medium (Power user throughput)</td>
+          <td>45 minutes</td>
+          <td><span class="badge-tag badge-amber">Future Sprint</span></td>
+        </tr>
+        <tr>
+          <td><strong>6. Admin Portal CSV Audit Export</strong><br/><span style="font-size:11px;color:var(--text-muted)">Export metered token consumption to CSV</span></td>
+          <td><code>src/components/AdminPortal.tsx</code></td>
+          <td><span class="impact-dot dot-amber"></span>Medium (Executive compliance)</td>
+          <td>30 minutes</td>
+          <td><span class="badge-tag badge-amber">Future Sprint</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</body>
+</html>
