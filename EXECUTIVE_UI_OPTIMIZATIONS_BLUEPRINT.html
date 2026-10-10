@@ -298,9 +298,7 @@
 
   /* Floating Dock Mockup */
   .floating-dock {
-    background: rgba(15, 23, 42, 0.95);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    background: #0f172a;
     border: 1px solid rgba(56, 189, 248, 0.4);
     box-shadow: 0 10px 30px rgba(0,0,0,0.7);
     border-radius: 12px;
@@ -310,6 +308,44 @@
     align-items: center;
     margin-top: 14px;
   }
+
+  /* Utility classes to avoid inline styles */
+  .text-right { text-align: right; }
+  .header-meta { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+  .text-red-bold { color: #f87171; font-weight: 700; }
+  .grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .kpi-feedback { display: none; margin-top: 10px; background: #0f172a; padding: 10px; border-radius: 6px; border-left: 3px solid #38bdf8; font-size: 11.5px; color: #cbd5e1; }
+  .state-verified { background: #091e14; border: 1px solid #10b981; border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+  .state-warning { background: #241208; border: 1px solid #f59e0b; border-radius: 8px; padding: 12px; }
+  .flex-between { display: flex; justify-content: space-between; align-items: center; }
+  .flex-center-gap8 { display: flex; align-items: center; gap: 8px; }
+  .flex-center-gap10 { display: flex; align-items: center; gap: 10px; }
+  .flex-gap8 { display: flex; gap: 8px; }
+  .icon-large { font-size: 16px; }
+  .card-title-white { font-weight: 700; color: #fff; font-size: 12.5px; }
+  .card-title-small { font-weight: 700; color: #fff; font-size: 12px; }
+  .text-verified-green { font-size: 11px; color: #34d399; font-weight: 600; }
+  .text-warning-amber { font-size: 11px; color: #fbbf24; font-weight: 600; }
+  .btn-reauth { background: #f59e0b; color: #000; font-weight: 700; border: none; }
+  .badge-count-blue { background: #0284c7; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 999px; }
+  .btn-apply-green { background: #10b981; color: #042f1a; font-weight: 800; border: none; }
+  .btn-clear { background: transparent; border: none; color: #94a3b8; }
+  .text-muted-12 { font-size: 12px; color: #94a3b8; }
+  .text-dim-11 { font-size: 11px; color: #64748b; }
+  .search-palette { background: #080c16; border: 1px solid #1e293b; border-radius: 8px; padding: 12px; font-size: 12px; }
+  .search-header { display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 8px; }
+  .kbd-esc { margin-left: auto; background: #1e293b; padding: 2px 6px; border-radius: 4px; font-size: 10px; color: #94a3b8; }
+  .search-body { color: #64748b; font-size: 11px; line-height: 1.6; }
+  .text-emerald { color: #10b981; }
+  .text-amber { color: #f59e0b; }
+  .text-amber-bright { color: #fbbf24; }
+  .text-blue { color: #38bdf8; }
+  .text-mono-white { color: #fff; font-family: var(--font-mono); }
+  .status-waiting { font-size: 11px; font-weight: 700; color: #10b981; }
+  .pill-amber { background: rgba(245,158,11,0.15); color: #fbbf24; border-color: rgba(245,158,11,0.4); }
+  .audit-note { font-size: 11px; color: #94a3b8; text-align: center; margin-top: 8px; }
+  .mb-32 { margin-bottom: 32px; }
+  .td-subtext { font-size: 11.5px; color: var(--text-muted); }
 </style>
 </head>
 <body>
@@ -322,9 +358,9 @@
       <h1>Executive UI & Workflow Optimization Portfolio</h1>
       <div class="subtitle">Actionable recommendations to transform YouTube SEO Maximizer into an effortless 1-click executive cockpit</div>
     </div>
-    <div style="text-align: right;">
+    <div class="text-right">
       <span class="badge-tag badge-blue">Production v1.2 Candidate</span>
-      <div style="font-size: 12px; color: var(--text-dim); margin-top: 6px;">Evaluated Across 1,440+ Video Catalogs</div>
+      <div class="header-meta">Evaluated Across 1,440+ Video Catalogs</div>
     </div>
   </div>
 
@@ -386,7 +422,7 @@
       </div>
       <p class="card-desc">
         <strong>The Problem:</strong> Clicking accordion buttons for 50 videos just to see what the "4 issues" are wastes minutes of scrolling.<br/>
-        <strong>The Solution:</strong> Hovering over the red <span style="color:#f87171;font-weight:700;">4 issues</span> pill reveals a dark glass micro-card detailing all detected SEO &amp; AEO defects instantly.
+        <strong>The Solution:</strong> Hovering over the red <span class="text-red-bold">4 issues</span> pill reveals a dark glass micro-card detailing all detected SEO &amp; AEO defects instantly.
       </p>
 
       <!-- Interactive Tooltip Simulator -->
@@ -397,8 +433,8 @@
 
         <div class="demo-row">
           <div>
-            <div style="font-weight:700; color:#fff; font-size:12px;">Executive Career Pivots in Tech</div>
-            <div style="font-size:11px; color:#64748b;">CPF-Coaching • Video ID: 8kxM...</div>
+            <div class="card-title-small">Executive Career Pivots in Tech</div>
+            <div class="text-dim-11">CPF-Coaching • Video ID: 8kxM...</div>
           </div>
           <div class="tooltip-anchor">
             <span class="pill-issues">4 issues ⓘ</span>
@@ -416,22 +452,22 @@
 
         <div class="demo-row">
           <div>
-            <div style="font-weight:700; color:#fff; font-size:12px;">Breaking Into Cybersecurity Cloud Auditing</div>
-            <div style="font-size:11px; color:#64748b;">BIC Channel • Video ID: Pq9Z...</div>
+            <div class="card-title-small">Breaking Into Cybersecurity Cloud Auditing</div>
+            <div class="text-dim-11">BIC Channel • Video ID: Pq9Z...</div>
           </div>
           <div class="tooltip-anchor">
-            <span class="pill-issues" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.4);">2 issues ⓘ</span>
+            <span class="pill-issues" class="pill-issues pill-amber">2 issues ⓘ</span>
             <div class="tooltip-popover">
-              <div class="tooltip-title" style="color:#fbbf24;">⚠️ Detected SEO &amp; AEO Defects</div>
+              <div class="tooltip-title" class="text-amber-bright">⚠️ Detected SEO &amp; AEO Defects</div>
               <ul class="tooltip-list">
-                <li><span class="dot" style="color:#fbbf24;">•</span> <span><strong>Description:</strong> Missing Discord community link</span></li>
-                <li><span class="dot" style="color:#fbbf24;">•</span> <span><strong>Thumbnail:</strong> Low contrast ratio on mobile screen</span></li>
+                <li><span class="dot" class="text-amber-bright">•</span> <span><strong>Description:</strong> Missing Discord community link</span></li>
+                <li><span class="dot" class="text-amber-bright">•</span> <span><strong>Thumbnail:</strong> Low contrast ratio on mobile screen</span></li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div style="font-size:11px; color:#94a3b8; text-align:center; margin-top:8px;">
+        <div class="audit-note">
           ✓ Zero clicks required to audit video vulnerabilities across the catalog.
         </div>
       </div>
@@ -452,14 +488,14 @@
       <div class="sim-box">
         <div class="sim-header">
           <span class="sim-label">Test Clicking A KPI Card:</span>
-          <span id="kpi-target-action" style="font-size:11px; font-weight:700; color:#10b981;">[Status: Waiting for Click]</span>
+          <span id="kpi-target-action" class="status-waiting">[Status: Waiting for Click]</span>
         </div>
 
-        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+        <div class="grid-2-col">
           <div class="kpi-tile" onclick="triggerKpiClick('missing-cta')">
             <div class="kpi-header">
               <span class="kpi-name">CTA Coverage</span>
-              <span style="color:#10b981;">⚡ Clickable</span>
+              <span class="text-emerald">⚡ Clickable</span>
             </div>
             <div class="kpi-val">94.2%</div>
             <div class="kpi-hint">➔ Deep-link: Videos [Missing CTA (34)]</div>
@@ -468,14 +504,14 @@
           <div class="kpi-tile" onclick="triggerKpiClick('low-seo')">
             <div class="kpi-header">
               <span class="kpi-name">Avg SEO Score</span>
-              <span style="color:#f59e0b;">⚡ Clickable</span>
+              <span class="text-amber">⚡ Clickable</span>
             </div>
-            <div class="kpi-val" style="color:#fbbf24;">74/100</div>
+            <div class="kpi-val" class="text-amber-bright">74/100</div>
             <div class="kpi-hint">➔ Deep-link: Videos [Score &lt; 50]</div>
           </div>
         </div>
 
-        <div id="kpi-feedback-banner" style="display:none; margin-top:10px; background:#0f172a; padding:10px; border-radius:6px; border-left:3px solid #38bdf8; font-size:11.5px; color:#cbd5e1;">
+        <div id="kpi-feedback-banner" class="kpi-feedback">
           <!-- Dynamically populated -->
         </div>
       </div>
@@ -498,13 +534,13 @@
         </div>
 
         <!-- State 1: Verified Brand Account -->
-        <div style="background:#091e14; border:1px solid #10b981; border-radius:8px; padding:12px; margin-bottom:10px;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; align-items:center; gap:8px;">
-              <span style="font-size:16px;">📺</span>
+        <div class="state-verified">
+          <div class="flex-between">
+            <div class="flex-center-gap8">
+              <span class="icon-large">📺</span>
               <div>
-                <div style="font-weight:700; color:#fff; font-size:12.5px;">Active Channel: CPF-Coaching</div>
-                <div style="font-size:11px; color:#34d399; font-weight:600;">✓ Verified Studio Write Rights (Brand Account Token Bound)</div>
+                <div class="card-title-white">Active Channel: CPF-Coaching</div>
+                <div class="text-verified-green">✓ Verified Studio Write Rights (Brand Account Token Bound)</div>
               </div>
             </div>
             <span class="badge-tag badge-emerald">Ready for Autopilot</span>
@@ -512,16 +548,16 @@
         </div>
 
         <!-- State 2: Personal Profile Warning -->
-        <div style="background:#241208; border:1px solid #f59e0b; border-radius:8px; padding:12px;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; align-items:center; gap:8px;">
-              <span style="font-size:16px;">⚠️</span>
+        <div class="state-warning">
+          <div class="flex-between">
+            <div class="flex-center-gap8">
+              <span class="icon-large">⚠️</span>
               <div>
-                <div style="font-weight:700; color:#fff; font-size:12.5px;">Active Channel: Breaking Into Cybersecurity</div>
-                <div style="font-size:11px; color:#fbbf24; font-weight:600;">Token Tied to Personal Profile &bull; 1-Click Brand Account Re-Auth</div>
+                <div class="card-title-white">Active Channel: Breaking Into Cybersecurity</div>
+                <div class="text-warning-amber">Token Tied to Personal Profile &bull; 1-Click Brand Account Re-Auth</div>
               </div>
             </div>
-            <button class="sim-btn" style="background:#f59e0b; color:#000; font-weight:700; border:none;">Re-Auth Channel</button>
+            <button class="sim-btn" class="sim-btn btn-reauth">Re-Auth Channel</button>
           </div>
         </div>
       </div>
@@ -542,14 +578,14 @@
         When scrolling catalogs of 1,400+ videos, keep a sleek dark-glass dock pinned to the bottom viewport whenever videos are selected:
       </p>
       <div class="floating-dock">
-        <div style="display:flex; align-items:center; gap:10px;">
-          <span style="background:#0284c7; color:#fff; font-size:10px; font-weight:800; padding:2px 8px; border-radius:999px;">14 SELECTED</span>
-          <span style="font-size:12px; color:#94a3b8;">(14 defects detected)</span>
+        <div class="flex-center-gap10">
+          <span class="badge-count-blue">14 SELECTED</span>
+          <span class="text-muted-12">(14 defects detected)</span>
         </div>
-        <div style="display:flex; gap:8px;">
-          <button class="sim-btn" style="background:#10b981; color:#042f1a; font-weight:800; border:none;">✨ Batch Auto-Apply (14)</button>
+        <div class="flex-gap8">
+          <button class="sim-btn" class="sim-btn btn-apply-green">✨ Batch Auto-Apply (14)</button>
           <button class="sim-btn">👉 Inject CTA</button>
-          <button class="sim-btn" style="background:transparent; border:none; color:#94a3b8;">✕ Clear</button>
+          <button class="sim-btn" class="sim-btn btn-clear">✕ Clear</button>
         </div>
       </div>
     </div>
@@ -583,13 +619,13 @@ setToasts(prev => {
       <p class="card-desc">
         Instant spotlight search for creators managing hundreds of podcast episodes and coaching videos:
       </p>
-      <div style="background:#080c16; border:1px solid #1e293b; border-radius:8px; padding:12px; font-size:12px;">
-        <div style="display:flex; align-items:center; gap:8px; border-bottom:1px solid #1e293b; padding-bottom:8px; margin-bottom:8px;">
-          <span style="color:#38bdf8;">🔍</span>
-          <span style="color:#fff; font-family:var(--font-mono);">Search videos, channels, or actions...</span>
-          <span style="margin-left:auto; background:#1e293b; padding:2px 6px; border-radius:4px; font-size:10px; color:#94a3b8;">ESC</span>
+      <div class="search-palette">
+        <div class="search-header">
+          <span class="text-blue">🔍</span>
+          <span class="text-mono-white">Search videos, channels, or actions...</span>
+          <span class="kbd-esc">ESC</span>
         </div>
-        <div style="color:#64748b; font-size:11px; line-height:1.6;">
+        <div class="search-body">
           <div>• <strong>Switch Channel:</strong> <em>Breaking Into Cybersecurity</em></div>
           <div>• <strong>Action:</strong> <em>Auto-Inject CTA into 34 missing videos</em></div>
           <div>• <strong>Filter:</strong> <em>Show videos with SEO Score &lt; 50</em></div>
@@ -600,7 +636,7 @@ setToasts(prev => {
   </div>
 
   <!-- Implementation Priority Matrix Table -->
-  <div class="card" style="margin-bottom:32px;">
+  <div class="card" class="card mb-32">
     <div class="card-header">
       <span class="card-title">📋 Implementation Priority &amp; Effort Matrix</span>
       <span class="badge-tag badge-blue">Engineering Roadmap</span>
@@ -620,7 +656,7 @@ setToasts(prev => {
         <tr>
           <td>
             <strong>1. Catalog Ingestion Progress Denominator Math</strong><br/>
-            <span style="font-size:11.5px; color:var(--text-muted);">Ensure <code>1,440 / 1,440 Videos Ingested (100% Synced)</code> instead of inverted ratios</span>
+            <span class="td-subtext">Ensure <code>1,440 / 1,440 Videos Ingested (100% Synced)</code> instead of inverted ratios</span>
           </td>
           <td><code>src/components/Videos.tsx</code></td>
           <td><span class="dot dot-green"></span>High (Eliminates confusion on catalog depth)</td>
@@ -630,7 +666,7 @@ setToasts(prev => {
         <tr>
           <td>
             <strong>2. Interactive Click-Through KPI Deep Links</strong><br/>
-            <span style="font-size:11.5px; color:var(--text-muted);">Click "CTA Coverage" ➔ opens Videos filtered by "Missing CTA"</span>
+            <span class="td-subtext">Click "CTA Coverage" ➔ opens Videos filtered by "Missing CTA"</span>
           </td>
           <td><code>src/components/Overview.tsx</code></td>
           <td><span class="dot dot-green"></span>Very High (Saves 3 navigation clicks)</td>
@@ -640,7 +676,7 @@ setToasts(prev => {
         <tr>
           <td>
             <strong>3. Toast Queue Capping &amp; Deduplication</strong><br/>
-            <span style="font-size:11.5px; color:var(--text-muted);">Max 2 concurrent toasts, 4-second auto dismiss, no duplicate spam</span>
+            <span class="td-subtext">Max 2 concurrent toasts, 4-second auto dismiss, no duplicate spam</span>
           </td>
           <td><code>src/App.tsx</code></td>
           <td><span class="dot dot-blue"></span>High (Preserves screen real estate during batch runs)</td>
@@ -650,7 +686,7 @@ setToasts(prev => {
         <tr>
           <td>
             <strong>4. Defect Hover Micro-Card Tooltip</strong><br/>
-            <span style="font-size:11.5px; color:var(--text-muted);">Hover on "4 issues" badge reveals specific defects without row expansion</span>
+            <span class="td-subtext">Hover on "4 issues" badge reveals specific defects without row expansion</span>
           </td>
           <td><code>src/components/Videos.tsx</code></td>
           <td><span class="dot dot-blue"></span>Very High (Instant catalog triage across 1,400+ videos)</td>
@@ -660,7 +696,7 @@ setToasts(prev => {
         <tr>
           <td>
             <strong>5. Above-the-Fold YouTube Description Simulator</strong><br/>
-            <span style="font-size:11.5px; color:var(--text-muted);">Preview mobile &amp; desktop "...more" fold to guarantee CTA visibility</span>
+            <span class="td-subtext">Preview mobile &amp; desktop "...more" fold to guarantee CTA visibility</span>
           </td>
           <td><code>src/components/FeaturesHub.tsx</code></td>
           <td><span class="dot dot-green"></span>Exceptional (Directly maximizes consultation bookings)</td>
@@ -670,7 +706,7 @@ setToasts(prev => {
         <tr>
           <td>
             <strong>6. Channel Header Write Permissions HUD</strong><br/>
-            <span style="font-size:11.5px; color:var(--text-muted);">Visual indicator in header showing Brand Account token validity</span>
+            <span class="td-subtext">Visual indicator in header showing Brand Account token validity</span>
           </td>
           <td><code>src/App.tsx</code> / <code>Overview.tsx</code></td>
           <td><span class="dot dot-amber"></span>High (Eliminates surprise 403 authorization dialogs)</td>
@@ -680,7 +716,7 @@ setToasts(prev => {
         <tr>
           <td>
             <strong>7. Sticky Floating Batch Action Bar</strong><br/>
-            <span style="font-size:11.5px; color:var(--text-muted);">Fixed viewport action bar when selecting videos in long tables</span>
+            <span class="td-subtext">Fixed viewport action bar when selecting videos in long tables</span>
           </td>
           <td><code>src/components/Videos.tsx</code></td>
           <td><span class="dot dot-amber"></span>Medium (Power user convenience)</td>

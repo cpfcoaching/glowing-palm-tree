@@ -168,6 +168,15 @@
 
   /* Code block */
   code { font-family: var(--font-mono); color: #38bdf8; background: rgba(56, 189, 248, 0.1); padding: 2px 5px; border-radius: 4px; font-size: 11.5px; }
+
+  /* Utility classes */
+  .text-right { text-align: right; }
+  .header-meta { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+  .text-red-bold { color: #f87171; font-weight: 700; }
+  .tooltip-label { color: #94a3b8; margin-bottom: 4px; }
+  .tooltip-card { background: #0f172a; padding: 6px 10px; border-radius: 4px; border-left: 2px solid #ef4444; }
+  .mt-4 { margin-top: 4px; }
+  .td-subtext { font-size: 11px; color: var(--text-muted); }
 </style>
 </head>
 <body>
@@ -180,9 +189,9 @@
       <h1>Executive UI & Workflow Recommendations</h1>
       <div class="subtitle">Curated high-impact optimizations for YouTube SEO Maximizer based on real usage patterns</div>
     </div>
-    <div style="text-align: right;">
+    <div class="text-right">
       <span class="badge-tag badge-blue">Target: Production v1.2</span>
-      <div style="font-size: 12px; color: var(--text-dim); margin-top: 6px;">Focus: Creator Clarity, Throughput & Flow</div>
+      <div class="header-meta">Focus: Creator Clarity, Throughput & Flow</div>
     </div>
   </div>
 
@@ -221,11 +230,11 @@
           <span class="opt-badge high">High Polish</span>
         </div>
         <p class="opt-detail">
-          Hovering over the red <span style="color:#f87171; font-weight:700;">4 issues</span> pill reveals a tooltip listing the exact defects (e.g., <em>"Missing question in first 60 chars"</em>, <em>"No CTA URL in top 150 chars"</em>) without requiring row expansion.
+          Hovering over the red <span class="text-red-bold">4 issues</span> pill reveals a tooltip listing the exact defects (e.g., <em>"Missing question in first 60 chars"</em>, <em>"No CTA URL in top 150 chars"</em>) without requiring row expansion.
         </p>
         <div class="wireframe">
-          <div style="color: #94a3b8; margin-bottom: 4px;">[Hover on "4 issues" pill]:</div>
-          <div style="background:#0f172a; padding:6px 10px; border-radius:4px; border-left: 2px solid #ef4444;">
+          <div class="tooltip-label">[Hover on "4 issues" pill]:</div>
+          <div class="tooltip-card">
             <div>• Title: Missing search hook in first 60 chars</div>
             <div>• Description: Missing booking link in top 150 chars</div>
             <div>• AEO: No natural-language question chapters</div>
@@ -266,7 +275,7 @@
             <span>[Card: 94.2% CTA Coverage]</span>
             <span class="wf-btn">Click ➔ Filter Missing CTAs</span>
           </div>
-          <div class="wf-row" style="margin-top:4px;">
+          <div class="wf-row" class="wf-row mt-4">
             <span>[Card: 74/100 Avg SEO Score]</span>
             <span class="wf-btn">Click ➔ Filter Score &lt; 50</span>
           </div>
@@ -354,42 +363,42 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>1. Channel Ingestion Denominator Math</strong><br/><span style="font-size:11px;color:var(--text-muted)">Fix 1,440 / 326 ratio display</span></td>
+          <td><strong>1. Channel Ingestion Denominator Math</strong><br/><span class="td-subtext">Fix 1,440 / 326 ratio display</span></td>
           <td><code>src/components/Videos.tsx</code></td>
           <td><span class="impact-dot dot-green"></span>High (Eliminates confusion)</td>
           <td>15 minutes</td>
           <td><span class="badge-tag badge-emerald">Ready to Apply</span></td>
         </tr>
         <tr>
-          <td><strong>2. Interactive Deep-Link KPI Tiles</strong><br/><span style="font-size:11px;color:var(--text-muted)">Click tile ➔ open Videos with active filter</span></td>
+          <td><strong>2. Interactive Deep-Link KPI Tiles</strong><br/><span class="td-subtext">Click tile ➔ open Videos with active filter</span></td>
           <td><code>src/components/Overview.tsx</code></td>
           <td><span class="impact-dot dot-green"></span>Very High (Saves 3 clicks)</td>
           <td>30 minutes</td>
           <td><span class="badge-tag badge-emerald">Ready to Apply</span></td>
         </tr>
         <tr>
-          <td><strong>3. Toast Queue Cap & Deduplication</strong><br/><span style="font-size:11px;color:var(--text-muted)">Max 2 concurrent toasts, 4s auto-dismiss</span></td>
+          <td><strong>3. Toast Queue Cap & Deduplication</strong><br/><span class="td-subtext">Max 2 concurrent toasts, 4s auto-dismiss</span></td>
           <td><code>src/App.tsx</code></td>
           <td><span class="impact-dot dot-blue"></span>High (Cleans screen real estate)</td>
           <td>20 minutes</td>
           <td><span class="badge-tag badge-blue">Recommended</span></td>
         </tr>
         <tr>
-          <td><strong>4. Hover Defect Preview Tooltip</strong><br/><span style="font-size:11px;color:var(--text-muted)">Instant preview of the 4 video issues</span></td>
+          <td><strong>4. Hover Defect Preview Tooltip</strong><br/><span class="td-subtext">Instant preview of the 4 video issues</span></td>
           <td><code>src/components/Videos.tsx</code></td>
           <td><span class="impact-dot dot-blue"></span>High (Instant triage)</td>
           <td>45 minutes</td>
           <td><span class="badge-tag badge-blue">Recommended</span></td>
         </tr>
         <tr>
-          <td><strong>5. Sticky Bottom Batch Optimization Bar</strong><br/><span style="font-size:11px;color:var(--text-muted)">One-click batch fix while scrolling</span></td>
+          <td><strong>5. Sticky Bottom Batch Optimization Bar</strong><br/><span class="td-subtext">One-click batch fix while scrolling</span></td>
           <td><code>src/components/Videos.tsx</code></td>
           <td><span class="impact-dot dot-amber"></span>Medium (Power user throughput)</td>
           <td>45 minutes</td>
           <td><span class="badge-tag badge-amber">Future Sprint</span></td>
         </tr>
         <tr>
-          <td><strong>6. Admin Portal CSV Audit Export</strong><br/><span style="font-size:11px;color:var(--text-muted)">Export metered token consumption to CSV</span></td>
+          <td><strong>6. Admin Portal CSV Audit Export</strong><br/><span class="td-subtext">Export metered token consumption to CSV</span></td>
           <td><code>src/components/AdminPortal.tsx</code></td>
           <td><span class="impact-dot dot-amber"></span>Medium (Executive compliance)</td>
           <td>30 minutes</td>
