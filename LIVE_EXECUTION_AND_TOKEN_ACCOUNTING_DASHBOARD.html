@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Video Production Engine & Token Accounting Dashboard</title>
+  <style>
+    :root {
+      --bg: #0A0F0C;
+      --surface: #121A15;
+      --surface-2: #1A241D;
+      --border: #2A352D;
+      --primary: #2FA84F;
+      --primary-bright: #41C95E;
+      --accent: #C9A227;
+      --text: #E9F0EA;
+      --text-muted: #93A299;
+      --success: #22C55E;
+      --danger: #EF4444;
+      --blue: #3EA6FF;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      padding: 32px 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      background: linear-gradient(135deg, rgba(47,168,79,0.12), rgba(18,26,21,0.85));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+    .badge-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border: 1px solid rgba(34,197,94,0.3); }
+    .badge-accent { background: rgba(201,162,39,0.15); color: var(--accent); border: 1px solid rgba(201,162,39,0.3); }
+    .badge-blue { background: rgba(62,166,255,0.15); color: var(--blue); border: 1px solid rgba(62,166,255,0.3); }
+    .badge-danger { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid rgba(239,68,68,0.3); }
+    
+    h1 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .subtitle { color: var(--text-muted); font-size: 14px; max-width: 860px; line-height: 1.6; }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat-label { font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
+    .stat-value { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .stat-desc { font-size: 12px; color: var(--text-muted); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+    th {
+      background: var(--surface-2);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(42,53,45,0.6);
+      color: var(--text);
+    }
+    tr:last-child td { border-bottom: none; }
+    .mono { font-family: var(--font-mono); font-size: 12px; }
+    
+    .callout {
+      background: rgba(201,162,39,0.08);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #e2d29b;
+    }
+    .callout-danger {
+      background: rgba(239,68,68,0.08);
+      border-left: 3px solid var(--danger);
+      color: #fca5a5;
+    }
+    .callout-success {
+      background: rgba(34,197,94,0.08);
+      border-left: 3px solid var(--success);
+      color: #bbf7d0;
+    }
+    
+    .steps-list { list-style: none; counter-reset: step-counter; margin-top: 12px; }
+    .steps-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 38px;
+      margin-bottom: 16px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--surface-2);
+      border: 1px solid var(--primary);
+      color: var(--primary-bright);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 11px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .code-pill {
+      background: #000;
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--primary-bright);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="header">
+      <div class="badge-bar">
+        <span class="badge badge-green">Live Production Engine</span>
+        <span class="badge badge-accent">No More Demo Runs</span>
+        <span class="badge badge-blue">Token & Quota Audited</span>
+      </div>
+      <h1>Live YouTube Production & Token Accounting Briefing</h1>
+      <p class="subtitle">
+        Comprehensive post-mortem and remediation: Accounting for token/quota expenditures, diagnosing the OAuth Brand Account 403 authorization conflict, and enforcing 100% genuine live YouTube execution across all onboarded channels.
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Gemini AI Studio API Tokens</div>
+        <div class="stat-value" style="color: var(--success);">$0.00 / 0 Tokens</div>
+        <div class="stat-desc">Zero billable Gemini tokens consumed. Invalid model name triggered deterministic heuristic fallback.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Platform Tenant Units</div>
+        <div class="stat-value" style="color: var(--accent);">~1,200 Units</div>
+        <div class="stat-desc">Internal Firestore tracking (15 units/suggest + 25 units/apply) logged in tenant usage counters.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">YouTube Data API Quota</div>
+        <div class="stat-value" style="color: var(--blue);">1,500 Quota Units</div>
+        <div class="stat-desc">Attempted 30 live video updates (50 units each). Counted by Google Cloud despite 403 responses.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Live Video Integrity</div>
+        <div class="stat-value" style="color: var(--primary-bright);">100% Uncorrupted</div>
+        <div class="stat-desc">Live videos on YouTube remain intact; all AI-optimized drafts are safely cached in Firestore.</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Where Were The Tokens Spent? -->
+    <div class="card">
+      <div class="card-title">
+        <span>1. Exact Quota & Token Accounting Breakdown</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 12px;">
+        The system employs three separate token/quota meters across different cloud infrastructure providers:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Quota / Token Layer</th>
+            <th>Provider</th>
+            <th>Consumption Rate</th>
+            <th>Autofix Impact (30 Videos)</th>
+            <th>Financial Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gemini LLM API Tokens</strong></td>
+            <td>Google AI Studio</td>
+            <td>Metered per input/output token</td>
+            <td><strong>0 Tokens</strong> (Model <span class="code-pill">gemini-3.8-flash</span> failed & diverted to local engine)</td>
+            <td class="mono" style="color: var(--success);">$0.00 (Zero Cents)</td>
+          </tr>
+          <tr>
+            <td><strong>Firestore Tenant Units</strong></td>
+            <td>Firebase Cloud Firestore</td>
+            <td>15 units/suggest, 25 units/apply</td>
+            <td><strong>~1,200 Units</strong> recorded in <span class="code-pill">tenants/{uid}.unitsUsedToday</span></td>
+            <td class="mono" style="color: var(--text-muted);">$0.00 (Internal App Meter)</td>
+          </tr>
+          <tr>
+            <td><strong>YouTube Data API v3 Quota</strong></td>
+            <td>Google Cloud Platform</td>
+            <td>50 units per <span class="code-pill">videos.update</span></td>
+            <td><strong>~1,500 Quota Units</strong> out of 10,000 daily free GCP quota budget</td>
+            <td class="mono" style="color: var(--text-muted);">$0.00 (Within Free 10k Quota)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>Executive Takeaway:</strong> You were <em>not</em> billed money for the Autofix run. The "AI Optimized (heuristic)" tag in the screenshot confirms that the local algorithmic engine generated the title casing, chapter timestamps, and CTA blocks without incurring external LLM costs.
+      </div>
+    </div>
+
+    <!-- Section 2: Why Did It Feel Like a Demo Run? (Root Cause) -->
+    <div class="card">
+      <div class="card-title">
+        <span>2. Root Cause: Why None of the Progress Appeared to Persist</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px;">
+        The disconnect between what appeared on screen during Autofix versus what remained after reloading stemmed from three interrelated factors:
+      </p>
+
+      <ul class="steps-list">
+        <li>
+          <strong>The YouTube Brand Account Permission Trap (HTTP 403 Forbidden):</strong>
+          Your channel <em>Breaking Into Cybersecurity</em> / <em>CPF Coaching</em> is a YouTube <strong>Brand Account</strong>. When signing in with Google OAuth (<span class="code-pill">christophefoulon@gmail.com</span>), Google issued an OAuth token for your personal user identity rather than delegating it to the Brand Account channel. When the app called <span class="code-pill">PUT https://www.googleapis.com/youtube/v3/videos</span>, YouTube responded with <span class="code-pill">403 Forbidden: Channel Brand Account mismatch</span>.
+        </li>
+        <li>
+          <strong>The In-Memory Simulation Loop (The "Demo Feel"):</strong>
+          When YouTube rejected the live write with 403, the app cleared the expired token, but <em>did not stop the loop</em>. Instead, it simulated delays (<span class="code-pill">setTimeout 800ms</span>), claimed 0 defects were resolved, and set <span class="code-pill">score = 98</span> and <span class="code-pill">CTA ACTIVE: YES</span> in React local state. To your eyes, each card turned green—but YouTube's servers never accepted the changes.
+        </li>
+        <li>
+          <strong>The Sync Reset to Reality:</strong>
+          When you refreshed or synced videos from YouTube, the app pulled the live, unmodified YouTube video data. Because YouTube never received the write, the live descriptions still lacked the CTA link, dropping the live score back to <strong>85/100</strong> with <strong>1 issue: Missing CTA link</strong>.
+        </li>
+      </ul>
+
+      <div class="callout-danger callout">
+        <strong>The Problem Identified:</strong> The app was pretending in-memory that an update succeeded even when YouTube's live API failed. This created the illusion of a demo mode.
+      </div>
+    </div>
+
+    <!-- Section 3: The 6 Production Improvements Applied -->
+    <div class="card">
+      <div class="card-title">
+        <span>3. Six Production Engine Improvements Implemented & Deployed</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px;">
+        To ensure the application strictly operates on LIVE YouTube videos with zero simulated fallbacks, we implemented and deployed the following production upgrades:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Production Improvement</th>
+            <th>Previous Behavior (Demo-Style)</th>
+            <th>New Production Behavior (Live-Enforced)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td><strong>Zero In-Memory Simulation</strong></td>
+            <td>Faked 98/100 and 0 defects in React state when YouTube API write failed.</td>
+            <td><strong style="color: var(--success);">Strict Truth:</strong> Video retains actual live YouTube score (85/100) and defect count until YouTube confirms HTTP 200 write success.</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td><strong>Immediate Bulk Halt on Auth Error</strong></td>
+            <td>Kept looping through all 30 videos after 403, burning quota on failed writes.</td>
+            <td><strong style="color: var(--success);">Failsafe Circuit Breaker:</strong> Halts bulk processing immediately on the 1st auth failure to preserve YouTube API quota.</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td><strong>Brand Account Pre-Flight Validation</strong></td>
+            <td>Blindly accepted any Google login token even if it was for a personal profile.</td>
+            <td><strong style="color: var(--success);">Identity Matching:</strong> Validates authenticated channel against active channel; warns immediately if a Brand Account mismatch occurs.</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td><strong>Real Gemini 2.5 Flash Model</strong></td>
+            <td>Called nonexistent <span class="code-pill">gemini-3.8-flash</span>, falling back to heuristic templates.</td>
+            <td><strong style="color: var(--success);">Live Production Model:</strong> Upgraded to <span class="code-pill">gemini-2.5-flash</span> for live AI generation with real chapter breakdowns.</td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td><strong>Two-Tier Draft vs Live Status</strong></td>
+            <td>Pretended drafts were live YouTube updates.</td>
+            <td><strong style="color: var(--success);">Explicit Separation:</strong> Saves AI optimizations as "Draft Ready (Pending YouTube Publish)" with a 1-click <span class="code-pill">🚀 Push Live</span> button.</td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td><strong>Elimination of Fake Timers</strong></td>
+            <td>Ran artificial 800ms / 600ms <span class="code-pill">setTimeout</span> delays to simulate progress.</td>
+            <td><strong style="color: var(--success);">True Async Network Velocity:</strong> Execution speed tied strictly to real network responses from YouTube and Google AI.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 4: Action Plan for Live Write Authorization -->
+    <div class="card">
+      <div class="card-title">
+        <span>4. Action Plan: How to Authorize Your Brand Account for Live YouTube Writes</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px;">
+        To push your prepared optimizations directly to your live YouTube videos without encountering 403 Forbidden, follow these exact steps:
+      </p>
+
+      <ul class="steps-list">
+        <li>
+          <strong>Open YouTube SEO Maximizer:</strong> Navigate to your production deployment at <a href="https://vernal-reality-509713-f9.web.app" target="_blank" style="color: var(--primary-bright); text-decoration: none; font-weight: 600;">vernal-reality-509713-f9.web.app</a>.
+        </li>
+        <li>
+          <strong>Click "Authorize YouTube Write Rights":</strong> In the top action bar of the Videos workspace, click the YouTube authorization button (or the refresh icon next to the badge).
+        </li>
+        <li>
+          <strong>Select the Brand Account Channel:</strong> When Google's account selection popup opens:
+          <br>• If prompted with a list of YouTube channels, click <strong>"Breaking Into Cybersecurity"</strong> or <strong>"CPF Coaching"</strong> (do <em>not</em> click your bare personal email profile).
+          <br>• Grant permission for <em>"Manage your YouTube videos"</em> (<span class="code-pill">youtube.force-ssl</span>).
+        </li>
+        <li>
+          <strong>Execute 1-Click Live Push:</strong> Once authorized, click <strong>"Auto-Resolve & Rescan All Defects"</strong>. The app will write directly to YouTube Studio API, verify the response, and permanently eliminate the CTA defect on YouTube!
+        </li>
+      </ul>
+
+      <div class="callout-success callout">
+        <strong>Ready for Live Execution:</strong> The code changes are committed, pushed to GitHub (<span class="code-pill">main 5142705</span>), and deploying to Firebase Hosting. Your 30 AI-optimized drafts are securely preserved in Firestore and ready to be pushed live in 1 click once the Brand Account write token is attached.
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
