@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google OAuth App Verification Compliance Dashboard</title>
+  <style>
+    :root {
+      --bg: #0A0F0C;
+      --card-bg: #111813;
+      --border: #1E2B21;
+      --primary: #2FA84F;
+      --primary-bright: #48C76A;
+      --text: #E6E8E6;
+      --text-muted: #8E9990;
+      --accent-yellow: #EAB308;
+      --accent-blue: #38BDF8;
+      --code-bg: #18221B;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 30px 20px;
+      line-height: 1.6;
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(47, 168, 79, 0.15);
+      color: var(--primary-bright);
+      border: 1px solid rgba(47, 168, 79, 0.35);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 12px 0 6px 0;
+      color: #FFFFFF;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title.green { color: var(--primary-bright); }
+    .card-title.yellow { color: var(--accent-yellow); }
+    .card-title.blue { color: var(--accent-blue); }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .section-title {
+      font-size: 18px;
+      color: #FFFFFF;
+      margin: 32px 0 16px 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .script-step {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .step-number {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary-bright);
+      background: rgba(47, 168, 79, 0.15);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .step-time {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0 0 6px 0;
+    }
+    .step-content {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .step-instruction {
+      background: var(--code-bg);
+      border-left: 3px solid var(--primary);
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text);
+      border-radius: 0 6px 6px 0;
+    }
+    .copy-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 13px;
+      color: var(--text);
+      white-space: pre-wrap;
+      font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;
+      line-height: 1.5;
+    }
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #18221B;
+      color: var(--primary-bright);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-link:hover {
+      background: #243528;
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="badge">Google Cloud OAuth Verification Action Plan</div>
+    <h1>Project 258827664757 (vernal-reality-509713-f9) Compliance Package</h1>
+    <p class="subtitle">Complete remediation package addressing Google Trust & Safety verification requirements for YouTube Data API v3 integration.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-title green">✓ Privacy Policy Updated</div>
+        <p class="card-desc">Comprehensive disclosures deployed live to <code>/privacy.html</code> covering data access, protection, retention/deletion, and AI model training restrictions.</p>
+      </div>
+      <div class="card">
+        <div class="card-title yellow">📹 Demo Video Blueprint</div>
+        <p class="card-desc">Turn-by-turn recording script explicitly showing the expanded consent screen, client ID, least privilege justification, and live YouTube Studio updates.</p>
+      </div>
+      <div class="card">
+        <div class="card-title blue">✉️ Email Response Draft</div>
+        <p class="card-desc">Formal submission response ready to send to Google OAuth Review team citing exact updated policy anchors and video timestamp evidence.</p>
+      </div>
+    </div>
+
+    <div class="link-row">
+      <a class="btn-link" href="https://vernal-reality-509713-f9.web.app/privacy.html" target="_blank" rel="noopener noreferrer">
+        🌐 Live Verified Privacy Policy (https://vernal-reality-509713-f9.web.app/privacy.html)
+      </a>
+      <a class="btn-link" href="https://console.cloud.google.com/auth/verification?project=vernal-reality-509713-f9" target="_blank" rel="noopener noreferrer">
+        ⚙️ Google Cloud Console Verification Center
+      </a>
+    </div>
+
+    <h2 class="section-title">Part 1: Demo Video Recording Script (Under 3 Minutes)</h2>
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+      Google requires the demo video to clearly show the browser address bar, the OAuth client ID matching project <code>258827664757</code>, the fully expanded scopes list, and the exact user-facing feature utilizing <code>youtube.force-ssl</code>.
+    </p>
+
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-number">Step 1</span>
+        <span class="step-time">0:00 - 0:30</span>
+      </div>
+      <div class="step-title">Show URL & Initial Application State</div>
+      <p class="step-content">Open <strong>https://vernal-reality-509713-f9.web.app</strong> in Google Chrome. Keep the browser address bar clearly visible so the reviewer sees the verified domain.</p>
+      <div class="step-instruction">
+        <strong>Narration:</strong> "Hello Google OAuth Verification Team. This is a demonstration of YouTube SEO Maximizer, developed by CPF Coaching LLC for Google Cloud Project 258827664757. Our application helps creators and executive advisors audit their YouTube video back-catalog for Answer Engine Optimization (AEO) defects and apply approved metadata updates directly to YouTube Studio."
+      </div>
+    </div>
+
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-number">Step 2</span>
+        <span class="step-time">0:30 - 1:15</span>
+      </div>
+      <div class="step-title">Trigger OAuth Flow & Expand Scopes Screen (CRITICAL REQUIREMENT)</div>
+      <p class="step-content">Click <strong>"Authorize YouTube Write Rights"</strong> or <strong>"Push Live to YouTube"</strong>. When Google's OAuth consent popup appears:</p>
+      <div class="step-instruction">
+        <strong>Mandatory Action:</strong> Click into the browser address bar of the popup or show the full URL showing <code>client_id=258827664757-...</code>.<br>
+        <strong>Mandatory Action:</strong> If the consent screen has collapsed permission dropdowns, click <strong>"Show all services"</strong> or expand all checkboxes so the text <code>Manage your YouTube videos</code> (<code>youtube.force-ssl</code>) is fully visible and readable on screen before clicking Continue.<br>
+        <strong>Narration:</strong> "Here is our OAuth consent dialog. As shown in the URL, our client ID matches our Google Cloud project. We expand the requested permissions to display 'Manage your YouTube videos', which corresponds to the sensitive scope https://www.googleapis.com/auth/youtube.force-ssl."
+      </div>
+    </div>
+
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-number">Step 3</span>
+        <span class="step-time">1:15 - 2:00</span>
+      </div>
+      <div class="step-title">Demonstrate Least Privilege & The Core User-Facing Feature</div>
+      <p class="step-content">Show a video in the table that has detected defects (e.g. truncated title, missing call-to-action link, low SEO score). Click <strong>"AI Suggest"</strong> or <strong>"Push Live to YouTube"</strong>.</p>
+      <div class="step-instruction">
+        <strong>Narration:</strong> "Under the principle of least privilege, we only request youtube.force-ssl because narrower read-only scopes cannot update video metadata. Here is a video with missing booking links and weak tags. When the creator clicks 'Push Live to YouTube', our application invokes the YouTube Data API v3 videos.update endpoint to write the optimized title, description, and tags directly to YouTube Studio."
+      </div>
+    </div>
+
+    <div class="script-step">
+      <div class="step-header">
+        <span class="step-number">Step 4</span>
+        <span class="step-time">2:00 - 2:45</span>
+      </div>
+      <div class="step-title">Verify Live Update on YouTube / YouTube Studio</div>
+      <p class="step-content">Show the green confirmation toast in the app. Switch tabs to YouTube Studio or the live YouTube video URL to show that the description, title, and tags were updated live on YouTube.</p>
+      <div class="step-instruction">
+        <strong>Narration:</strong> "As demonstrated, the video has been updated live on YouTube Studio, rescanned with 0 defects remaining, and our users' data is protected by TLS 1.3, AES-256 encryption at rest, and 55-minute ephemeral token purging. Thank you."
+      </div>
+    </div>
+
+    <h2 class="section-title">Part 2: Email Response Template for Google OAuth Review</h2>
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+      Copy and paste this response when replying directly to the Google Verification email:
+    </p>
+
+    <div class="copy-block">Subject: Re: [Google Verification] Verification request for project 258827664757 (vernal-reality-509713-f9)
+
+Dear Google OAuth Verification Team,
+
+Thank you for your feedback regarding our verification submission for Project ID vernal-reality-509713-f9 (Project #258827664757). 
+
+We have addressed all requirements regarding the Privacy Policy and prepared our demonstration video according to your exact specifications:
+
+1. UPDATED PRIVACY POLICY DISCLOSURES:
+Our Privacy Policy has been comprehensively updated and is accessible at our verified domain:
+https://vernal-reality-509713-f9.web.app/privacy.html
+
+The updated policy explicitly includes:
+a) Google User Data Access Disclosures (Section 1):
+- Details the exact OAuth scopes requested (openid, email, profile, and https://www.googleapis.com/auth/youtube.force-ssl).
+- Specifies all Google user data accessed (Google profile email/name, YouTube channel ID/title, video IDs, titles, descriptions, tags, and thumbnails).
+- Justifies why narrower permissions cannot be used: YouTube Data API v3 requires youtube.force-ssl to execute videos.update and thumbnails.set on user-approved video enhancements; read-only scopes cannot write metadata to YouTube Studio.
+b) Sensitive Data Protection Disclosures (Section 3):
+- Details our security mechanisms, including Transport Layer Security (TLS 1.3) for all transit, AES-256 encryption at rest in Google Cloud Firestore, ephemeral token handling with automated 55-minute expiration (TTL) purging, and cryptographic tenant isolation.
+c) Data Retention and Deletion Disclosures (Section 4):
+- Explicitly states that OAuth access tokens are held ephemerally for a maximum of 55 minutes.
+- Details in-app channel disconnection mechanisms, user data deletion requests via privacy@cpf-coaching.com (purged within 30 days), and how users can revoke access at any time via myaccount.google.com/permissions.
+d) Limited Use & AI Model Training Restrictions (Section 2):
+- Explicitly affirms that Google user data is NEVER sold, NEVER used for advertising/targeting, and NEVER used to train or fine-tune generalized AI or machine learning models.
+
+2. NEW DEMONSTRATION VIDEO:
+We have recorded a new, comprehensive demonstration video meeting all criteria:
+- Video URL: [INSERT YOUR YOUTUBE UNLISTED / GOOGLE DRIVE LINK HERE]
+- Project ID: vernal-reality-509713-f9
+- Client ID: [INSERT YOUR OAUTH CLIENT ID HERE]
+
+Video Highlights:
+- [0:00 - 0:30]: Full browser address bar showing https://vernal-reality-509713-f9.web.app.
+- [0:30 - 1:15]: The OAuth consent screen with client ID clearly visible in the URL and all scopes fully expanded to show "Manage your YouTube videos" (youtube.force-ssl).
+- [1:15 - 2:00]: Core user-facing feature demonstration: showing pre-existing video defects and clicking "Push Live to YouTube".
+- [2:00 - 2:45]: Live verification in YouTube Studio showing the metadata updated in real-time.
+
+Please let us know if you need any additional information to finalize the verification approval.
+
+Best regards,
+
+Christophe Foulon
+Founder & CISO | CPF Coaching LLC
+privacy@cpf-coaching.com | Info@cpf-coaching.com
+https://cpf-coaching.com</div>
+  </div>
+</body>
+</html>
