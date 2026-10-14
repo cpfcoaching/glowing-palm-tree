@@ -16,6 +16,7 @@
       --accent-yellow: #EAB308;
       --accent-blue: #38BDF8;
       --code-bg: #18221B;
+      --badge-bg: rgba(47, 168, 79, 0.15);
     }
     body {
       background-color: var(--bg);
@@ -26,14 +27,14 @@
       line-height: 1.6;
     }
     .wrapper {
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
     }
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(47, 168, 79, 0.15);
+      background: var(--badge-bg);
       color: var(--primary-bright);
       border: 1px solid rgba(47, 168, 79, 0.35);
       padding: 4px 12px;
@@ -87,19 +88,71 @@
     .section-title {
       font-size: 18px;
       color: #FFFFFF;
-      margin: 32px 0 16px 0;
+      margin: 36px 0 16px 0;
       border-bottom: 1px solid var(--border);
       padding-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 12px;
+      margin: 16px 0 24px 0;
+    }
+    .link-card {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .link-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .link-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #FFFFFF;
+    }
+    .link-card-url {
+      font-family: ui-monospace, Menlo, Monaco, monospace;
+      font-size: 12px;
+      color: var(--primary-bright);
+      word-break: break-all;
+      background: rgba(47, 168, 79, 0.1);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(47, 168, 79, 0.25);
+    }
+    .link-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-bright);
+      text-decoration: none;
+      margin-top: 4px;
+    }
+    .link-card-action:hover {
+      text-decoration: underline;
+    }
     .script-step {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 16px 20px;
-      margin-bottom: 14px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
     }
     .step-header {
       display: flex;
@@ -134,80 +187,175 @@
     .step-instruction {
       background: var(--code-bg);
       border-left: 3px solid var(--primary);
-      padding: 10px 14px;
+      padding: 12px 14px;
       margin-top: 10px;
       font-size: 12px;
       color: var(--text);
       border-radius: 0 6px 6px 0;
     }
+    .step-instruction strong {
+      color: var(--primary-bright);
+    }
     .copy-block {
       background: var(--code-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 16px;
+      padding: 18px;
       font-size: 13px;
       color: var(--text);
       white-space: pre-wrap;
       font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;
-      line-height: 1.5;
+      line-height: 1.55;
     }
-    .link-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .checklist {
+      list-style: none;
+      padding: 0;
       margin: 16px 0;
     }
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #18221B;
-      color: var(--primary-bright);
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 10px;
+      background: var(--card-bg);
       border: 1px solid var(--border);
-      padding: 8px 14px;
+      padding: 10px 14px;
       border-radius: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
     }
-    .btn-link:hover {
-      background: #243528;
-      border-color: var(--primary);
+    .check-icon {
+      color: var(--primary-bright);
+      font-weight: 800;
+      font-size: 14px;
+    }
+    code {
+      font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      background: #18221B;
+      color: #55D476;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #243528;
+    }
+    .callout-box {
+      background: rgba(234, 179, 8, 0.08);
+      border-left: 4px solid var(--accent-yellow);
+      padding: 14px 18px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+      color: #F3E8BA;
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <div class="badge">Google Cloud OAuth Verification Action Plan</div>
+    <div class="badge">Google Cloud OAuth Verification Remediation Package</div>
     <h1>Project 258827664757 (vernal-reality-509713-f9) Compliance Package</h1>
-    <p class="subtitle">Complete remediation package addressing Google Trust & Safety verification requirements for YouTube Data API v3 integration.</p>
+    <p class="subtitle">Complete turnkey remediation addressing Google Trust & Safety verification review feedback for YouTube Data API v3 integration.</p>
 
     <div class="grid">
       <div class="card">
-        <div class="card-title green">✓ Privacy Policy Updated</div>
-        <p class="card-desc">Comprehensive disclosures deployed live to <code>/privacy.html</code> covering data access, protection, retention/deletion, and AI model training restrictions.</p>
+        <div class="card-title green">✓ Privacy Policy Anchors Live</div>
+        <p class="card-desc">Comprehensive disclosures deployed to <code>https://vernal-reality-509713-f9.web.app/privacy.html</code> with deep-link anchors for Data Access, Data Protection, and Data Retention/Deletion.</p>
       </div>
       <div class="card">
-        <div class="card-title yellow">📹 Demo Video Blueprint</div>
-        <p class="card-desc">Turn-by-turn recording script explicitly showing the expanded consent screen, client ID, least privilege justification, and live YouTube Studio updates.</p>
+        <div class="card-title yellow">📹 Demo Video Protocol</div>
+        <p class="card-desc">Turn-by-turn recording script explicitly showing the address bar, client ID, "Show all services" expansion, least-privilege justification, and live YouTube Studio updates.</p>
       </div>
       <div class="card">
-        <div class="card-title blue">✉️ Email Response Draft</div>
-        <p class="card-desc">Formal submission response ready to send to Google OAuth Review team citing exact updated policy anchors and video timestamp evidence.</p>
+        <div class="card-title blue">✉️ Direct Email Reply</div>
+        <p class="card-desc">Formal submission response ready to copy and send to the Google OAuth Verification Review team directly addressing all items.</p>
       </div>
     </div>
 
-    <div class="link-row">
-      <a class="btn-link" href="https://vernal-reality-509713-f9.web.app/privacy.html" target="_blank" rel="noopener noreferrer">
-        🌐 Live Verified Privacy Policy (https://vernal-reality-509713-f9.web.app/privacy.html)
-      </a>
-      <a class="btn-link" href="https://console.cloud.google.com/auth/verification?project=vernal-reality-509713-f9" target="_blank" rel="noopener noreferrer">
-        ⚙️ Google Cloud Console Verification Center
-      </a>
+    <!-- 1. PRIVACY POLICY LINKS SPECIFICALLY REQUESTED BY GOOGLE -->
+    <h2 class="section-title">Part 1: Updated Privacy Policy Disclosure Links (Direct Submission URLs)</h2>
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+      Google requires explicit links addressing the three privacy policy deficiencies. Each URL below navigates directly to the corresponding compliant section on your verified domain:
+    </p>
+
+    <div class="link-card-grid">
+      <div class="link-card">
+        <div>
+          <div class="link-card-header">📌 1. Data Access Disclosures</div>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 6px 0;">Discloses exact scopes (openid, email, profile, youtube.force-ssl), channel/video data accessed, and least-privilege justification.</p>
+        </div>
+        <div>
+          <div class="link-card-url">https://vernal-reality-509713-f9.web.app/privacy.html#data-access-disclosures</div>
+          <a class="link-card-action" href="https://vernal-reality-509713-f9.web.app/privacy.html#data-access-disclosures" target="_blank" rel="noopener noreferrer">
+            Open Anchor Link ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="link-card">
+        <div>
+          <div class="link-card-header">🛡️ 2. Sensitive Data Protection Disclosures</div>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 6px 0;">Specifies security procedures, TLS 1.3 transit encryption, AES-256 Firestore rest encryption, and 55-minute ephemeral token TTL.</p>
+        </div>
+        <div>
+          <div class="link-card-url">https://vernal-reality-509713-f9.web.app/privacy.html#data-protection-disclosures</div>
+          <a class="link-card-action" href="https://vernal-reality-509713-f9.web.app/privacy.html#data-protection-disclosures" target="_blank" rel="noopener noreferrer">
+            Open Anchor Link ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="link-card">
+        <div>
+          <div class="link-card-header">🗑️ 3. Retention & Deletion Disclosures</div>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 6px 0;">Specifies retention periods, in-app channel disconnect, 30-day purge requests via privacy@cpf-coaching.com, and Google security revocation.</p>
+        </div>
+        <div>
+          <div class="link-card-url">https://vernal-reality-509713-f9.web.app/privacy.html#data-retention-and-deletion-disclosures</div>
+          <a class="link-card-action" href="https://vernal-reality-509713-f9.web.app/privacy.html#data-retention-and-deletion-disclosures" target="_blank" rel="noopener noreferrer">
+            Open Anchor Link ↗
+          </a>
+        </div>
+      </div>
     </div>
 
-    <h2 class="section-title">Part 1: Demo Video Recording Script (Under 3 Minutes)</h2>
+    <!-- 2. GOOGLE CLOUD CONSOLE ACTION CHECKLIST -->
+    <h2 class="section-title">Part 2: Google Cloud Console Resubmission Checklist</h2>
+    <div class="callout-box">
+      <strong>Action Required in Cloud Console:</strong> Update and resubmit your app in Cloud Console (<a href="https://console.cloud.google.com/apis/credentials/consent?project=vernal-reality-509713-f9" target="_blank" style="color: var(--accent-yellow); text-decoration: underline;">OAuth Consent Screen</a>):
+    </div>
+
+    <ul class="checklist">
+      <li>
+        <span class="check-icon">✓</span>
+        <div>
+          <strong>Privacy Policy Link:</strong> Confirm the Privacy Policy link is set to <code>https://vernal-reality-509713-f9.web.app/privacy.html</code>.
+        </div>
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        <div>
+          <strong>Scope Matching:</strong> Confirm the scopes in Cloud Console exactly match the manifest:
+          <br>• <code>openid</code>
+          <br>• <code>https://www.googleapis.com/auth/userinfo.email</code>
+          <br>• <code>https://www.googleapis.com/auth/userinfo.profile</code>
+          <br>• <code>https://www.googleapis.com/auth/youtube.force-ssl</code>
+        </div>
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        <div>
+          <strong>Publishing Status:</strong> Ensure publishing status remains <strong>"In Production"</strong>.
+        </div>
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        <div>
+          <strong>Submit for Verification:</strong> Click "Submit for Verification" at the final step of the consent screen wizard.
+        </div>
+      </li>
+    </ul>
+
+    <!-- 3. DEMO VIDEO RECORDING SCRIPT -->
+    <h2 class="section-title">Part 3: Demo Video Recording Script (Under 3 Minutes)</h2>
     <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
       Google requires the demo video to clearly show the browser address bar, the OAuth client ID matching project <code>258827664757</code>, the fully expanded scopes list, and the exact user-facing feature utilizing <code>youtube.force-ssl</code>.
     </p>
@@ -220,7 +368,7 @@
       <div class="step-title">Show URL & Initial Application State</div>
       <p class="step-content">Open <strong>https://vernal-reality-509713-f9.web.app</strong> in Google Chrome. Keep the browser address bar clearly visible so the reviewer sees the verified domain.</p>
       <div class="step-instruction">
-        <strong>Narration:</strong> "Hello Google OAuth Verification Team. This is a demonstration of YouTube SEO Maximizer, developed by CPF Coaching LLC for Google Cloud Project 258827664757. Our application helps creators and executive advisors audit their YouTube video back-catalog for Answer Engine Optimization (AEO) defects and apply approved metadata updates directly to YouTube Studio."
+        <strong>Narration:</strong> "Hello Google OAuth Verification Team. This is a demonstration of YouTube SEO Maximizer, developed by CPF Coaching LLC for Google Cloud Project 258827664757 (Project ID: vernal-reality-509713-f9). Our application helps creators and executive advisors audit their YouTube video back-catalog for Answer Engine Optimization (AEO) and SEO defects and apply user-approved metadata updates directly to YouTube Studio."
       </div>
     </div>
 
@@ -230,11 +378,11 @@
         <span class="step-time">0:30 - 1:15</span>
       </div>
       <div class="step-title">Trigger OAuth Flow & Expand Scopes Screen (CRITICAL REQUIREMENT)</div>
-      <p class="step-content">Click <strong>"Authorize YouTube Write Rights"</strong> or <strong>"Push Live to YouTube"</strong>. When Google's OAuth consent popup appears:</p>
+      <p class="step-content">Click <strong>"Authorize YouTube Write Rights"</strong> or <strong>"Push Live to YouTube"</strong> to open Google's OAuth consent popup.</p>
       <div class="step-instruction">
-        <strong>Mandatory Action:</strong> Click into the browser address bar of the popup or show the full URL showing <code>client_id=258827664757-...</code>.<br>
-        <strong>Mandatory Action:</strong> If the consent screen has collapsed permission dropdowns, click <strong>"Show all services"</strong> or expand all checkboxes so the text <code>Manage your YouTube videos</code> (<code>youtube.force-ssl</code>) is fully visible and readable on screen before clicking Continue.<br>
-        <strong>Narration:</strong> "Here is our OAuth consent dialog. As shown in the URL, our client ID matches our Google Cloud project. We expand the requested permissions to display 'Manage your YouTube videos', which corresponds to the sensitive scope https://www.googleapis.com/auth/youtube.force-ssl."
+        <strong>Mandatory Action 1:</strong> Click into the browser address bar of the OAuth popup window or highlight the URL showing <code>client_id=258827664757-...</code> so the reviewer can confirm project matching.<br>
+        <strong>Mandatory Action 2:</strong> If the consent screen has collapsed permission dropdowns, click <strong>"Show all services"</strong> or expand all checkboxes so that <code>Manage your YouTube videos</code> (<code>https://www.googleapis.com/auth/youtube.force-ssl</code>) is completely expanded and clearly legible on screen before clicking Continue.<br>
+        <strong>Narration:</strong> "Here is our OAuth consent dialog. As shown in the URL, our client ID matches Google Cloud project 258827664757. We expand all permissions by clicking 'Show all services' to display 'Manage your YouTube videos', which corresponds to the sensitive scope https://www.googleapis.com/auth/youtube.force-ssl."
       </div>
     </div>
 
@@ -243,8 +391,8 @@
         <span class="step-number">Step 3</span>
         <span class="step-time">1:15 - 2:00</span>
       </div>
-      <div class="step-title">Demonstrate Least Privilege & The Core User-Facing Feature</div>
-      <p class="step-content">Show a video in the table that has detected defects (e.g. truncated title, missing call-to-action link, low SEO score). Click <strong>"AI Suggest"</strong> or <strong>"Push Live to YouTube"</strong>.</p>
+      <div class="step-title">Demonstrate Least Privilege & The Core User-Facing Feature (Evidenced Need)</div>
+      <p class="step-content">Show a video in the workspace that has detected defects (e.g. truncated title, missing call-to-action booking link, weak tags). Click <strong>"AI Suggest"</strong> or <strong>"Push Live to YouTube"</strong>.</p>
       <div class="step-instruction">
         <strong>Narration:</strong> "Under the principle of least privilege, we only request youtube.force-ssl because narrower read-only scopes cannot update video metadata. Here is a video with missing booking links and weak tags. When the creator clicks 'Push Live to YouTube', our application invokes the YouTube Data API v3 videos.update endpoint to write the optimized title, description, and tags directly to YouTube Studio."
       </div>
@@ -256,13 +404,14 @@
         <span class="step-time">2:00 - 2:45</span>
       </div>
       <div class="step-title">Verify Live Update on YouTube / YouTube Studio</div>
-      <p class="step-content">Show the green confirmation toast in the app. Switch tabs to YouTube Studio or the live YouTube video URL to show that the description, title, and tags were updated live on YouTube.</p>
+      <p class="step-content">Show the green confirmation toast in the app. Switch tabs to YouTube Studio (studio.youtube.com) or the live video on YouTube to show that the description, title, and tags were updated live on YouTube.</p>
       <div class="step-instruction">
-        <strong>Narration:</strong> "As demonstrated, the video has been updated live on YouTube Studio, rescanned with 0 defects remaining, and our users' data is protected by TLS 1.3, AES-256 encryption at rest, and 55-minute ephemeral token purging. Thank you."
+        <strong>Narration:</strong> "As demonstrated, the video metadata has been updated live on YouTube Studio, rescanned with 0 defects remaining, and our users' data is protected by TLS 1.3, AES-256 encryption at rest, and 55-minute ephemeral token purging. Thank you."
       </div>
     </div>
 
-    <h2 class="section-title">Part 2: Email Response Template for Google OAuth Review</h2>
+    <!-- 4. EMAIL RESPONSE TEMPLATE -->
+    <h2 class="section-title">Part 4: Email Response Template for Google Trust & Safety Review</h2>
     <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
       Copy and paste this response when replying directly to the Google Verification email:
     </p>
@@ -273,38 +422,45 @@ Dear Google OAuth Verification Team,
 
 Thank you for your feedback regarding our verification submission for Project ID vernal-reality-509713-f9 (Project #258827664757). 
 
-We have addressed all requirements regarding the Privacy Policy and prepared our demonstration video according to your exact specifications:
+We have comprehensively addressed all requirements regarding the Privacy Policy and recorded a new demonstration video according to your exact specifications:
 
 1. UPDATED PRIVACY POLICY DISCLOSURES:
-Our Privacy Policy has been comprehensively updated and is accessible at our verified domain:
+Our Privacy Policy has been comprehensively updated and is live at our verified domain:
 https://vernal-reality-509713-f9.web.app/privacy.html
 
-The updated policy explicitly includes:
-a) Google User Data Access Disclosures (Section 1):
-- Details the exact OAuth scopes requested (openid, email, profile, and https://www.googleapis.com/auth/youtube.force-ssl).
-- Specifies all Google user data accessed (Google profile email/name, YouTube channel ID/title, video IDs, titles, descriptions, tags, and thumbnails).
-- Justifies why narrower permissions cannot be used: YouTube Data API v3 requires youtube.force-ssl to execute videos.update and thumbnails.set on user-approved video enhancements; read-only scopes cannot write metadata to YouTube Studio.
-b) Sensitive Data Protection Disclosures (Section 3):
-- Details our security mechanisms, including Transport Layer Security (TLS 1.3) for all transit, AES-256 encryption at rest in Google Cloud Firestore, ephemeral token handling with automated 55-minute expiration (TTL) purging, and cryptographic tenant isolation.
-c) Data Retention and Deletion Disclosures (Section 4):
-- Explicitly states that OAuth access tokens are held ephemerally for a maximum of 55 minutes.
-- Details in-app channel disconnection mechanisms, user data deletion requests via privacy@cpf-coaching.com (purged within 30 days), and how users can revoke access at any time via myaccount.google.com/permissions.
-d) Limited Use & AI Model Training Restrictions (Section 2):
-- Explicitly affirms that Google user data is NEVER sold, NEVER used for advertising/targeting, and NEVER used to train or fine-tune generalized AI or machine learning models.
+Below are the direct links to the specific required disclosures:
+
+a) Google User Data Access Disclosures:
+https://vernal-reality-509713-f9.web.app/privacy.html#data-access-disclosures
+- Explicitly states all Google user data accessed: Google Account email, name, profile image, Google Subject ID, YouTube channel metadata (channel ID, title, custom URL, subscriber count), and video metadata (video IDs, titles, descriptions, tags, thumbnails, category IDs).
+- Explicitly justifies why narrower permissions cannot be used: YouTube Data API v3 does not provide a separate write-only scope for modifying video metadata. The read-only scope (youtube.readonly) cannot publish title enhancements, call-to-action description links, or optimized tags to YouTube Studio. To apply user-approved optimizations via videos.update and thumbnails.set, https://www.googleapis.com/auth/youtube.force-ssl is strictly required.
+
+b) Sensitive Data Protection Disclosures:
+https://vernal-reality-509713-f9.web.app/privacy.html#data-protection-disclosures
+- Details our security procedures and encryption mechanisms: Transport Layer Security (TLS 1.3 / HTTPS) in transit, AES-256 encryption at rest in Google Cloud Firestore, ephemeral token handling with automated 55-minute expiration time-to-live (TTL) purging, strict cryptographic tenant isolation via Firestore security rules, and zero storage of user passwords.
+
+c) Data Retention and Deletion Disclosures:
+https://vernal-reality-509713-f9.web.app/privacy.html#data-retention-and-deletion-disclosures
+- Explicitly details retention periods: OAuth access tokens are stored ephemerally for a maximum of 55 minutes; channel metadata is retained only during active use to track SEO score progress.
+- Explicitly details deletion procedures: Users can disconnect channels in-app at any time, request a complete account/data purge via privacy@cpf-coaching.com or Info@cpf-coaching.com (purged within 30 calendar days), and revoke app access at any time via myaccount.google.com/permissions.
+
+d) Limited Use & AI Model Training Restrictions:
+https://vernal-reality-509713-f9.web.app/privacy.html#limited-use-disclosures
+- Explicitly affirms that Google user data is NEVER sold, NEVER transferred or used for advertising/targeting, and NEVER used to develop, improve, train, or fine-tune non-personalized artificial intelligence (AI) and/or machine learning (ML) models.
 
 2. NEW DEMONSTRATION VIDEO:
-We have recorded a new, comprehensive demonstration video meeting all criteria:
+We have recorded and uploaded a new demonstration video meeting all your specified criteria:
 - Video URL: [INSERT YOUR YOUTUBE UNLISTED / GOOGLE DRIVE LINK HERE]
 - Project ID: vernal-reality-509713-f9
-- Client ID: [INSERT YOUR OAUTH CLIENT ID HERE]
+- Project Number: 258827664757
 
-Video Highlights:
-- [0:00 - 0:30]: Full browser address bar showing https://vernal-reality-509713-f9.web.app.
-- [0:30 - 1:15]: The OAuth consent screen with client ID clearly visible in the URL and all scopes fully expanded to show "Manage your YouTube videos" (youtube.force-ssl).
-- [1:15 - 2:00]: Core user-facing feature demonstration: showing pre-existing video defects and clicking "Push Live to YouTube".
-- [2:00 - 2:45]: Live verification in YouTube Studio showing the metadata updated in real-time.
+Video Criteria Highlights:
+- [0:00 - 0:30]: Full browser address bar clearly visible displaying https://vernal-reality-509713-f9.web.app.
+- [0:30 - 1:15]: Consent Screen: OAuth consent popup triggered, with the browser address bar clearly displaying client_id matching project 258827664757, and all scopes fully expanded (via "Show all services") so "Manage your YouTube videos" (youtube.force-ssl) is completely readable.
+- [1:15 - 2:00]: Core Feature & Least Privilege: Demonstrates a video with detected SEO/AEO defects, justifies why write access is necessary, and clicks "Push Live to YouTube" to invoke videos.update.
+- [2:00 - 2:45]: Real-Time Verification: Shows the live YouTube Studio / YouTube video page refreshed with the updated title, description, and tags reflected in real-time.
 
-Please let us know if you need any additional information to finalize the verification approval.
+We have resubmitted the application in Google Cloud Console. Please let us know if you need any additional information to finalize the verification approval.
 
 Best regards,
 
